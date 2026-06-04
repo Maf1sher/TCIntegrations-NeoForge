@@ -4,10 +4,17 @@ import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 import tcintegrations.common.TCIntegrationsModule;
 import tcintegrations.data.integration.ModIntegration;
+import tcintegrations.items.modifiers.armor.BisonFurModifier;
+import tcintegrations.items.modifiers.armor.CrocodileModifier;
 import tcintegrations.items.modifiers.armor.EngineersGogglesModifier;
+import tcintegrations.items.modifiers.armor.FrontierCapModifier;
 import tcintegrations.items.modifiers.armor.MasticateModifier;
+import tcintegrations.items.modifiers.armor.MosquitoModifier;
 import tcintegrations.items.modifiers.armor.PoseidonModifier;
+import tcintegrations.items.modifiers.armor.RoadrunnerModifier;
 import tcintegrations.items.modifiers.armor.SculkingModifier;
+import tcintegrations.items.modifiers.armor.ShieldOfTheDeepModifier;
+import tcintegrations.items.modifiers.armor.TurtleShellModifier;
 import tcintegrations.items.modifiers.tool.ForgottenModifier;
 import tcintegrations.items.modifiers.tool.MechanicalArmModifier;
 import tcintegrations.items.modifiers.tool.FroststeelModifier;
@@ -22,6 +29,13 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
 
     public static StaticModifier<ModerateModifier> MODERATE_MODIFIER;
     public static StaticModifier<MechanicalArmModifier> MECHANICAL_ARM_MODIFIER;
+    public static StaticModifier<RoadrunnerModifier> ROADRUNNER_MODIFIER;
+    public static StaticModifier<FrontierCapModifier> FRONTIER_CAP_MODIFIER;
+    public static StaticModifier<TurtleShellModifier> TURTLE_SHELL_MODIFIER;
+    public static StaticModifier<BisonFurModifier> BISON_FUR_MODIFIER;
+    public static StaticModifier<ShieldOfTheDeepModifier> SHIELD_OF_THE_DEEP_MODIFIER;
+    public static StaticModifier<MosquitoModifier> MOSQUITO_MODIFIER;
+    public static StaticModifier<CrocodileModifier> CROCODILE_MODIFIER;
     public static StaticModifier<WaterPowered> WATER_POWERED_MODIFIER;
     public static StaticModifier<PoseidonModifier> POSEIDON_MODIFIER;
     public static StaticModifier<SirenModifier> SIREN_MODIFIER;
@@ -38,6 +52,16 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
 
         if (ModIntegration.canLoad(ModIntegration.CREATE_MODID)) {
             MECHANICAL_ARM_MODIFIER = MODIFIERS_REGISTRY.register("mechanical_arm", MechanicalArmModifier::new);
+        }
+
+        if (ModIntegration.canLoad(ModIntegration.ALEX_MODID)) {
+            ROADRUNNER_MODIFIER = MODIFIERS_REGISTRY.register("roadrunner", RoadrunnerModifier::new);
+            FRONTIER_CAP_MODIFIER = MODIFIERS_REGISTRY.register("frontier_cap", FrontierCapModifier::new);
+            TURTLE_SHELL_MODIFIER = MODIFIERS_REGISTRY.register("turtle_shell", TurtleShellModifier::new);
+            BISON_FUR_MODIFIER = MODIFIERS_REGISTRY.register("bison_fur", BisonFurModifier::new);
+            SHIELD_OF_THE_DEEP_MODIFIER = MODIFIERS_REGISTRY.register("shield_of_the_deep", ShieldOfTheDeepModifier::new);
+            MOSQUITO_MODIFIER = MODIFIERS_REGISTRY.register("mosquito", MosquitoModifier::new);
+            CROCODILE_MODIFIER = MODIFIERS_REGISTRY.register("crocodile", CrocodileModifier::new);
         }
 
         if (ModIntegration.canLoad(ModIntegration.AQUACULTURE_MODID)) {
