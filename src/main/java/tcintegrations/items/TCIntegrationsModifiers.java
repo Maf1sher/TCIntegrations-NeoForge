@@ -7,6 +7,7 @@ import tcintegrations.common.TCIntegrationsModule;
 
 import static tcintegrations.util.ResourceLocationHelper.resource;
 import tcintegrations.data.integration.ModIntegration;
+import tcintegrations.util.IfdWorkaroundHelper;
 import tcintegrations.items.modifiers.armor.BisonFurModifier;
 import tcintegrations.items.modifiers.armor.CrocodileModifier;
 import tcintegrations.items.modifiers.armor.EngineersGogglesModifier;
@@ -27,7 +28,12 @@ import tcintegrations.items.modifiers.tool.SirenModifier;
 import tcintegrations.items.modifiers.tool.TwilitModifier;
 import tcintegrations.items.modifiers.tool.UtheriumModifier;
 import tcintegrations.items.modifiers.tool.CapturingModifier;
+import tcintegrations.items.modifiers.tool.FlamedModifier;
 import tcintegrations.items.modifiers.tool.GlowUpModifier;
+import tcintegrations.items.modifiers.tool.IcedModifier;
+import tcintegrations.items.modifiers.tool.PhantasmalModifier;
+import tcintegrations.items.modifiers.tool.ZappedModifier;
+import tcintegrations.items.modifiers.traits.DragonScalesModifier;
 import tcintegrations.items.modifiers.traits.KineticModifier;
 import tcintegrations.items.modifiers.traits.WaterPowered;
 
@@ -43,6 +49,11 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<MosquitoModifier> MOSQUITO_MODIFIER;
     public static StaticModifier<CrocodileModifier> CROCODILE_MODIFIER;
     public static StaticModifier<CapturingModifier> CAPTURING_MODIFIER;
+    public static StaticModifier<FlamedModifier> FLAMED_MODIFIER;
+    public static StaticModifier<IcedModifier> ICED_MODIFIER;
+    public static StaticModifier<ZappedModifier> ZAPPED_MODIFIER;
+    public static StaticModifier<PhantasmalModifier> PHANTASMAL_MODIFIER;
+    public static StaticModifier<DragonScalesModifier> DRAGON_SCALES_MODIFIER;
     public static StaticModifier<KineticModifier> KINETIC_MODIFIER;
     public static StaticModifier<GlowUpModifier> GLOWUP_MODIFIER;
     public static StaticModifier<WaterPowered> WATER_POWERED_MODIFIER;
@@ -61,6 +72,16 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
 
         if (ModIntegration.canLoad(ModIntegration.APOTH_MODID)) {
             CAPTURING_MODIFIER = MODIFIERS_REGISTRY.register("capturing", CapturingModifier::new);
+        }
+
+        if (ModIntegration.canLoad(ModIntegration.IFD_MODID)) {
+            if (IfdWorkaroundHelper.isLoaded()) {
+                FLAMED_MODIFIER = MODIFIERS_REGISTRY.register("flamed", FlamedModifier::new);
+                ICED_MODIFIER = MODIFIERS_REGISTRY.register("iced", IcedModifier::new);
+                ZAPPED_MODIFIER = MODIFIERS_REGISTRY.register("zapped", ZappedModifier::new);
+                PHANTASMAL_MODIFIER = MODIFIERS_REGISTRY.register("phantasmal", PhantasmalModifier::new);
+                DRAGON_SCALES_MODIFIER = MODIFIERS_REGISTRY.register("dragonscales", DragonScalesModifier::new);
+            }
         }
 
         if (ModIntegration.canLoad(ModIntegration.CREATE_MODID)) {

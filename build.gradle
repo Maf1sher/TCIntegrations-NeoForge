@@ -108,6 +108,10 @@ dependencies {
     compileOnly "curse.maven:placebo-283644:6926281"
     compileOnly "curse.maven:apothic-attributes-898963:7445079"
 
+    // IFD CE support libs
+    compileOnly "curse.maven:jupiter-1072905:7738312"
+    compileOnly "curse.maven:uranus-1010827:8008516"
+
     // Runtime mods for testing
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
     runtimeOnly "curse.maven:geckolib-388172:7707149"
