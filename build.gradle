@@ -111,6 +111,7 @@ dependencies {
     // IFD CE support libs
     compileOnly "curse.maven:jupiter-1072905:7738312"
     compileOnly "curse.maven:uranus-1010827:8008516"
+    compileOnly "curse.maven:architectury-api-419699:5786327"
 
     // Runtime mods for testing
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"

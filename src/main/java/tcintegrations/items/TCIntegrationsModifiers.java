@@ -35,6 +35,7 @@ import tcintegrations.items.modifiers.tool.PhantasmalModifier;
 import tcintegrations.items.modifiers.tool.ZappedModifier;
 import tcintegrations.items.modifiers.traits.DragonScalesModifier;
 import tcintegrations.items.modifiers.traits.KineticModifier;
+import tcintegrations.items.modifiers.traits.SoulStained;
 import tcintegrations.items.modifiers.traits.WaterPowered;
 
 public class TCIntegrationsModifiers extends TCIntegrationsModule {
@@ -55,6 +56,7 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<PhantasmalModifier> PHANTASMAL_MODIFIER;
     public static StaticModifier<DragonScalesModifier> DRAGON_SCALES_MODIFIER;
     public static StaticModifier<KineticModifier> KINETIC_MODIFIER;
+    public static StaticModifier<SoulStained> SOUL_STAINED_MODIFIER;
     public static StaticModifier<GlowUpModifier> GLOWUP_MODIFIER;
     public static StaticModifier<WaterPowered> WATER_POWERED_MODIFIER;
     public static StaticModifier<PoseidonModifier> POSEIDON_MODIFIER;
@@ -72,6 +74,10 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
 
         if (ModIntegration.canLoad(ModIntegration.APOTH_MODID)) {
             CAPTURING_MODIFIER = MODIFIERS_REGISTRY.register("capturing", CapturingModifier::new);
+        }
+
+        if (ModIntegration.canLoad(ModIntegration.MALUM_MODID)) {
+            SOUL_STAINED_MODIFIER = MODIFIERS_REGISTRY.register("soul_stained", SoulStained::new);
         }
 
         if (ModIntegration.canLoad(ModIntegration.IFD_MODID)) {
