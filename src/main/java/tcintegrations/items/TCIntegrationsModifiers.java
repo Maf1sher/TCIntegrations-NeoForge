@@ -4,10 +4,12 @@ import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 import tcintegrations.common.TCIntegrationsModule;
 import tcintegrations.data.integration.ModIntegration;
+import tcintegrations.items.modifiers.armor.EngineersGogglesModifier;
 import tcintegrations.items.modifiers.armor.MasticateModifier;
 import tcintegrations.items.modifiers.armor.PoseidonModifier;
 import tcintegrations.items.modifiers.armor.SculkingModifier;
 import tcintegrations.items.modifiers.tool.ForgottenModifier;
+import tcintegrations.items.modifiers.tool.MechanicalArmModifier;
 import tcintegrations.items.modifiers.tool.FroststeelModifier;
 import tcintegrations.items.modifiers.tool.ModerateModifier;
 import tcintegrations.items.modifiers.tool.PrecipitateModifier;
@@ -19,6 +21,7 @@ import tcintegrations.items.modifiers.traits.WaterPowered;
 public class TCIntegrationsModifiers extends TCIntegrationsModule {
 
     public static StaticModifier<ModerateModifier> MODERATE_MODIFIER;
+    public static StaticModifier<MechanicalArmModifier> MECHANICAL_ARM_MODIFIER;
     public static StaticModifier<WaterPowered> WATER_POWERED_MODIFIER;
     public static StaticModifier<PoseidonModifier> POSEIDON_MODIFIER;
     public static StaticModifier<SirenModifier> SIREN_MODIFIER;
@@ -32,6 +35,10 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
 
     public static void init() {
         MODERATE_MODIFIER = MODIFIERS_REGISTRY.register("moderate", ModerateModifier::new);
+
+        if (ModIntegration.canLoad(ModIntegration.CREATE_MODID)) {
+            MECHANICAL_ARM_MODIFIER = MODIFIERS_REGISTRY.register("mechanical_arm", MechanicalArmModifier::new);
+        }
 
         if (ModIntegration.canLoad(ModIntegration.AQUACULTURE_MODID)) {
             WATER_POWERED_MODIFIER = MODIFIERS_REGISTRY.register("water_powered", WaterPowered::new);
