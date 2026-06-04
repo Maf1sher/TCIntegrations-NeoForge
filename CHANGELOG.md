@@ -22,14 +22,13 @@
 - Immersive Engineering integration (MultiVision modifier)
 - Apotheosis integration (Capturing modifier)
 - Ice and Fire Dragons CE integrations (5 modifiers: Flamed, Iced, Zapped, Phantasmal, DragonScales)
+- Malum integration (SoulStained modifier)
+- Ars Nouveau integrations (ArsNouveau, EnchantersShield modifiers)
 - Extended ModIntegration helper with location methods
 
 ### Removed
 - Botania, MythicBotany, Beyond Earth, Ad Astra, Consecration integrations (per CSV)
 - All stale generated data (src/generated/resources/) — needs regeneration
 
-### Pending (not yet ported)
-- Ars Nouveau integration
-- Malum SoulStained modifier (capability→attachment)
-- Data generation providers (recipe API changes in 1.21.1)
-- Networking layer (NeoForge CustomPacketPayload system)
+### Pending
+- Data generation (runData) — providers require 1.21.1 recipe API rewrite

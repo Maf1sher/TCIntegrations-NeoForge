@@ -9,7 +9,9 @@ import static tcintegrations.util.ResourceLocationHelper.resource;
 import tcintegrations.data.integration.ModIntegration;
 import tcintegrations.util.IfdWorkaroundHelper;
 import tcintegrations.items.modifiers.armor.BisonFurModifier;
+import tcintegrations.items.modifiers.armor.ArsNouveauModifier;
 import tcintegrations.items.modifiers.armor.CrocodileModifier;
+import tcintegrations.items.modifiers.armor.EnchantersShieldModifier;
 import tcintegrations.items.modifiers.armor.EngineersGogglesModifier;
 import tcintegrations.items.modifiers.armor.FrontierCapModifier;
 import tcintegrations.items.modifiers.armor.MasticateModifier;
@@ -45,6 +47,8 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<RoadrunnerModifier> ROADRUNNER_MODIFIER;
     public static StaticModifier<FrontierCapModifier> FRONTIER_CAP_MODIFIER;
     public static StaticModifier<TurtleShellModifier> TURTLE_SHELL_MODIFIER;
+    public static StaticModifier<ArsNouveauModifier> ARS_MODIFIER;
+    public static StaticModifier<EnchantersShieldModifier> ENCHANTERS_SHIELD_MODIFIER;
     public static StaticModifier<BisonFurModifier> BISON_FUR_MODIFIER;
     public static StaticModifier<ShieldOfTheDeepModifier> SHIELD_OF_THE_DEEP_MODIFIER;
     public static StaticModifier<MosquitoModifier> MOSQUITO_MODIFIER;
@@ -78,6 +82,11 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
 
         if (ModIntegration.canLoad(ModIntegration.MALUM_MODID)) {
             SOUL_STAINED_MODIFIER = MODIFIERS_REGISTRY.register("soul_stained", SoulStained::new);
+        }
+
+        if (ModIntegration.canLoad(ModIntegration.ARS_MODID)) {
+            ARS_MODIFIER = MODIFIERS_REGISTRY.register("ars_nouveau", ArsNouveauModifier::new);
+            ENCHANTERS_SHIELD_MODIFIER = MODIFIERS_REGISTRY.register("enchanters_shield", EnchantersShieldModifier::new);
         }
 
         if (ModIntegration.canLoad(ModIntegration.IFD_MODID)) {
