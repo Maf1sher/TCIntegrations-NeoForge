@@ -1,8 +1,11 @@
 package tcintegrations.items;
 
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 import tcintegrations.common.TCIntegrationsModule;
+
+import static tcintegrations.util.ResourceLocationHelper.resource;
 import tcintegrations.data.integration.ModIntegration;
 import tcintegrations.items.modifiers.armor.BisonFurModifier;
 import tcintegrations.items.modifiers.armor.CrocodileModifier;
@@ -61,6 +64,10 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
         if (ModIntegration.canLoad(ModIntegration.MEKANISM_MODID)) {
             KINETIC_MODIFIER = MODIFIERS_REGISTRY.register("kinetic", KineticModifier::new);
             GLOWUP_MODIFIER = MODIFIERS_REGISTRY.register("glowup", GlowUpModifier::new);
+        }
+
+        if (ModIntegration.canLoad(ModIntegration.IE_MODID)) {
+            ModifierModule.LOADER.register(resource("multivision"), tcintegrations.items.modifiers.armor.MultiVisionModifier.INSTANCE.getLoader());
         }
 
         if (ModIntegration.canLoad(ModIntegration.ALEX_MODID)) {
