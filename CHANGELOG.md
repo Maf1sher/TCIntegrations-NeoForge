@@ -21,6 +21,7 @@
 - Mekanism integrations (Kinetic, GlowUp modifiers)
 - Immersive Engineering integration (MultiVision modifier)
 - Apotheosis integration (Capturing modifier)
+- Ice and Fire Dragons CE integrations (5 modifiers: Flamed, Iced, Zapped, Phantasmal, DragonScales)
 - Extended ModIntegration helper with location methods
 
 ### Removed
@@ -29,7 +30,6 @@
 
 ### Pending (not yet ported)
 - Ars Nouveau integration
-- Ice and Fire Dragons CE integration (curse maven file ID needed for NeoForge)
 - Malum SoulStained modifier (capability→attachment)
 - Data generation providers (recipe API changes in 1.21.1)
 - Networking layer (NeoForge CustomPacketPayload system)
