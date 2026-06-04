@@ -1,8 +1,11 @@
 package tcintegrations.data.integration;
 
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.ModList;
 
 import tcintegrations.common.TCIntegrationsModule;
+
+import static tcintegrations.util.ResourceLocationHelper.location;
 
 public final class ModIntegration extends TCIntegrationsModule {
 
@@ -25,6 +28,23 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final String ARS_ELEMENTAL_MODID = "ars_elemental";
     public static final String DEEPERDARKER_MODID = "deeperdarker";
     public static final String TWILIGHT_MODID = "twilightforest";
+
+    public static ResourceLocation botaniaLoc(String name) { return location(BOTANIA_MODID, name); }
+    public static ResourceLocation malumLoc(String name) { return location(MALUM_MODID, name); }
+    public static ResourceLocation beyondEarthLoc(String name) { return location(BEYOND_EARTH_MODID, name); }
+    public static ResourceLocation arsLoc(String name) { return location(ARS_MODID, name); }
+    public static ResourceLocation ifdLoc(String name) { return location(IFD_MODID, name); }
+    public static ResourceLocation mbotLoc(String name) { return location(MYTHIC_BOTANY_MODID, name); }
+    public static ResourceLocation ieLoc(String name) { return location(IE_MODID, name); }
+    public static ResourceLocation alexLoc(String name) { return location(ALEX_MODID, name); }
+    public static ResourceLocation createLoc(String name) { return location(CREATE_MODID, name); }
+    public static ResourceLocation aquaLoc(String name) { return location(AQUACULTURE_MODID, name); }
+    public static ResourceLocation ugLoc(String name) { return location(UNDERGARDEN_MODID, name); }
+    public static ResourceLocation mekanismLoc(String name) { return location(MEKANISM_MODID, name); }
+    public static ResourceLocation adAstraLoc(String name) { return location(AD_ASTRA_MODID, name); }
+    public static ResourceLocation arsElementalLoc(String name) { return location(ARS_ELEMENTAL_MODID, name); }
+    public static ResourceLocation deeperDarkerLoc(String name) { return location(DEEPERDARKER_MODID, name); }
+    public static ResourceLocation twilightLoc(String name) { return location(TWILIGHT_MODID, name); }
 
     public static boolean canLoad(String modid) {
         return ModList.get().isLoaded(modid);
