@@ -23,6 +23,8 @@ import tcintegrations.items.modifiers.tool.PrecipitateModifier;
 import tcintegrations.items.modifiers.tool.SirenModifier;
 import tcintegrations.items.modifiers.tool.TwilitModifier;
 import tcintegrations.items.modifiers.tool.UtheriumModifier;
+import tcintegrations.items.modifiers.tool.GlowUpModifier;
+import tcintegrations.items.modifiers.traits.KineticModifier;
 import tcintegrations.items.modifiers.traits.WaterPowered;
 
 public class TCIntegrationsModifiers extends TCIntegrationsModule {
@@ -36,6 +38,8 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<ShieldOfTheDeepModifier> SHIELD_OF_THE_DEEP_MODIFIER;
     public static StaticModifier<MosquitoModifier> MOSQUITO_MODIFIER;
     public static StaticModifier<CrocodileModifier> CROCODILE_MODIFIER;
+    public static StaticModifier<KineticModifier> KINETIC_MODIFIER;
+    public static StaticModifier<GlowUpModifier> GLOWUP_MODIFIER;
     public static StaticModifier<WaterPowered> WATER_POWERED_MODIFIER;
     public static StaticModifier<PoseidonModifier> POSEIDON_MODIFIER;
     public static StaticModifier<SirenModifier> SIREN_MODIFIER;
@@ -52,6 +56,11 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
 
         if (ModIntegration.canLoad(ModIntegration.CREATE_MODID)) {
             MECHANICAL_ARM_MODIFIER = MODIFIERS_REGISTRY.register("mechanical_arm", MechanicalArmModifier::new);
+        }
+
+        if (ModIntegration.canLoad(ModIntegration.MEKANISM_MODID)) {
+            KINETIC_MODIFIER = MODIFIERS_REGISTRY.register("kinetic", KineticModifier::new);
+            GLOWUP_MODIFIER = MODIFIERS_REGISTRY.register("glowup", GlowUpModifier::new);
         }
 
         if (ModIntegration.canLoad(ModIntegration.ALEX_MODID)) {
