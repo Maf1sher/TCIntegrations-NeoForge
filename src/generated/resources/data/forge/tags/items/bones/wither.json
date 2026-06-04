@@ -1,9 +1,0 @@
-{
-  "values": [
-    "tconstruct:necrotic_bone",
-    {
-      "id": "iceandfire:witherbone",
-      "required": false
-    }
-  ]
-}
