@@ -20,15 +20,16 @@
 - Alex's Mobs integrations (7 modifiers: Roadrunner, FrontierCap, TurtleShell, BisonFur, ShieldOfTheDeep, Mosquito, Crocodile)
 - Mekanism integrations (Kinetic, GlowUp modifiers)
 - Immersive Engineering integration (MultiVision modifier)
+- Apotheosis integration (Capturing modifier)
 - Extended ModIntegration helper with location methods
 
 ### Removed
 - Botania, MythicBotany, Beyond Earth, Ad Astra, Consecration integrations (per CSV)
+- All stale generated data (src/generated/resources/) — needs regeneration
 
 ### Pending (not yet ported)
 - Ars Nouveau integration
-- Ice and Fire Dragons CE integration (package rename required)
+- Ice and Fire Dragons CE integration (curse maven file ID needed for NeoForge)
 - Malum SoulStained modifier (capability→attachment)
-- Apotheosis Capturing modifier
 - Data generation providers (recipe API changes in 1.21.1)
 - Networking layer (NeoForge CustomPacketPayload system)
