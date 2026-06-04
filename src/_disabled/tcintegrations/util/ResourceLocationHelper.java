@@ -11,7 +11,7 @@ public class ResourceLocationHelper {
     }
 
     public static ResourceLocation location(String modid, String name) {
-        return ResourceLocation.parse(modid + ":" + name);
+        return new ResourceLocation(modid, name);
     }
 
 }

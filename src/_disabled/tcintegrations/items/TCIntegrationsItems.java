@@ -13,8 +13,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 
-import net.neoforged.neoforge.registries.DeferredHolder;
-
 import slimeknights.mantle.item.BlockTooltipItem;
 import slimeknights.mantle.registration.object.MetalItemObject;
 
@@ -25,7 +23,7 @@ import tcintegrations.TCIntegrations;
 
 public final class TCIntegrationsItems extends TCIntegrationsModule {
 
-    public static DeferredHolder<CreativeModeTab, CreativeModeTab> ITEM_TAB_GROUP;
+    public static CreativeModeTab ITEM_TAB_GROUP;
     public static Function<Block, ? extends BlockItem> GENERAL_TOOLTIP_BLOCK_ITEM;
 
     public static MetalItemObject BRONZE;
@@ -42,6 +40,7 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
         );
         GENERAL_TOOLTIP_BLOCK_ITEM = (b) -> new BlockTooltipItem(b, new Item.Properties());
 
+        // Metals
         BRONZE = METAL_BLOCK_REGISTRY.registerMetal(
             "bronze",
             metalBuilder(MapColor.WOOD),
