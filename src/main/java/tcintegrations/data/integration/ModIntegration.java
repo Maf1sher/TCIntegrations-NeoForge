@@ -27,7 +27,7 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final String TWILIGHT_MODID = "twilightforest";
 
     public static boolean canLoad(String modid) {
-        return false;
+        return ModList.get().isLoaded(modid);
     }
 
 }
