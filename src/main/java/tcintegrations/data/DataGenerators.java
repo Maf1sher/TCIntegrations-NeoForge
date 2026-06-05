@@ -9,6 +9,7 @@ import tcintegrations.data.client.ModBlockStateProvider;
 import tcintegrations.data.client.ModItemModelProvider;
 import tcintegrations.data.integration.CreateGogglesPredicate;
 import tcintegrations.data.loot.ModLootTables;
+import tcintegrations.data.recipes.ModRecipesProvider;
 import tcintegrations.data.tcon.CombinedRecipeProvider;
 import tcintegrations.data.tcon.EnchantmentToModifierProvider;
 import tcintegrations.data.tcon.ModifierProvider;
@@ -40,6 +41,9 @@ public final class DataGenerators {
         gen.addProvider(event.includeServer(), blockTags);
         gen.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTags, existingFileHelper));
         gen.addProvider(event.includeServer(), new EntityTypeTagProvider(packOutput, lookupProvider, existingFileHelper));
+
+        // Mod recipes (use PackGenerator to avoid duplicate name conflict with CombinedRecipeProvider)
+        gen.getVanillaPack(event.includeServer()).addProvider(output -> new ModRecipesProvider(output, lookupProvider));
 
         // TCon providers
         gen.addProvider(event.includeServer(), new ModifierProvider(packOutput));
