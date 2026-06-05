@@ -123,6 +123,36 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ModIntegration.ifdLoc("ice_dragon_blood"));
         this.tag(TagManager.Items.LIGHTNING_DRAGON_BLOOD)
             .addOptional(ModIntegration.ifdLoc("lightning_dragon_blood"));
+
+        // Ice and Fire: Dragon Bone
+        this.tag(TagManager.Items.DRAGON_BONE)
+            .addOptional(ModIntegration.ifdLoc("dragon_bone"));
+
+        // Ice and Fire: Ghost Ingot
+        this.tag(TagManager.Items.GHOST_INGOT)
+            .addOptional(ModIntegration.ifdLoc("ghost_ingot"));
+
+        // Ice and Fire: Dragonsteel storage blocks (both forge: and c:)
+        this.tag(TagManager.Items.DRAGONSTEEL_FIRE)
+            .addOptional(ModIntegration.ifdLoc("dragonsteel_fire_block"));
+        this.tag(TagManager.Items.DRAGONSTEEL_ICE)
+            .addOptional(ModIntegration.ifdLoc("dragonsteel_ice_block"));
+        this.tag(TagManager.Items.DRAGONSTEEL_LIGHTNING)
+            .addOptional(ModIntegration.ifdLoc("dragonsteel_lightning_block"));
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/dragonsteel_fire")))
+            .addOptional(ModIntegration.ifdLoc("dragonsteel_fire_block"));
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/dragonsteel_ice")))
+            .addOptional(ModIntegration.ifdLoc("dragonsteel_ice_block"));
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/dragonsteel_lightning")))
+            .addOptional(ModIntegration.ifdLoc("dragonsteel_lightning_block"));
+
+        // Mekanism: Refined Glowstone Ingot
+        this.tag(TagManager.Items.INGOT_REFINED_GLOWSTONE)
+            .addOptional(ModIntegration.mekanismLoc("ingot_refined_glowstone"));
+
+        // Create: Mechanical Arm
+        this.tag(TagManager.Items.MECHANICAL_ARM)
+            .addOptional(ModIntegration.createLoc("mechanical_arm"));
     }
 
     /** Adds an ingot to both c:ingots/<name> and forge:ingots/<name> tags */
