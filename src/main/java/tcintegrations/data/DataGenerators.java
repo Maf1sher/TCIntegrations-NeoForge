@@ -7,7 +7,6 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import tcintegrations.TCIntegrations;
 import tcintegrations.data.client.ModBlockStateProvider;
 import tcintegrations.data.client.ModItemModelProvider;
-import tcintegrations.data.integration.CreateGogglesPredicate;
 import tcintegrations.data.loot.ModLootTables;
 import tcintegrations.data.recipes.ModRecipesProvider;
 import tcintegrations.data.tcon.CombinedRecipeProvider;
@@ -70,8 +69,6 @@ public final class DataGenerators {
         gen.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         gen.addProvider(event.includeClient(), new FluidTextureProvider(packOutput));
 
-        // Integration providers
-        // CreateGogglesPredicate.init(); // requires Create runtime dep
     }
 
 }

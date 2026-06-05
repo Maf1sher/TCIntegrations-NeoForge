@@ -9,8 +9,12 @@ import static tcintegrations.util.ResourceLocationHelper.resource;
 import tcintegrations.data.integration.ModIntegration;
 import tcintegrations.util.IfdWorkaroundHelper;
 import tcintegrations.items.modifiers.armor.BisonFurModifier;
+import tcintegrations.items.modifiers.armor.AethermancerModifier;
+import tcintegrations.items.modifiers.armor.AquamancerModifier;
 import tcintegrations.items.modifiers.armor.ArsNouveauModifier;
 import tcintegrations.items.modifiers.armor.CrocodileModifier;
+import tcintegrations.items.modifiers.armor.GeomancerModifier;
+import tcintegrations.items.modifiers.armor.PyromancerModifier;
 import tcintegrations.items.modifiers.armor.EnchantersShieldModifier;
 import tcintegrations.items.modifiers.armor.EngineersGogglesModifier;
 import tcintegrations.items.modifiers.armor.FrontierCapModifier;
@@ -104,6 +108,10 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
         if (ModIntegration.canLoad(ModIntegration.ARS_MODID)) {
             ARS_MODIFIER = MODIFIERS_REGISTRY.register("ars_nouveau", ArsNouveauModifier::new);
             ENCHANTERS_SHIELD_MODIFIER = MODIFIERS_REGISTRY.register("enchanters_shield", EnchantersShieldModifier::new);
+            AETHERMANCER_MODIFIER = MODIFIERS_REGISTRY.register("aethermancer", AethermancerModifier::new);
+            AQUAMANCER_MODIFIER = MODIFIERS_REGISTRY.register("aquamancer", AquamancerModifier::new);
+            GEOMANCER_MODIFIER = MODIFIERS_REGISTRY.register("geomancer", GeomancerModifier::new);
+            PYROMANCER_MODIFIER = MODIFIERS_REGISTRY.register("pyromancer", PyromancerModifier::new);
         }
 
         if (ModIntegration.canLoad(ModIntegration.IFD_MODID)) {

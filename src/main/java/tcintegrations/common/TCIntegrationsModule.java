@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.CreativeModeTab;
 
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
@@ -14,6 +15,7 @@ import slimeknights.tconstruct.common.registration.BlockDeferredRegisterExtensio
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 
 import tcintegrations.TCIntegrations;
+import tcintegrations.common.attachments.TCIntegrationAttachments;
 
 public abstract class TCIntegrationsModule {
 
@@ -36,6 +38,8 @@ public abstract class TCIntegrationsModule {
         EFFECTS_REGISTRY.register(bus);
 
         CREATIVE_TABS.register(bus);
+
+        TCIntegrationAttachments.ATTACHMENT_TYPES.register(bus);
     }
 
 }
