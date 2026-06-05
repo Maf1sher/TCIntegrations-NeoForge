@@ -1,0 +1,196 @@
+package tcintegrations.data.tcon;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
+import org.jetbrains.annotations.NotNull;
+
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.material.Fluid;
+
+import net.neoforged.neoforge.common.conditions.OrCondition;
+import net.neoforged.neoforge.common.conditions.TagEmptyCondition;
+
+import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
+import slimeknights.mantle.recipe.helper.ItemOutput;
+import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.fluids.TinkerFluids;
+import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
+import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
+import slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe;
+import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
+
+import tcintegrations.data.BaseRecipeProvider;
+import tcintegrations.data.integration.ModIntegration;
+import tcintegrations.items.TCIntegrationsItems;
+import tcintegrations.util.ResourceLocationHelper;
+
+import static slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder.itemTag;
+
+public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelteryRecipeHelper, ICommonRecipeHelper {
+
+    public SmelteryRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries) {
+        super(packOutput, registries);
+    }
+
+    @Override
+    protected void buildRecipes(@NotNull RecipeOutput consumer) {
+        this.addMeltingRecipes(consumer);
+        this.addAlloyRecipes(consumer);
+    }
+
+    private void addMeltingRecipes(RecipeOutput consumer) {
+        String folder = "smeltery/melting/";
+
+        // ores
+        String metalFolder = folder + "metal/";
+        RecipeOutput botaniaConsumer = withCondition(consumer, modLoaded(ModIntegration.BOTANIA_MODID));
+        RecipeOutput aquacultureConsumer = withCondition(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
+        RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
+        RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
+        RecipeOutput adAstraConsumer = withCondition(consumer, new OrCondition(List.of(modLoaded(ModIntegration.AD_ASTRA_MODID), modLoaded(ModIntegration.BEYOND_EARTH_MODID))));
+        RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
+        RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
+
+        if (TCIntegrationsItems.MOLTEN_SOURCE_GEM != null) molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
+        if (TCIntegrationsItems.MOLTEN_MANASTEEL != null) metal(botaniaConsumer, TCIntegrationsItems.MOLTEN_MANASTEEL).metal();
+        if (TCIntegrationsItems.MOLTEN_NEPTUNIUM != null) metal(aquacultureConsumer, TCIntegrationsItems.MOLTEN_NEPTUNIUM).metal();
+        if (TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL != null) metal(malumConsumer, TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL).metal();
+        if (TCIntegrationsItems.MOLTEN_CLOGGRUM != null) metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_CLOGGRUM).ore().metal();
+        if (TCIntegrationsItems.MOLTEN_FROSTSTEEL != null) metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_FROSTSTEEL).ore().metal();
+        if (TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL != null) metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL).metal();
+        if (TCIntegrationsItems.MOLTEN_DESH != null) metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_DESH).ore().metal();
+        if (TCIntegrationsItems.MOLTEN_CALORITE != null) metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_CALORITE).ore().metal();
+        if (TCIntegrationsItems.MOLTEN_OSTRUM != null) metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_OSTRUM).ore().metal();
+        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE != null) metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
+        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE != null) metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
+        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING != null) metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
+
+        // IFD Silver & Copper Items (only if mod items are available)
+        boolean hasIfdSilverItems = ModIntegration.IFD_SILVER_METAL_HELMET != null && ModIntegration.IFD_SILVER_METAL_HELMET != Items.AIR;
+        boolean hasIfdCopperItems = ModIntegration.IFD_COPPER_METAL_HELMET != null && ModIntegration.IFD_COPPER_METAL_HELMET != Items.AIR;
+
+        if (hasIfdSilverItems) {
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_SILVER_METAL_HELMET), TinkerFluids.moltenSilver.get(), FluidValues.INGOT * 5)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/helmet"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_SILVER_METAL_CHESTPLATE), TinkerFluids.moltenSilver.get(), FluidValues.INGOT * 8)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/chestplate"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_SILVER_METAL_LEGGINGS), TinkerFluids.moltenSilver.get(), FluidValues.INGOT * 7)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/leggings"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_SILVER_METAL_BOOTS), TinkerFluids.moltenSilver.get(), FluidValues.INGOT * 4)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/boots"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_SILVER_AXE, ModIntegration.IFD_SILVER_PICKAXE), TinkerFluids.moltenSilver.get(), FluidValues.INGOT * 3)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/axes"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_SILVER_SWORD, ModIntegration.IFD_SILVER_HOE), TinkerFluids.moltenSilver.get(), FluidValues.INGOT * 2)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/weapon"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_SILVER_SHOVEL), TinkerFluids.moltenSilver.get(), FluidValues.INGOT)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/small"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_DRAGONARMOR_SILVER_HEAD, ModIntegration.IFD_DRAGONARMOR_SILVER_NECK), TinkerFluids.moltenSilver.get(), FluidValues.METAL_BLOCK * 5)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/dragon_armor_head_neck"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_DRAGONARMOR_SILVER_BODY), TinkerFluids.moltenSilver.get(), FluidValues.METAL_BLOCK * 8)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/dragon_armor_head_body"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_DRAGONARMOR_SILVER_TAIL), TinkerFluids.moltenSilver.get(), FluidValues.METAL_BLOCK * 3)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "silver/dragon_armor_head_tail"));
+        }
+
+        if (hasIfdCopperItems) {
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_COPPER_METAL_HELMET), TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 5)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/helmet"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_COPPER_METAL_CHESTPLATE), TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 8)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/chestplate"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_COPPER_METAL_LEGGINGS), TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 7)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/leggings"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_COPPER_METAL_BOOTS), TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 4)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/boots"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_COPPER_AXE, ModIntegration.IFD_COPPER_PICKAXE), TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 3)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/axes"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_COPPER_SWORD, ModIntegration.IFD_COPPER_HOE), TinkerFluids.moltenCopper.get(), FluidValues.INGOT * 2)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/weapon"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_COPPER_SHOVEL), TinkerFluids.moltenCopper.get(), FluidValues.INGOT)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/small"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_DRAGONARMOR_COPPER_HEAD, ModIntegration.IFD_DRAGONARMOR_COPPER_NECK), TinkerFluids.moltenCopper.get(), FluidValues.METAL_BLOCK * 5)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/dragon_armor_head_neck"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_DRAGONARMOR_COPPER_BODY), TinkerFluids.moltenCopper.get(), FluidValues.METAL_BLOCK * 8)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/dragon_armor_head_body"));
+            MeltingRecipeBuilder.melting(Ingredient.of(ModIntegration.IFD_DRAGONARMOR_COPPER_TAIL), TinkerFluids.moltenCopper.get(), FluidValues.METAL_BLOCK * 3)
+                .setDamagable(FluidValues.NUGGET)
+                .save(ifdConsumer, location(metalFolder + "copper/dragon_armor_head_tail"));
+        }
+    }
+
+    private void addAlloyRecipes(RecipeOutput consumer) {
+        String folder = "smeltery/alloys/";
+
+        // Update Recipe to use Obsidian instead of Quartz to not interfere with Hepatizon
+        RecipeOutput wrapped = withCondition(consumer, new TagEmptyCondition(ResourceLocationHelper.location("forge", "ingots/tin")));
+
+        AlloyRecipeBuilder.alloy(TinkerFluids.moltenBronze.get(), FluidValues.INGOT * 4)
+            .addInput(TinkerFluids.moltenCopper.ingredient(FluidValues.INGOT * 3))
+            .addInput(TinkerFluids.moltenObsidian.ingredient(FluidValues.GLASS_BLOCK))
+            .save(wrapped, prefix(TinkerFluids.moltenBronze, folder));
+    }
+
+    /** Creates a metal from a tag */
+    public SmelteryRecipeBuilder metal(RecipeOutput consumer, String name, TagKey<Fluid> fluid) {
+        return SmelteryRecipeBuilder.fluid(consumer, location(name), fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
+    }
+
+    /** Creates a smeltery builder for a metal fluid */
+    public SmelteryRecipeBuilder metal(RecipeOutput consumer, FluidObject<?> fluid) {
+        return molten(consumer, fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
+    }
+
+    private void metalWithoutNugget(RecipeOutput consumer, FluidObject<?> fluid) {
+        SmelteryRecipeBuilder builder = molten(consumer, fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
+        ResourceLocation name = this.location(fluid.getId().getPath().substring("molten_".length()));
+
+        builder.oreRate(IMeltingContainer.OreRateType.METAL);
+        builder.baseUnit(90);
+        builder.damageUnit(10);
+        builder.melting(9.0F, "block", "storage_blocks", 3.0F, false, false);
+        basinMetalCasting(builder, consumer, fluid,  name);
+        builder.meltingCasting(1.0F, TinkerSmeltery.ingotCast, 1.0F, false);
+    }
+
+    private void basinMetalCasting(SmelteryRecipeBuilder builder, RecipeOutput consumer, FluidObject<?> fluid, ResourceLocation name) {
+        String castingFolder = "smeltery/casting/metal/";
+        String tagName = "storage_blocks/" + name.getPath();
+
+        ItemCastingRecipeBuilder.basinRecipe(ItemOutput.fromTag(itemTag(tagName))).setFluid(fluid.ingredient(810)).setCoolingTime(IMeltingRecipe.getTemperature(fluid), 810).save(consumer, location(name, castingFolder, "block"));
+    }
+
+    private ResourceLocation location(ResourceLocation name, String folder, String variant) {
+        return name.withPath(folder + name.getPath() + "/" + variant);
+    }
+
+}

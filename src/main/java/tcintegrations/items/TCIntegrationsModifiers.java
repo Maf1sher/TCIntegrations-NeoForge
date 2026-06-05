@@ -73,6 +73,23 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<TwilitModifier> TWILIT_MODIFIER;
     public static StaticModifier<SculkingModifier> SCULKING_MODIFIER;
 
+    // Botania modifiers (not yet ported)
+    public static StaticModifier<?> TERRA_MODIFIER;
+    public static StaticModifier<?> ALF_MODIFIER;
+    public static StaticModifier<?> ALFHEIM_MODIFIER;
+    public static StaticModifier<?> ELEMENTAL_MODIFIER;
+    public static StaticModifier<?> TERRESTRIAL_MODIFIER;
+    public static StaticModifier<?> GREAT_FAIRY_MODIFIER;
+
+    // Ars Elemental modifiers (not yet ported)
+    public static StaticModifier<?> AETHERMANCER_MODIFIER;
+    public static StaticModifier<?> AQUAMANCER_MODIFIER;
+    public static StaticModifier<?> GEOMANCER_MODIFIER;
+    public static StaticModifier<?> PYROMANCER_MODIFIER;
+
+    // Ad Astra / Beyond Earth modifiers (not yet ported)
+    public static StaticModifier<?> CHEESY_MODIFIER;
+
     public static void init() {
         MODERATE_MODIFIER = MODIFIERS_REGISTRY.register("moderate", ModerateModifier::new);
 
@@ -90,13 +107,11 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
         }
 
         if (ModIntegration.canLoad(ModIntegration.IFD_MODID)) {
-            if (IfdWorkaroundHelper.isLoaded()) {
-                FLAMED_MODIFIER = MODIFIERS_REGISTRY.register("flamed", FlamedModifier::new);
-                ICED_MODIFIER = MODIFIERS_REGISTRY.register("iced", IcedModifier::new);
-                ZAPPED_MODIFIER = MODIFIERS_REGISTRY.register("zapped", ZappedModifier::new);
-                PHANTASMAL_MODIFIER = MODIFIERS_REGISTRY.register("phantasmal", PhantasmalModifier::new);
-                DRAGON_SCALES_MODIFIER = MODIFIERS_REGISTRY.register("dragonscales", DragonScalesModifier::new);
-            }
+            FLAMED_MODIFIER = MODIFIERS_REGISTRY.register("flamed", FlamedModifier::new);
+            ICED_MODIFIER = MODIFIERS_REGISTRY.register("iced", IcedModifier::new);
+            ZAPPED_MODIFIER = MODIFIERS_REGISTRY.register("zapped", ZappedModifier::new);
+            PHANTASMAL_MODIFIER = MODIFIERS_REGISTRY.register("phantasmal", PhantasmalModifier::new);
+            DRAGON_SCALES_MODIFIER = MODIFIERS_REGISTRY.register("dragonscales", DragonScalesModifier::new);
         }
 
         if (ModIntegration.canLoad(ModIntegration.CREATE_MODID)) {
@@ -108,9 +123,8 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
             GLOWUP_MODIFIER = MODIFIERS_REGISTRY.register("glowup", GlowUpModifier::new);
         }
 
-        if (ModIntegration.canLoad(ModIntegration.IE_MODID)) {
-            ModifierModule.LOADER.register(resource("multivision"), tcintegrations.items.modifiers.armor.MultiVisionModifier.INSTANCE.getLoader());
-        }
+        ModifierModule.LOADER.register(resource("multivision"), tcintegrations.items.modifiers.armor.MultiVisionModifier.INSTANCE.getLoader());
+        ModifierModule.LOADER.register(resource("engineers_goggles"), tcintegrations.items.modifiers.armor.EngineersGogglesModifier.INSTANCE.getLoader());
 
         if (ModIntegration.canLoad(ModIntegration.ALEX_MODID)) {
             ROADRUNNER_MODIFIER = MODIFIERS_REGISTRY.register("roadrunner", RoadrunnerModifier::new);

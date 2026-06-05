@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "iceandfire"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:storage_blocks/dragonsteel_lightning"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:storage_blocks/dragonsteel_lightning"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "c:ingots/dragonsteel_lightning"
+  },
+  "material": "tcintegrations:dragonsteel_lightning",
+  "needed": 1,
+  "value": 9
+}

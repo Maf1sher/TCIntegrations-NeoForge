@@ -1,0 +1,9 @@
+{
+  "values": [
+    "tcintegrations:bronze_nugget",
+    {
+      "id": "malum:soul_stained_steel_nugget",
+      "required": false
+    }
+  ]
+}

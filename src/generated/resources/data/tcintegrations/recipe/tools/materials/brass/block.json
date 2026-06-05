@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/brass"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:storage_blocks/brass"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:storage_blocks/brass"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "c:ingots/brass"
+  },
+  "material": "tcintegrations:brass",
+  "needed": 1,
+  "value": 9
+}

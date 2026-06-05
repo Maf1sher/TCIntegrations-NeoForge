@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "tcintegrations:livingwood",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:engineers_goggles",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:multivision",
+      "required": false
+    }
+  ]
+}

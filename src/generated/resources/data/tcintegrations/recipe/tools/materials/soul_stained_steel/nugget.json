@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:nuggets/soul_stained_steel"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:nuggets/soul_stained_steel"
+  },
+  "material": "tcintegrations:soul_stained_steel",
+  "needed": 9,
+  "value": 1
+}

@@ -16,6 +16,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 import slimeknights.mantle.item.BlockTooltipItem;
+import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.mantle.registration.object.MetalItemObject;
 
 import slimeknights.tconstruct.world.TinkerWorld;
@@ -29,6 +30,21 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
     public static Function<Block, ? extends BlockItem> GENERAL_TOOLTIP_BLOCK_ITEM;
 
     public static MetalItemObject BRONZE;
+
+    // Molten fluid objects (registered via FLUID_REGISTRY in init)
+    public static FluidObject<?> MOLTEN_MANASTEEL;
+    public static FluidObject<?> MOLTEN_NEPTUNIUM;
+    public static FluidObject<?> MOLTEN_SOURCE_GEM;
+    public static FluidObject<?> MOLTEN_SOUL_STAINED_STEEL;
+    public static FluidObject<?> MOLTEN_CLOGGRUM;
+    public static FluidObject<?> MOLTEN_FROSTSTEEL;
+    public static FluidObject<?> MOLTEN_FORGOTTEN_METAL;
+    public static FluidObject<?> MOLTEN_DESH;
+    public static FluidObject<?> MOLTEN_CALORITE;
+    public static FluidObject<?> MOLTEN_OSTRUM;
+    public static FluidObject<?> MOLTEN_DRAGONSTEEL_FIRE;
+    public static FluidObject<?> MOLTEN_DRAGONSTEEL_ICE;
+    public static FluidObject<?> MOLTEN_DRAGONSTEEL_LIGHTNING;
 
     public static void init() {
         ITEM_TAB_GROUP = CREATIVE_TABS.register(

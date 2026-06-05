@@ -1,6 +1,8 @@
 package tcintegrations.data.integration;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.neoforged.fml.ModList;
 
 import tcintegrations.common.TCIntegrationsModule;
@@ -28,6 +30,108 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final String ARS_ELEMENTAL_MODID = "ars_elemental";
     public static final String DEEPERDARKER_MODID = "deeperdarker";
     public static final String TWILIGHT_MODID = "twilightforest";
+
+    // Botania items (placeholders - port properly with actual items)
+    public static final Item BOTANIA_LIVINGWOOD_PLANKS = Items.STONE;
+    public static final Item LIVING_ROCK = Items.STONE;
+    public static final Item MANA_STRING = Items.STONE;
+    public static final Item LIVINGWOOD_TWIG = Items.STONE;
+    public static final Item RUNE_SPRING = Items.STONE;
+    public static final Item RUNE_SUMMER = Items.STONE;
+    public static final Item RUNE_AUTUMN = Items.STONE;
+    public static final Item RUNE_WINTER = Items.STONE;
+
+    // MythicBotany items
+    public static final Item ALFSTEEL_INGOT = Items.STONE;
+
+    // Create items
+    public static final Item GOGGLES = Items.STONE;
+    public static final Item MECHANICAL_ARM = Items.STONE;
+
+    // Aquaculture items
+    public static final Item NEPTUNIUM_INGOT = Items.STONE;
+    public static final Item TIN_CAN = Items.STONE;
+    public static final Item REDSTONE_HOOK = Items.STONE;
+    public static final Item FISH_FILLET_RAW = Items.STONE;
+    public static final Item IRON_HOOK = Items.STONE;
+
+    // Ars Nouveau items
+    public static final Item MAGE_FIBER = Items.STONE;
+    public static final Item MARK_OF_MASTERY = Items.STONE;
+    public static final Item AIR_ESSENCE = Items.STONE;
+    public static final Item WATER_ESSENCE = Items.STONE;
+    public static final Item EARTH_ESSENCE = Items.STONE;
+    public static final Item FIRE_ESSENCE = Items.STONE;
+    public static final Item SOURCE_GEM_BLOCK = Items.STONE;
+
+    // Alex's Mobs items
+    public static final Item ROADRUNNER_FEATHER = Items.STONE;
+    public static final Item SPIKED_SCUTE = Items.STONE;
+    public static final Item BISON_FUR = Items.STONE;
+    public static final Item BEAR_FUR = Items.STONE;
+    public static final Item RACCOON_TAIL = Items.STONE;
+    public static final Item SERRATED_SHARK_TOOTH = Items.STONE;
+    public static final Item SHARK_TOOTH = Items.STONE;
+    public static final Item MOSQUITO_PROBOSCIS = Items.STONE;
+    public static final Item CROCODILE_SCUTE = Items.STONE;
+
+    // Malum items
+    public static final Item SOUL_STAINED_STEEL_INGOT = Items.STONE;
+
+    // Undergarden items
+    public static final Item MASTICATOR_SCALES = Items.STONE;
+    public static final Item UTHERIUM_CRYSTAL = Items.STONE;
+    public static final Item FROSTSTEEL_INGOT = Items.STONE;
+    public static final Item CLOGGRUM_INGOT = Items.STONE;
+    public static final Item FORGOTTEN_INGOT = Items.STONE;
+
+    // Mekanism items
+    public static final Item INGOT_REFINED_GLOWSTONE = Items.STONE;
+
+    // Ice and Fire items
+    public static final Item DRAGON_BONE = Items.STONE;
+    public static final Item FIRE_DRAGON_BLOOD = Items.STONE;
+    public static final Item ICE_DRAGON_BLOOD = Items.STONE;
+    public static final Item LIGHTNING_DRAGON_BLOOD = Items.STONE;
+    public static final Item GHOST_INGOT = Items.STONE;
+    public static final Item IFD_SILVER_METAL_HELMET = Items.STONE;
+    public static final Item IFD_SILVER_METAL_CHESTPLATE = Items.STONE;
+    public static final Item IFD_SILVER_METAL_LEGGINGS = Items.STONE;
+    public static final Item IFD_SILVER_METAL_BOOTS = Items.STONE;
+    public static final Item IFD_SILVER_AXE = Items.STONE;
+    public static final Item IFD_SILVER_PICKAXE = Items.STONE;
+    public static final Item IFD_SILVER_SWORD = Items.STONE;
+    public static final Item IFD_SILVER_HOE = Items.STONE;
+    public static final Item IFD_SILVER_SHOVEL = Items.STONE;
+    public static final Item IFD_DRAGONARMOR_SILVER_HEAD = Items.STONE;
+    public static final Item IFD_DRAGONARMOR_SILVER_NECK = Items.STONE;
+    public static final Item IFD_DRAGONARMOR_SILVER_BODY = Items.STONE;
+    public static final Item IFD_DRAGONARMOR_SILVER_TAIL = Items.STONE;
+    public static final Item IFD_COPPER_METAL_HELMET = Items.STONE;
+    public static final Item IFD_COPPER_METAL_CHESTPLATE = Items.STONE;
+    public static final Item IFD_COPPER_METAL_LEGGINGS = Items.STONE;
+    public static final Item IFD_COPPER_METAL_BOOTS = Items.STONE;
+    public static final Item IFD_COPPER_AXE = Items.STONE;
+    public static final Item IFD_COPPER_PICKAXE = Items.STONE;
+    public static final Item IFD_COPPER_SWORD = Items.STONE;
+    public static final Item IFD_COPPER_HOE = Items.STONE;
+    public static final Item IFD_COPPER_SHOVEL = Items.STONE;
+    public static final Item IFD_DRAGONARMOR_COPPER_HEAD = Items.STONE;
+    public static final Item IFD_DRAGONARMOR_COPPER_NECK = Items.STONE;
+    public static final Item IFD_DRAGONARMOR_COPPER_BODY = Items.STONE;
+    public static final Item IFD_DRAGONARMOR_COPPER_TAIL = Items.STONE;
+
+    // Deeper and Darker items
+    public static final Item REINFORCED_ECHO_SHARD = Items.STONE;
+
+    // Twilight Forest items
+    public static final Item FIERY_INGOT = Items.STONE;
+    public static final Item ARCTIC_FUR = Items.STONE;
+    public static final Item NAGA_SCALE = Items.STONE;
+    public static final Item STEELEAF_INGOT = Items.STONE;
+
+    // Immersive Engineering items
+    public static final Item VOLTMETER = Items.STONE;
 
     public static ResourceLocation botaniaLoc(String name) { return location(BOTANIA_MODID, name); }
     public static ResourceLocation malumLoc(String name) { return location(MALUM_MODID, name); }

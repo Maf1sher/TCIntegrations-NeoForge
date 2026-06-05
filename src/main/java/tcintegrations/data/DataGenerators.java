@@ -5,6 +5,22 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import tcintegrations.TCIntegrations;
+import tcintegrations.data.client.ModBlockStateProvider;
+import tcintegrations.data.client.ModItemModelProvider;
+import tcintegrations.data.integration.CreateGogglesPredicate;
+import tcintegrations.data.loot.ModLootTables;
+import tcintegrations.data.tcon.CombinedRecipeProvider;
+import tcintegrations.data.tcon.EnchantmentToModifierProvider;
+import tcintegrations.data.tcon.ModifierProvider;
+import tcintegrations.data.tcon.ModifierTagProvider;
+import tcintegrations.data.tcon.fluid.FluidEffectProvider;
+import tcintegrations.data.tcon.fluid.FluidTagProvider;
+import tcintegrations.data.tcon.fluid.FluidTextureProvider;
+import tcintegrations.data.tcon.material.MaterialDataProvider;
+import tcintegrations.data.tcon.material.MaterialRenderInfoProvider;
+import tcintegrations.data.tcon.material.MaterialStatsDataProvider;
+import tcintegrations.data.tcon.material.MaterialTraitsDataProvider;
+import tcintegrations.data.tcon.sprite.TinkerMaterialSpriteProvider;
 
 @EventBusSubscriber(modid = TCIntegrations.MODID, bus = EventBusSubscriber.Bus.MOD)
 public final class DataGenerators {
@@ -13,6 +29,45 @@ public final class DataGenerators {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
+        var gen = event.getGenerator();
+        var packOutput = gen.getPackOutput();
+        var lookupProvider = event.getLookupProvider();
+        var existingFileHelper = event.getExistingFileHelper();
+
+        // Server-side providers (block tags first for item tag dependency)
+        var blockTags = new ModBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
+        gen.addProvider(event.includeServer(), ModLootTables.create(packOutput, lookupProvider));
+        gen.addProvider(event.includeServer(), blockTags);
+        gen.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTags, existingFileHelper));
+        gen.addProvider(event.includeServer(), new EntityTypeTagProvider(packOutput, lookupProvider, existingFileHelper));
+
+        // TCon providers
+        gen.addProvider(event.includeServer(), new ModifierProvider(packOutput));
+        gen.addProvider(event.includeServer(), new CombinedRecipeProvider(packOutput, lookupProvider));
+        gen.addProvider(event.includeServer(), new EnchantmentToModifierProvider(packOutput));
+        gen.addProvider(event.includeServer(), new ModifierTagProvider(packOutput, TCIntegrations.MODID, existingFileHelper));
+
+        // TCon material providers (ordered by dependencies)
+        var materialData = new MaterialDataProvider(packOutput);
+        gen.addProvider(event.includeServer(), materialData);
+        gen.addProvider(event.includeServer(), new MaterialStatsDataProvider(packOutput, materialData));
+        gen.addProvider(event.includeServer(), new MaterialTraitsDataProvider(packOutput, materialData));
+
+        // TCon fluid providers
+        gen.addProvider(event.includeServer(), new FluidEffectProvider(packOutput, TCIntegrations.MODID));
+        gen.addProvider(event.includeServer(), new FluidTagProvider(packOutput, lookupProvider, existingFileHelper));
+
+        // TCon sprite/render providers
+        var spriteProvider = new TinkerMaterialSpriteProvider();
+        gen.addProvider(event.includeClient(), new MaterialRenderInfoProvider(packOutput, spriteProvider, existingFileHelper));
+
+        // Client-side providers
+        gen.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+        gen.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        gen.addProvider(event.includeClient(), new FluidTextureProvider(packOutput));
+
+        // Integration providers
+        // CreateGogglesPredicate.init(); // requires Create runtime dep
     }
 
 }

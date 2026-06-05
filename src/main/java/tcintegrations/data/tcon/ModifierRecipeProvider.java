@@ -1,0 +1,680 @@
+package tcintegrations.data.tcon;
+
+import java.util.concurrent.CompletableFuture;
+
+import org.jetbrains.annotations.NotNull;
+
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+
+import net.neoforged.neoforge.common.Tags;
+
+import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
+import slimeknights.tconstruct.library.recipe.modifiers.adding.IncrementalModifierRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
+import slimeknights.tconstruct.library.tools.SlotType;
+
+import slimeknights.tconstruct.tools.TinkerModifiers;
+import tcintegrations.common.TagManager;
+import tcintegrations.data.BaseRecipeProvider;
+import tcintegrations.data.integration.ModIntegration;
+import tcintegrations.data.tcon.material.TciModifierIds;
+import tcintegrations.items.TCIntegrationsModifiers;
+
+public class ModifierRecipeProvider extends BaseRecipeProvider {
+
+    public ModifierRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> registries) {
+        super(packOutput, registries);
+    }
+
+    @Override
+    protected void buildRecipes(@NotNull RecipeOutput consumer) {
+        addModifierRecipes(consumer);
+    }
+
+    private void addModifierRecipes(RecipeOutput consumer) {
+        // upgrades
+        String compatFolder = "tools/modifiers/compat/";
+        String compatSalvage = "tools/modifiers/salvage/compat/";
+        RecipeOutput botaniaConsumer = withCondition(consumer, modLoaded(ModIntegration.BOTANIA_MODID));
+        RecipeOutput createConsumer = withCondition(consumer, modLoaded(ModIntegration.CREATE_MODID));
+        RecipeOutput aquacultureConsumer = withCondition(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
+        RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
+        RecipeOutput alexConsumer = withCondition(consumer, modLoaded(ModIntegration.ALEX_MODID));
+        RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
+        RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
+        RecipeOutput cheeseConsumer = withCondition(consumer, tagCondition(TagManager.Items.CHEESE.location().getPath()));
+        RecipeOutput ieConsumer = withCondition(consumer, modLoaded(ModIntegration.IE_MODID));
+        RecipeOutput mekanismConsumer = withCondition(consumer, modLoaded(ModIntegration.MEKANISM_MODID));
+        RecipeOutput mythicBotanyConsumer = withCondition(consumer, modLoaded(ModIntegration.MYTHIC_BOTANY_MODID));
+        RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
+        RecipeOutput apothConsumer = withCondition(consumer, modLoaded(ModIntegration.APOTH_MODID));
+        RecipeOutput arsElementalConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_ELEMENTAL_MODID));
+        RecipeOutput deeperDarkerConsumer = withCondition(consumer, modLoaded(ModIntegration.DEEPERDARKER_MODID));
+        RecipeOutput twilightForestConsumer = withCondition(consumer, modLoaded(ModIntegration.TWILIGHT_MODID));
+
+        if (TCIntegrationsModifiers.TERRA_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRA_MODIFIER)
+                .setTools(TinkerTags.Items.MELEE_PRIMARY)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.MYSTICAL_FLOWERS)
+                .addInput(TagManager.Items.DOUBLE_MYSTICAL_FLOWERS)
+                .addInput(TagManager.Items.LIVINGWOOD_LOGS)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRA_MODIFIER, compatSalvage))
+                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRA_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.ALF_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ALF_MODIFIER)
+                .setTools(TinkerTags.Items.MELEE_PRIMARY)
+                .addInput(ModIntegration.ALFSTEEL_INGOT)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.MYSTICAL_FLOWERS)
+                .addInput(TagManager.Items.DOUBLE_MYSTICAL_FLOWERS)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(mythicBotanyConsumer, prefix(TCIntegrationsModifiers.ALF_MODIFIER, compatSalvage))
+                .save(mythicBotanyConsumer, prefix(TCIntegrationsModifiers.ALF_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.ALFHEIM_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ALFHEIM_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.ALFSTEEL_INGOT)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.MYSTICAL_FLOWERS)
+                .addInput(TagManager.Items.DOUBLE_MYSTICAL_FLOWERS)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(mythicBotanyConsumer, prefix(TCIntegrationsModifiers.ALFHEIM_MODIFIER, compatSalvage))
+                .save(mythicBotanyConsumer, prefix(TCIntegrationsModifiers.ALFHEIM_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.ELEMENTAL_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ELEMENTAL_MODIFIER)
+                .setTools(TinkerTags.Items.MELEE_PRIMARY)
+                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
+                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
+                .addInput(TagManager.Items.MYSTICAL_FLOWERS)
+                .addInput(TagManager.Items.DOUBLE_MYSTICAL_FLOWERS)
+                .addInput(TagManager.Items.LIVINGWOOD_LOGS_GLIMMERING)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.ELEMENTAL_MODIFIER, compatSalvage))
+                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.ELEMENTAL_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER)
+                .setTools(TinkerTags.Items.HELMETS)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(ModIntegration.LIVINGWOOD_TWIG)
+                .addInput(ModIntegration.RUNE_SPRING)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_helmets"), compatSalvage))
+                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_helmets"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER)
+                .setTools(TinkerTags.Items.CHESTPLATES)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(ModIntegration.LIVINGWOOD_TWIG)
+                .addInput(ModIntegration.RUNE_SUMMER)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_chestplates"), compatSalvage))
+                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_chestplates"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER)
+                .setTools(TinkerTags.Items.LEGGINGS)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(ModIntegration.LIVINGWOOD_TWIG)
+                .addInput(ModIntegration.RUNE_AUTUMN)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_leggings"), compatSalvage))
+                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_leggings"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER)
+                .setTools(TinkerTags.Items.BOOTS)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
+                .addInput(ModIntegration.LIVINGWOOD_TWIG)
+                .addInput(ModIntegration.RUNE_WINTER)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_boots"), compatSalvage))
+                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_boots"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
+                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
+                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
+                .addInput(ModIntegration.LIVINGWOOD_TWIG)
+                .addInput(TagManager.Items.LIVINGWOOD_LOGS_GLIMMERING)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER, compatSalvage))
+                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.MECHANICAL_ARM_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.MECHANICAL_ARM_MODIFIER)
+                .setTools(TinkerTags.Items.MELEE_PRIMARY)
+                .addInput(ModIntegration.MECHANICAL_ARM)
+                .setSlots(SlotType.ABILITY, 1)
+                .setMaxLevel(1)
+                .saveSalvage(createConsumer, prefix(TCIntegrationsModifiers.MECHANICAL_ARM_MODIFIER, compatSalvage))
+                .save(createConsumer, prefix(TCIntegrationsModifiers.MECHANICAL_ARM_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.POSEIDON_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.POSEIDON_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.NEPTUNIUM_INGOT)
+                .addInput(ModIntegration.NEPTUNIUM_INGOT)
+                .addInput(ModIntegration.NEPTUNIUM_INGOT)
+                .addInput(ModIntegration.TIN_CAN)
+                .addInput(ModIntegration.REDSTONE_HOOK)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(aquacultureConsumer, prefix(TCIntegrationsModifiers.POSEIDON_MODIFIER, compatSalvage))
+                .save(aquacultureConsumer, prefix(TCIntegrationsModifiers.POSEIDON_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.SIREN_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.SIREN_MODIFIER)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
+                .addInput(ModIntegration.NEPTUNIUM_INGOT)
+                .addInput(ModIntegration.NEPTUNIUM_INGOT)
+                .addInput(ModIntegration.NEPTUNIUM_INGOT)
+                .addInput(ModIntegration.FISH_FILLET_RAW)
+                .addInput(ModIntegration.IRON_HOOK)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(aquacultureConsumer, prefix(TCIntegrationsModifiers.SIREN_MODIFIER, compatSalvage))
+                .save(aquacultureConsumer, prefix(TCIntegrationsModifiers.SIREN_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ARS_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .setMaxLevel(1)
+                .setSlots(SlotType.UPGRADE, 1)
+                .disallowCrystal()
+                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatSalvage, "_level_1"))
+                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatFolder, "_level_1"));
+        }
+
+        if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ARS_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(Items.BLAZE_ROD)
+                .addInput(Items.BLAZE_ROD)
+                .exactLevel(2)
+                .setSlots(SlotType.UPGRADE, 1)
+                .disallowCrystal()
+                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatSalvage, "_level_2"))
+                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatFolder, "_level_2"));
+        }
+
+        if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ARS_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(ModIntegration.MAGE_FIBER)
+                .addInput(Items.CHORUS_FRUIT)
+                .addInput(Items.ENDER_PEARL)
+                .addInput(Items.ENDER_PEARL)
+                .exactLevel(3)
+                .setSlots(SlotType.UPGRADE, 1)
+                .disallowCrystal()
+                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatSalvage, "_level_3"))
+                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatFolder, "_level_3"));
+        }
+
+        if (TCIntegrationsModifiers.AETHERMANCER_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.AETHERMANCER_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.MARK_OF_MASTERY)
+                .addInput(ModIntegration.AIR_ESSENCE)
+                .addInput(ModIntegration.AIR_ESSENCE)
+                .addInput(Items.NETHERITE_INGOT)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.AETHERMANCER_MODIFIER, compatSalvage))
+                .save(arsElementalConsumer, prefix(TCIntegrationsModifiers.AETHERMANCER_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.AQUAMANCER_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.AQUAMANCER_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.MARK_OF_MASTERY)
+                .addInput(ModIntegration.WATER_ESSENCE)
+                .addInput(ModIntegration.WATER_ESSENCE)
+                .addInput(Items.NETHERITE_INGOT)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.AQUAMANCER_MODIFIER, compatSalvage))
+                .save(arsElementalConsumer, prefix(TCIntegrationsModifiers.AQUAMANCER_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.GEOMANCER_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.GEOMANCER_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.MARK_OF_MASTERY)
+                .addInput(ModIntegration.EARTH_ESSENCE)
+                .addInput(ModIntegration.EARTH_ESSENCE)
+                .addInput(Items.NETHERITE_INGOT)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.GEOMANCER_MODIFIER, compatSalvage))
+                .save(arsElementalConsumer, prefix(TCIntegrationsModifiers.GEOMANCER_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.PYROMANCER_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.PYROMANCER_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.MARK_OF_MASTERY)
+                .addInput(ModIntegration.FIRE_ESSENCE)
+                .addInput(ModIntegration.FIRE_ESSENCE)
+                .addInput(Items.NETHERITE_INGOT)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.PYROMANCER_MODIFIER, compatSalvage))
+                .save(arsElementalConsumer, prefix(TCIntegrationsModifiers.PYROMANCER_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER)
+                .setTools(TinkerTags.Items.CHESTPLATES)
+                .addInput(ModIntegration.SOURCE_GEM_BLOCK)
+                .addInput(ModIntegration.SOURCE_GEM_BLOCK)
+                .addInput(Ingredient.of(Tags.Items.STORAGE_BLOCKS_GOLD))
+                .addInput(Ingredient.of(Tags.Items.STORAGE_BLOCKS_GOLD))
+                .addInput(Items.SHIELD)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.getId().withSuffix("_chestplates"), compatSalvage))
+                .save(arsConsumer, prefix(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.getId().withSuffix("_chestplates"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.ROADRUNNER_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ROADRUNNER_MODIFIER)
+                .setTools(TinkerTags.Items.BOOTS)
+                .addInput(Items.CHISELED_SANDSTONE)
+                .addInput(ModIntegration.ROADRUNNER_FEATHER)
+                .addInput(ModIntegration.ROADRUNNER_FEATHER)
+                .addInput(ModIntegration.ROADRUNNER_FEATHER)
+                .addInput(ModIntegration.ROADRUNNER_FEATHER)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(3)
+                .saveSalvage(alexConsumer, prefix(TCIntegrationsModifiers.ROADRUNNER_MODIFIER.getId().withSuffix("_boots"), compatSalvage))
+                .save(alexConsumer, prefix(TCIntegrationsModifiers.ROADRUNNER_MODIFIER.getId().withSuffix("_boots"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.FRONTIER_CAP_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.FRONTIER_CAP_MODIFIER)
+                .setTools(TinkerTags.Items.HELMETS)
+                .addInput(ModIntegration.BEAR_FUR)
+                .addInput(ModIntegration.BEAR_FUR)
+                .addInput(ModIntegration.BEAR_FUR)
+                .addInput(ModIntegration.BEAR_FUR)
+                .addInput(ModIntegration.RACCOON_TAIL)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(3)
+                .saveSalvage(alexConsumer, prefix(TCIntegrationsModifiers.FRONTIER_CAP_MODIFIER.getId().withSuffix("_helmets"), compatSalvage))
+                .save(alexConsumer, prefix(TCIntegrationsModifiers.FRONTIER_CAP_MODIFIER.getId().withSuffix("_helmets"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.TURTLE_SHELL_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TURTLE_SHELL_MODIFIER)
+                .setTools(TinkerTags.Items.HELMETS)
+                .addInput(ModIntegration.SPIKED_SCUTE)
+                .addInput(ModIntegration.SPIKED_SCUTE)
+                .addInput(ModIntegration.SPIKED_SCUTE)
+                .addInput(ModIntegration.SPIKED_SCUTE)
+                .addInput(ModIntegration.SPIKED_SCUTE)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(alexConsumer, prefix(TCIntegrationsModifiers.TURTLE_SHELL_MODIFIER.getId().withSuffix("_helmets"), compatSalvage))
+                .save(alexConsumer, prefix(TCIntegrationsModifiers.TURTLE_SHELL_MODIFIER.getId().withSuffix("_helmets"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.BISON_FUR_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.BISON_FUR_MODIFIER)
+                .setTools(TinkerTags.Items.BOOTS)
+                .addInput(ModIntegration.BISON_FUR)
+                .addInput(ModIntegration.BISON_FUR)
+                .addInput(ModIntegration.BISON_FUR)
+                .addInput(ModIntegration.BISON_FUR)
+                .addInput(ModIntegration.BISON_FUR)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(alexConsumer, prefix(TCIntegrationsModifiers.BISON_FUR_MODIFIER.getId().withSuffix("_boots"), compatSalvage))
+                .save(alexConsumer, prefix(TCIntegrationsModifiers.BISON_FUR_MODIFIER.getId().withSuffix("_boots"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.SHIELD_OF_THE_DEEP_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.SHIELD_OF_THE_DEEP_MODIFIER)
+                .setTools(TinkerTags.Items.CHESTPLATES)
+                .addInput(Items.HEART_OF_THE_SEA)
+                .addInput(Items.PRISMARINE_BRICKS)
+                .addInput(ModIntegration.SERRATED_SHARK_TOOTH)
+                .addInput(ModIntegration.SHARK_TOOTH)
+                .addInput(ModIntegration.SHARK_TOOTH)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(alexConsumer, prefix(TCIntegrationsModifiers.SHIELD_OF_THE_DEEP_MODIFIER.getId().withSuffix("_chestplates"), compatSalvage))
+                .save(alexConsumer, prefix(TCIntegrationsModifiers.SHIELD_OF_THE_DEEP_MODIFIER.getId().withSuffix("_chestplates"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.MOSQUITO_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.MOSQUITO_MODIFIER)
+                .setTools(TinkerTags.Items.BOOTS)
+                .addInput(ModIntegration.MOSQUITO_PROBOSCIS)
+                .addInput(ModIntegration.MOSQUITO_PROBOSCIS)
+                .addInput(ModIntegration.MOSQUITO_PROBOSCIS)
+                .addInput(ModIntegration.MOSQUITO_PROBOSCIS)
+                .addInput(ModIntegration.MOSQUITO_PROBOSCIS)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(3)
+                .saveSalvage(alexConsumer, prefix(TCIntegrationsModifiers.MOSQUITO_MODIFIER, compatSalvage))
+                .save(alexConsumer, prefix(TCIntegrationsModifiers.MOSQUITO_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.CROCODILE_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.CROCODILE_MODIFIER)
+                .setTools(TinkerTags.Items.CHESTPLATES)
+                .addInput(ModIntegration.CROCODILE_SCUTE)
+                .addInput(ModIntegration.CROCODILE_SCUTE)
+                .addInput(ModIntegration.CROCODILE_SCUTE)
+                .addInput(ModIntegration.CROCODILE_SCUTE)
+                .addInput(ModIntegration.CROCODILE_SCUTE)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(alexConsumer, prefix(TCIntegrationsModifiers.CROCODILE_MODIFIER.getId().withSuffix("_chestplates"), compatSalvage))
+                .save(alexConsumer, prefix(TCIntegrationsModifiers.CROCODILE_MODIFIER.getId().withSuffix("_chestplates"), compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.SOUL_STAINED_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.SOUL_STAINED_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.SOUL_STAINED_STEEL_INGOT)
+                .addInput(ModIntegration.SOUL_STAINED_STEEL_INGOT)
+                .addInput(ModIntegration.SOUL_STAINED_STEEL_INGOT)
+                .addInput(ModIntegration.SOUL_STAINED_STEEL_INGOT)
+                .addInput(ModIntegration.SOUL_STAINED_STEEL_INGOT)
+                .setSlots(SlotType.DEFENSE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(malumConsumer, prefix(TCIntegrationsModifiers.SOUL_STAINED_MODIFIER, compatSalvage))
+                .save(malumConsumer, prefix(TCIntegrationsModifiers.SOUL_STAINED_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.MASTICATE_MODIFIER != null) {
+            IncrementalModifierRecipeBuilder.modifier(TciModifierIds.masticate)
+                .setTools(TinkerTags.Items.ARMOR)
+                .setInput(ModIntegration.MASTICATOR_SCALES, 1, 2)
+                .setMaxLevel(3)
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(undergardenConsumer, prefix(TCIntegrationsModifiers.MASTICATE_MODIFIER, compatSalvage))
+                .save(undergardenConsumer, prefix(TCIntegrationsModifiers.MASTICATE_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.UTHERIUM_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.UTHERIUM_MODIFIER)
+                .setTools(TinkerTags.Items.MELEE_PRIMARY)
+                .addInput(ModIntegration.UTHERIUM_CRYSTAL)
+                .addInput(ModIntegration.UTHERIUM_CRYSTAL)
+                .addInput(ModIntegration.UTHERIUM_CRYSTAL)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(undergardenConsumer, prefix(TCIntegrationsModifiers.UTHERIUM_MODIFIER, compatSalvage))
+                .save(undergardenConsumer, prefix(TCIntegrationsModifiers.UTHERIUM_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.FROSTSTEEL_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.FROSTSTEEL_MODIFIER)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
+                .addInput(ModIntegration.FROSTSTEEL_INGOT)
+                .addInput(ModIntegration.FROSTSTEEL_INGOT)
+                .addInput(ModIntegration.FROSTSTEEL_INGOT)
+                .addInput(ModIntegration.FROSTSTEEL_INGOT)
+                .addInput(ModIntegration.FROSTSTEEL_INGOT)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(undergardenConsumer, prefix(TCIntegrationsModifiers.FROSTSTEEL_MODIFIER, compatSalvage))
+                .save(undergardenConsumer, prefix(TCIntegrationsModifiers.FROSTSTEEL_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.FORGOTTEN_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.FORGOTTEN_MODIFIER)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
+                .addInput(ModIntegration.FORGOTTEN_INGOT)
+                .addInput(ModIntegration.CLOGGRUM_INGOT)
+                .addInput(ModIntegration.CLOGGRUM_INGOT)
+                .addInput(ModIntegration.CLOGGRUM_INGOT)
+                .addInput(ModIntegration.CLOGGRUM_INGOT)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(undergardenConsumer, prefix(TCIntegrationsModifiers.FORGOTTEN_MODIFIER, compatSalvage))
+                .save(undergardenConsumer, prefix(TCIntegrationsModifiers.FORGOTTEN_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.CHEESY_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.CHEESY_MODIFIER)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
+                .addInput(TagManager.Items.CHEESE)
+                .addInput(TagManager.Items.CHEESE)
+                .addInput(TagManager.Items.CHEESE)
+                .addInput(TagManager.Items.CHEESE)
+                .addInput(TagManager.Items.CHEESE)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(3)
+                .saveSalvage(cheeseConsumer, prefix(TCIntegrationsModifiers.CHEESY_MODIFIER, compatSalvage))
+                .save(cheeseConsumer, prefix(TCIntegrationsModifiers.CHEESY_MODIFIER, compatFolder));
+        }
+
+        ModifierRecipeBuilder.modifier(TciModifierIds.multiVision)
+            .setTools(TinkerTags.Items.HELMETS)
+            .addInput(ModIntegration.VOLTMETER)
+            .save(ieConsumer, prefix(TciModifierIds.multiVision.location(), compatFolder));
+
+        if (TCIntegrationsModifiers.GLOWUP_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.GLOWUP_MODIFIER)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
+                .addInput(ModIntegration.INGOT_REFINED_GLOWSTONE)
+                .addInput(ModIntegration.INGOT_REFINED_GLOWSTONE)
+                .addInput(ModIntegration.INGOT_REFINED_GLOWSTONE)
+                .addInput(ModIntegration.INGOT_REFINED_GLOWSTONE)
+                .addInput(ModIntegration.INGOT_REFINED_GLOWSTONE)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(3)
+                .saveSalvage(mekanismConsumer, prefix(TCIntegrationsModifiers.GLOWUP_MODIFIER, compatSalvage))
+                .save(mekanismConsumer, prefix(TCIntegrationsModifiers.GLOWUP_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.FLAMED_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.FLAMED_MODIFIER)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.RANGED))
+                .addInput(ModIntegration.DRAGON_BONE)
+                .addInput(ModIntegration.DRAGON_BONE)
+                .addInput(TagManager.Items.WITHER_BONES)
+                .addInput(ModIntegration.FIRE_DRAGON_BLOOD)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(ifdConsumer, prefix(TCIntegrationsModifiers.FLAMED_MODIFIER, compatSalvage))
+                .save(ifdConsumer, prefix(TCIntegrationsModifiers.FLAMED_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.ICED_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ICED_MODIFIER)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.RANGED))
+                .addInput(ModIntegration.DRAGON_BONE)
+                .addInput(ModIntegration.DRAGON_BONE)
+                .addInput(TagManager.Items.WITHER_BONES)
+                .addInput(ModIntegration.ICE_DRAGON_BLOOD)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(ifdConsumer, prefix(TCIntegrationsModifiers.ICED_MODIFIER, compatSalvage))
+                .save(ifdConsumer, prefix(TCIntegrationsModifiers.ICED_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.ZAPPED_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ZAPPED_MODIFIER)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.RANGED))
+                .addInput(ModIntegration.DRAGON_BONE)
+                .addInput(ModIntegration.DRAGON_BONE)
+                .addInput(TagManager.Items.WITHER_BONES)
+                .addInput(ModIntegration.LIGHTNING_DRAGON_BLOOD)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(ifdConsumer, prefix(TCIntegrationsModifiers.ZAPPED_MODIFIER, compatSalvage))
+                .save(ifdConsumer, prefix(TCIntegrationsModifiers.ZAPPED_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.PHANTASMAL_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.PHANTASMAL_MODIFIER)
+                .setTools(TinkerTags.Items.SWORD)
+                .addInput(ModIntegration.DRAGON_BONE)
+                .addInput(ModIntegration.DRAGON_BONE)
+                .addInput(TagManager.Items.WITHER_BONES)
+                .addInput(ModIntegration.GHOST_INGOT)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(ifdConsumer, prefix(TCIntegrationsModifiers.PHANTASMAL_MODIFIER, compatSalvage))
+                .save(ifdConsumer, prefix(TCIntegrationsModifiers.PHANTASMAL_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.CAPTURING_MODIFIER != null) {
+            IncrementalModifierRecipeBuilder.modifier(TCIntegrationsModifiers.CAPTURING_MODIFIER)
+                .setTools(TinkerTags.Items.MELEE_PRIMARY)
+                .setInput(Items.EXPERIENCE_BOTTLE, 1, 28)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(7)
+                .saveSalvage(apothConsumer, prefix(TCIntegrationsModifiers.CAPTURING_MODIFIER, compatSalvage))
+                .save(apothConsumer, prefix(TCIntegrationsModifiers.CAPTURING_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.SCULKING_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.SCULKING_MODIFIER)
+                .setTools(TinkerTags.Items.WORN_ARMOR)
+                .addInput(ModIntegration.REINFORCED_ECHO_SHARD)
+                .addInput(Items.NETHERITE_INGOT)
+                .addInput(Items.DIAMOND)
+                .addInput(Items.DIAMOND)
+                .addInput(Items.DIAMOND)
+                .setSlots(SlotType.UPGRADE, 1)
+                .setMaxLevel(1)
+                .saveSalvage(deeperDarkerConsumer, prefix(TCIntegrationsModifiers.SCULKING_MODIFIER, compatSalvage))
+                .save(deeperDarkerConsumer, prefix(TCIntegrationsModifiers.SCULKING_MODIFIER, compatFolder));
+        }
+
+        IncrementalModifierRecipeBuilder.modifier(TinkerModifiers.fiery)
+            .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.BOWS, TinkerTags.Items.WORN_ARMOR, TinkerTags.Items.SHIELDS))
+            .setInput(ModIntegration.FIERY_INGOT, 1, 2)
+            .setMaxLevel(7) // +25 seconds fire damage
+            .setSlots(SlotType.UPGRADE, 1)
+            .saveSalvage(twilightForestConsumer, prefix(TinkerModifiers.fiery, compatSalvage))
+            .save(twilightForestConsumer, prefix(TinkerModifiers.fiery, compatFolder));
+
+        ModifierRecipeBuilder.modifier(TinkerModifiers.freezing)
+            .addInput(ModIntegration.ARCTIC_FUR)
+            .setMaxLevel(5)
+            .setSlots(SlotType.UPGRADE, 1)
+            .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.BOWS, TinkerTags.Items.WORN_ARMOR, TinkerTags.Items.SHIELDS))
+            .saveSalvage(twilightForestConsumer, prefix(TinkerModifiers.freezing, compatSalvage))
+            .save(twilightForestConsumer, prefix(TinkerModifiers.freezing, compatFolder));
+
+        ModifierRecipeBuilder.modifier(TinkerModifiers.autosmelt)
+            .addInput(Tags.Items.RAW_MATERIALS)
+            .addInput(ModIntegration.FIERY_INGOT)
+            .addInput(ModIntegration.FIERY_INGOT)
+            .addInput(ModIntegration.FIERY_INGOT)
+            .setMaxLevel(1).checkTraitLevel()
+            .setSlots(SlotType.ABILITY, 1)
+            .setTools(TinkerTags.Items.HARVEST)
+            .saveSalvage(twilightForestConsumer, prefix(TinkerModifiers.autosmelt, compatSalvage))
+            .save(twilightForestConsumer, prefix(TinkerModifiers.autosmelt, compatFolder));
+
+        if (TCIntegrationsModifiers.PRECIPITATE_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.PRECIPITATE_MODIFIER)
+                .addInput(ModIntegration.NAGA_SCALE)
+                .addInput(ModIntegration.NAGA_SCALE)
+                .addInput(ModIntegration.NAGA_SCALE)
+                .addInput(ModIntegration.NAGA_SCALE)
+                .addInput(ModIntegration.NAGA_SCALE)
+                .setMaxLevel(1)
+                .setSlots(SlotType.ABILITY, 1)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.HARVEST, TinkerTags.Items.RANGED))
+                .saveSalvage(twilightForestConsumer, prefix(TCIntegrationsModifiers.PRECIPITATE_MODIFIER, compatSalvage))
+                .save(twilightForestConsumer, prefix(TCIntegrationsModifiers.PRECIPITATE_MODIFIER, compatFolder));
+        }
+
+        if (TCIntegrationsModifiers.TWILIT_MODIFIER != null) {
+            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TWILIT_MODIFIER)
+                .addInput(ModIntegration.FIERY_INGOT)
+                .addInput(ModIntegration.FIERY_INGOT)
+                .addInput(ModIntegration.FIERY_INGOT)
+                .addInput(ModIntegration.STEELEAF_INGOT)
+                .addInput(ModIntegration.NAGA_SCALE)
+                .setMaxLevel(1)
+                .setSlots(SlotType.ABILITY, 1)
+                .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.HARVEST, TinkerTags.Items.RANGED))
+                .saveSalvage(twilightForestConsumer, prefix(TCIntegrationsModifiers.TWILIT_MODIFIER, compatSalvage))
+                .save(twilightForestConsumer, prefix(TCIntegrationsModifiers.TWILIT_MODIFIER, compatFolder));
+        }
+    }
+
+    public ResourceLocation prefix(LazyModifier modifier, String prefix) {
+        return prefix(modifier.getId(), prefix);
+    }
+
+    @SafeVarargs
+    private static Ingredient ingredientFromTags(TagKey<Item>... tags) {
+        Ingredient[] tagIngredients = new Ingredient[tags.length];
+
+        for (int i = 0; i < tags.length; i++) {
+            tagIngredients[i] = Ingredient.of(tags[i]);
+        }
+
+        return net.neoforged.neoforge.common.crafting.CompoundIngredient.of(tagIngredients);
+    }
+
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aquaculture"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:nuggets/neptunium"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:nuggets/neptunium"
+  },
+  "material": "tcintegrations:neptunium",
+  "needed": 9,
+  "value": 1
+}

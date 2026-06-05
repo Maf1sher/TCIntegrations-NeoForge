@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "tcintegrations:masticate",
+      "required": false
+    }
+  ]
+}

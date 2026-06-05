@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:tag_empty",
+      "tag": "forge:ingots/tin"
+    }
+  ],
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 270,
+      "tag": "c:molten_copper"
+    },
+    {
+      "amount": 1000,
+      "tag": "tconstruct:molten_obsidian"
+    }
+  ],
+  "result": {
+    "amount": 360,
+    "fluid": "tconstruct:molten_bronze"
+  },
+  "temperature": 700
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/brass"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:nuggets/brass"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:nuggets/brass"
+  },
+  "material": "tcintegrations:brass",
+  "needed": 9,
+  "value": 1
+}

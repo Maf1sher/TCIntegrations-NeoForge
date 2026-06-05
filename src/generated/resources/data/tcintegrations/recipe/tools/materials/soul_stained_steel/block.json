@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:storage_blocks/soul_stained_steel"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:storage_blocks/soul_stained_steel"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "c:ingots/soul_stained_steel"
+  },
+  "material": "tcintegrations:soul_stained_steel",
+  "needed": 1,
+  "value": 9
+}
