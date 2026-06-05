@@ -1,16 +1,21 @@
 package tcintegrations.data.client;
 
-import java.util.Objects;
-
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
+import slimeknights.mantle.registration.object.MetalItemObject;
+
 import tcintegrations.TCIntegrations;
+import tcintegrations.items.TCIntegrationsItems;
+
+import static tcintegrations.util.ResourceLocationHelper.resource;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
@@ -24,14 +29,25 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
-        ModelFile itemHandheld = getExistingFile(mcLoc("item/handheld"));
+        metalItemModels(TCIntegrationsItems.BRONZE);
     }
 
-    private ItemModelBuilder builder(ModelFile itemGenerated, Item item) {
-        String name = Objects.requireNonNull(item.toString());
+    private void metalItemModels(MetalItemObject metal) {
+        // Block item — parent the block model
+        String blockPath = BuiltInRegistries.BLOCK.getKey(metal.get()).getPath();
+        withExistingParent(blockPath, resource("block/" + blockPath));
 
-        return getBuilder(name).parent(itemGenerated).texture("layer0", "item/" + name);
+        // Ingot — item/generated
+        String ingotPath = BuiltInRegistries.ITEM.getKey(metal.getIngot()).getPath();
+        generated(ingotPath, resource("item/materials/" + ingotPath));
+
+        // Nugget — item/generated
+        String nuggetPath = BuiltInRegistries.ITEM.getKey(metal.getNugget()).getPath();
+        generated(nuggetPath, resource("item/materials/" + nuggetPath));
+    }
+
+    private ItemModelBuilder generated(String name, ResourceLocation texture) {
+        return getBuilder(name).parent(new UncheckedModelFile("item/generated")).texture("layer0", texture);
     }
 
 }

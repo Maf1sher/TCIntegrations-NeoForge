@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tcintegrations:block/bronze_block"
+    }
+  }
+}
