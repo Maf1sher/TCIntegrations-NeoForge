@@ -124,9 +124,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(TagManager.Items.LIGHTNING_DRAGON_BLOOD)
             .addOptional(ModIntegration.ifdLoc("lightning_dragon_blood"));
 
-        // Ice and Fire: Dragon Bone
+        // Ice and Fire: Dragon Bone (item id is "dragonbone", not "dragon_bone")
         this.tag(TagManager.Items.DRAGON_BONE)
-            .addOptional(ModIntegration.ifdLoc("dragon_bone"));
+            .addOptional(ModIntegration.ifdLoc("dragonbone"));
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "bones/dragon")))
+            .addOptional(ModIntegration.ifdLoc("dragonbone"));
 
         // Ice and Fire: Ghost Ingot
         this.tag(TagManager.Items.GHOST_INGOT)
