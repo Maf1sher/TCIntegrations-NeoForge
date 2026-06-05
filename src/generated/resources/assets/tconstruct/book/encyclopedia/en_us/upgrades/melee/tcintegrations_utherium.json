@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:utherium",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.utherium.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.utherium.flavor"
+  ],
+  "more_text_space": true
+}

@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:flamed",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.flamed.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.flamed.flavor"
+  ],
+  "more_text_space": true
+}

@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:twilit",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.twilit.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.twilit.flavor"
+  ],
+  "more_text_space": true
+}

@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:glowup",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.glowup.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.glowup.flavor"
+  ],
+  "more_text_space": true
+}

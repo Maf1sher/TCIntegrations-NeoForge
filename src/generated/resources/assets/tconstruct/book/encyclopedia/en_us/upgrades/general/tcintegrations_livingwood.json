@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:livingwood",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.livingwood.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.livingwood.flavor"
+  ],
+  "more_text_space": true
+}

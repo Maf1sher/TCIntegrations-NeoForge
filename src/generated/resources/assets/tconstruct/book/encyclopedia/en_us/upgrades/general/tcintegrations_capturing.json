@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:capturing",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.capturing.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.capturing.flavor"
+  ],
+  "more_text_space": true
+}

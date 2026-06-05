@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:siren",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.siren.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.siren.flavor"
+  ],
+  "more_text_space": true
+}

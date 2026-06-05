@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:precipitate",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.precipitate.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.precipitate.flavor"
+  ],
+  "more_text_space": true
+}

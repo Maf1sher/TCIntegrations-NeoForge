@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:engineers_goggles",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.engineers_goggles.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.engineers_goggles.flavor"
+  ],
+  "more_text_space": true
+}

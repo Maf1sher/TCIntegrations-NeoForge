@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:sculking",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.sculking.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.sculking.flavor"
+  ],
+  "more_text_space": true
+}

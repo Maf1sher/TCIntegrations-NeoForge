@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:mosquito",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.mosquito.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.mosquito.flavor"
+  ],
+  "more_text_space": true
+}

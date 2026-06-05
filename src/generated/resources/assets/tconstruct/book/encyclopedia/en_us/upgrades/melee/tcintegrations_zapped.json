@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:zapped",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.zapped.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.zapped.flavor"
+  ],
+  "more_text_space": true
+}

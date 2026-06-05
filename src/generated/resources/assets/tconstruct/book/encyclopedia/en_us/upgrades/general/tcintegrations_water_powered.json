@@ -1,0 +1,12 @@
+{
+  "modifier_id": "tcintegrations:water_powered",
+  "text": [
+    {
+      "text": "modifier.tcintegrations.water_powered.description"
+    }
+  ],
+  "effects": [
+    "modifier.tcintegrations.water_powered.flavor"
+  ],
+  "more_text_space": true
+}
