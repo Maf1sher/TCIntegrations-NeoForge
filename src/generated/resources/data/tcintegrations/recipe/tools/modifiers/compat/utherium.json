@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "undergarden"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "tag": "undergarden:utherium_crystal"
+    },
+    {
+      "tag": "undergarden:utherium_crystal"
+    },
+    {
+      "tag": "undergarden:utherium_crystal"
+    }
+  ],
+  "level": 1,
+  "result": "tcintegrations:utherium",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/melee/primary"
+  }
+}

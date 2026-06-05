@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "apotheosis"
+    }
+  ],
+  "type": "tconstruct:incremental_modifier",
+  "allow_crystal": true,
+  "amount_per_item": 1,
+  "input": {
+    "item": "minecraft:experience_bottle"
+  },
+  "level": {
+    "max": 7
+  },
+  "needed_per_level": 28,
+  "result": "tcintegrations:capturing",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/melee/primary"
+  }
+}

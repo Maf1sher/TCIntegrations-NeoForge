@@ -1,0 +1,37 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "alexsmobs"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "tag": "tcintegrations:bear_fur"
+    },
+    {
+      "tag": "tcintegrations:bear_fur"
+    },
+    {
+      "tag": "tcintegrations:bear_fur"
+    },
+    {
+      "tag": "tcintegrations:bear_fur"
+    },
+    {
+      "tag": "tcintegrations:raccoon_tail"
+    }
+  ],
+  "level": {
+    "max": 3
+  },
+  "result": "tcintegrations:frontier_cap",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/helmets"
+  }
+}

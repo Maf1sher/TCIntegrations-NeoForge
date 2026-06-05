@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aquaculture"
+    }
+  ],
+  "type": "tconstruct:modifier_salvage",
+  "modifier": "tcintegrations:poseidon",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/worn"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aquaculture"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "tag": "forge:ingots/neptunium"
+    },
+    {
+      "tag": "forge:ingots/neptunium"
+    },
+    {
+      "tag": "forge:ingots/neptunium"
+    },
+    {
+      "tag": "aquaculture:fish_fillet_raw"
+    },
+    {
+      "tag": "aquaculture:iron_hook"
+    }
+  ],
+  "level": 1,
+  "result": "tcintegrations:siren",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee/primary"
+    },
+    {
+      "tag": "tconstruct:modifiable/harvest/primary"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "tag": "forge:ingots/soul_stained_steel"
+    },
+    {
+      "tag": "forge:ingots/soul_stained_steel"
+    },
+    {
+      "tag": "forge:ingots/soul_stained_steel"
+    },
+    {
+      "tag": "forge:ingots/soul_stained_steel"
+    },
+    {
+      "tag": "forge:ingots/soul_stained_steel"
+    }
+  ],
+  "level": 1,
+  "result": "tcintegrations:soul_stained",
+  "slots": {
+    "defense": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/worn"
+  }
+}

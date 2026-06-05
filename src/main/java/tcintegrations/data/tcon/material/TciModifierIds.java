@@ -25,6 +25,23 @@ public class TciModifierIds {
     public static final ModifierId froststeelTrait = id("froststeel");
     public static final ModifierId forgottenTrait = id("forgotten");
     public static final ModifierId sourceGem = id("mana");
+    public static final ModifierId mechanicalArm = id("mechanical_arm");
+    public static final ModifierId glowup = id("glowup");
+    public static final ModifierId phantasmal = id("phantasmal");
+    public static final ModifierId roadrunner = id("roadrunner");
+    public static final ModifierId frontierCap = id("frontier_cap");
+    public static final ModifierId turtleShell = id("turtle_shell");
+    public static final ModifierId bisonFur = id("bison_fur");
+    public static final ModifierId shieldOfTheDeep = id("shield_of_the_deep");
+    public static final ModifierId mosquito = id("mosquito");
+    public static final ModifierId crocodile = id("crocodile");
+    public static final ModifierId capturing = id("capturing");
+    public static final ModifierId poseidon = id("poseidon");
+    public static final ModifierId siren = id("siren");
+    public static final ModifierId utherium = id("utherium");
+    public static final ModifierId sculking = id("sculking");
+    public static final ModifierId precipitate = id("precipitate");
+    public static final ModifierId twilit = id("twilit");
 
     private TciModifierIds() {}
 

@@ -4,10 +4,5 @@
     "modid": "immersiveengineering"
   },
   "level_display": "tconstruct:no_levels",
-  "modules": [
-    {
-      "type": "tcintegrations:multivision"
-    }
-  ],
   "tooltip_display": "always"
 }

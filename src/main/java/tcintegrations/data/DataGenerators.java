@@ -24,6 +24,7 @@ import tcintegrations.data.tcon.material.MaterialRenderInfoProvider;
 import tcintegrations.data.tcon.material.MaterialStatsDataProvider;
 import tcintegrations.data.tcon.material.MaterialTraitsDataProvider;
 import tcintegrations.data.tcon.sprite.TinkerMaterialSpriteProvider;
+import tcintegrations.data.integration.ModIntegration;
 
 @EventBusSubscriber(modid = TCIntegrations.MODID, bus = EventBusSubscriber.Bus.MOD)
 public final class DataGenerators {
@@ -33,6 +34,7 @@ public final class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         ModItemRef.setDataGenMode(true);
+        ModIntegration.setForceLoaded();
         var gen = event.getGenerator();
         var packOutput = gen.getPackOutput();
         var lookupProvider = event.getLookupProvider();

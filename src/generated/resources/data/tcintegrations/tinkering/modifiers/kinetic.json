@@ -1,0 +1,8 @@
+{
+  "condition": {
+    "type": "neoforge:mod_loaded",
+    "modid": "mekanism"
+  },
+  "level_display": "tconstruct:default",
+  "tooltip_display": "tinker_station"
+}

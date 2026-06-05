@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "tag": "forge:ingots/fiery"
+    },
+    {
+      "tag": "forge:ingots/fiery"
+    },
+    {
+      "tag": "forge:ingots/fiery"
+    },
+    {
+      "tag": "forge:ingots/steeleaf"
+    },
+    {
+      "tag": "twilightforest:naga_scale"
+    }
+  ],
+  "level": 1,
+  "result": "tcintegrations:twilit",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": [
+    {
+      "tag": "tconstruct:modifiable/melee"
+    },
+    {
+      "tag": "tconstruct:modifiable/harvest"
+    },
+    {
+      "tag": "tconstruct:modifiable/ranged"
+    }
+  ]
+}

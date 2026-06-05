@@ -152,7 +152,14 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static ResourceLocation deeperDarkerLoc(String name) { return location(DEEPERDARKER_MODID, name); }
     public static ResourceLocation twilightLoc(String name) { return location(TWILIGHT_MODID, name); }
 
+    private static boolean forceLoaded = false;
+
+    public static void setForceLoaded() {
+        forceLoaded = true;
+    }
+
     public static boolean canLoad(String modid) {
+        if (forceLoaded) return true;
         return ModList.get().isLoaded(modid);
     }
 
