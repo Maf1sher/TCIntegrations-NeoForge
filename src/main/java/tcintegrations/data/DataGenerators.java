@@ -6,6 +6,8 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import tcintegrations.TCIntegrations;
 import tcintegrations.util.ModItemRef;
+import tcintegrations.data.client.FluidBlockstateModelProvider;
+import tcintegrations.data.client.FluidBucketModelProvider;
 import tcintegrations.data.client.ModBlockStateProvider;
 import tcintegrations.data.client.ModItemModelProvider;
 import tcintegrations.data.loot.ModLootTables;
@@ -70,6 +72,8 @@ public final class DataGenerators {
         gen.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
         gen.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         gen.addProvider(event.includeClient(), new FluidTextureProvider(packOutput));
+        gen.addProvider(event.includeClient(), new FluidBlockstateModelProvider(packOutput, TCIntegrations.MODID));
+        gen.addProvider(event.includeClient(), new FluidBucketModelProvider(packOutput, TCIntegrations.MODID));
 
     }
 
