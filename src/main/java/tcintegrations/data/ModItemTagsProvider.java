@@ -6,8 +6,10 @@ import java.util.concurrent.CompletableFuture;
 import org.jetbrains.annotations.NotNull;
 
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
@@ -80,6 +82,20 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(TagManager.Items.SOURCE_GEM_BLOCK)
             .addOptional(ModIntegration.arsLoc("source_gem_block"));
 
+        // Ensure integration metal ingots appear in both c: and forge: ingot tags
+        addCompatibilityIngot("manasteel", ModIntegration.botaniaLoc("manasteel_ingot"));
+        addCompatibilityIngot("neptunium", ModIntegration.aquaLoc("neptunium_ingot"));
+        addCompatibilityIngot("soul_stained_steel", ModIntegration.malumLoc("soul_stained_steel_ingot"));
+        addCompatibilityIngot("cloggrum", ModIntegration.ugLoc("cloggrum_ingot"));
+        addCompatibilityIngot("froststeel", ModIntegration.ugLoc("froststeel_ingot"));
+        addCompatibilityIngot("forgotten", ModIntegration.ugLoc("forgotten_ingot"));
+        addCompatibilityIngot("desh", ModIntegration.adAstraLoc("desh_ingot"));
+        addCompatibilityIngot("calorite", ModIntegration.adAstraLoc("calorite_ingot"));
+        addCompatibilityIngot("ostrum", ModIntegration.adAstraLoc("ostrum_ingot"));
+        addCompatibilityIngot("dragonsteel_fire", ModIntegration.ifdLoc("dragonsteel_fire_ingot"));
+        addCompatibilityIngot("dragonsteel_ice", ModIntegration.ifdLoc("dragonsteel_ice_ingot"));
+        addCompatibilityIngot("dragonsteel_lightning", ModIntegration.ifdLoc("dragonsteel_lightning_ingot"));
+
         // Alex's Mobs
         this.tag(TagManager.Items.ROADRUNNER_FEATHER)
             .addOptional(ModIntegration.alexLoc("roadrunner_feather"));
@@ -107,6 +123,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ModIntegration.ifdLoc("ice_dragon_blood"));
         this.tag(TagManager.Items.LIGHTNING_DRAGON_BLOOD)
             .addOptional(ModIntegration.ifdLoc("lightning_dragon_blood"));
+    }
+
+    /** Adds an ingot to both c:ingots/<name> and forge:ingots/<name> tags */
+    private void addCompatibilityIngot(String name, ResourceLocation ingotLoc) {
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + name)))
+            .addOptional(ingotLoc);
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + name)))
+            .addOptional(ingotLoc);
     }
 
     private void addBotaniaLogVariants(TagKey<Item> tag, String type) {

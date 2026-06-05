@@ -9,6 +9,10 @@
       {
         "type": "mantle:tag_filled",
         "tag": "c:ingots/soul_stained_steel"
+      },
+      {
+        "type": "mantle:tag_filled",
+        "tag": "forge:ingots/soul_stained_steel"
       }
     ]
   },

@@ -9,6 +9,10 @@
       {
         "type": "mantle:tag_filled",
         "tag": "c:ingots/calorite"
+      },
+      {
+        "type": "mantle:tag_filled",
+        "tag": "forge:ingots/calorite"
       }
     ]
   },

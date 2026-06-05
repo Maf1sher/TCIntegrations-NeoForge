@@ -9,6 +9,10 @@
       {
         "type": "mantle:tag_filled",
         "tag": "c:ingots/manasteel"
+      },
+      {
+        "type": "mantle:tag_filled",
+        "tag": "forge:ingots/manasteel"
       }
     ]
   },

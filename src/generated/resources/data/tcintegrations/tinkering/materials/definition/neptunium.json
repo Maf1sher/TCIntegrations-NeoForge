@@ -9,6 +9,10 @@
       {
         "type": "mantle:tag_filled",
         "tag": "c:ingots/neptunium"
+      },
+      {
+        "type": "mantle:tag_filled",
+        "tag": "forge:ingots/neptunium"
       }
     ]
   },
