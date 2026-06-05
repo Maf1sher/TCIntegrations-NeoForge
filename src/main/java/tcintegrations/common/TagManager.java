@@ -57,6 +57,79 @@ public class TagManager {
         public static final TagKey<Item> SOURCE_GEM = itemTag("forge", "gems/source");
         public static final TagKey<Item> SOURCE_GEM_BLOCK = itemTag("forge", "storage_blocks/source_gem");
 
+        // Botania
+        public static final TagKey<Item> LIVINGWOOD_PLANKS = itemTag("botania", "livingwood_planks");
+        public static final TagKey<Item> LIVING_ROCK = itemTag("botania", "livingrock");
+        public static final TagKey<Item> MANA_STRING = itemTag("botania", "mana_string");
+        public static final TagKey<Item> LIVINGWOOD_TWIG = itemTag("botania", "livingwood_twigs");
+        public static final TagKey<Item> RUNE_SPRING = itemTag("botania", "rune_spring");
+        public static final TagKey<Item> RUNE_SUMMER = itemTag("botania", "rune_summer");
+        public static final TagKey<Item> RUNE_AUTUMN = itemTag("botania", "rune_autumn");
+        public static final TagKey<Item> RUNE_WINTER = itemTag("botania", "rune_winter");
+
+        // MythicBotany
+        public static final TagKey<Item> ALFSTEEL_INGOT = itemTag("forge", "ingots/alfsteel");
+
+        // Ars Nouveau
+        public static final TagKey<Item> MAGE_FIBER = itemTag("ars_nouveau", "mage_fiber");
+
+        // Alex's Mobs
+        public static final TagKey<Item> ROADRUNNER_FEATHER = itemTag(TCIntegrations.MODID, "roadrunner_feather");
+        public static final TagKey<Item> SPIKED_SCUTE = itemTag(TCIntegrations.MODID, "spiked_scute");
+        public static final TagKey<Item> BISON_FUR = itemTag(TCIntegrations.MODID, "bison_fur");
+        public static final TagKey<Item> BEAR_FUR = itemTag(TCIntegrations.MODID, "bear_fur");
+        public static final TagKey<Item> RACCOON_TAIL = itemTag(TCIntegrations.MODID, "raccoon_tail");
+        public static final TagKey<Item> SERRATED_SHARK_TOOTH = itemTag(TCIntegrations.MODID, "serrated_shark_tooth");
+        public static final TagKey<Item> SHARK_TOOTH = itemTag(TCIntegrations.MODID, "shark_tooth");
+        public static final TagKey<Item> MOSQUITO_PROBOSCIS = itemTag(TCIntegrations.MODID, "mosquito_probosis");
+        public static final TagKey<Item> CROCODILE_SCUTE = itemTag(TCIntegrations.MODID, "crocodile_scute");
+
+        // Aquaculture
+        public static final TagKey<Item> NEPTUNIUM_INGOT = itemTag("forge", "ingots/neptunium");
+        public static final TagKey<Item> TIN_CAN = itemTag("aquaculture", "tin_can");
+        public static final TagKey<Item> REDSTONE_HOOK = itemTag("aquaculture", "redstone_hook");
+        public static final TagKey<Item> IRON_HOOK = itemTag("aquaculture", "iron_hook");
+        public static final TagKey<Item> FISH_FILLET_RAW = itemTag("aquaculture", "fish_fillet_raw");
+
+        // Create
+        public static final TagKey<Item> MECHANICAL_ARM = itemTag("create", "mechanical_arm");
+
+        // Mekanism
+        public static final TagKey<Item> INGOT_REFINED_GLOWSTONE = itemTag("forge", "ingots/refined_glowstone");
+
+        // Undergarden
+        public static final TagKey<Item> CLOGGRUM_INGOT = itemTag("forge", "ingots/cloggrum");
+        public static final TagKey<Item> FROSTSTEEL_INGOT = itemTag("forge", "ingots/froststeel");
+        public static final TagKey<Item> FORGOTTEN_INGOT = itemTag("forge", "ingots/forgotten");
+        public static final TagKey<Item> UTHERIUM_CRYSTAL = itemTag("undergarden", "utherium_crystal");
+        public static final TagKey<Item> MASTICATOR_SCALES = itemTag("undergarden", "masticator_scales");
+
+        // Ice and Fire
+        public static final TagKey<Item> DRAGON_BONE = itemTag("forge", "bones/dragon");
+        public static final TagKey<Item> FIRE_DRAGON_BLOOD = itemTag(TCIntegrations.MODID, "fire_dragon_blood");
+        public static final TagKey<Item> ICE_DRAGON_BLOOD = itemTag(TCIntegrations.MODID, "ice_dragon_blood");
+        public static final TagKey<Item> LIGHTNING_DRAGON_BLOOD = itemTag(TCIntegrations.MODID, "lightning_dragon_blood");
+        public static final TagKey<Item> GHOST_INGOT = itemTag("forge", "ingots/ghost");
+
+        // Deeper and Darker
+        public static final TagKey<Item> REINFORCED_ECHO_SHARD = itemTag("deeperdarker", "reinforced_echo_shard");
+
+        // Twilight Forest
+        public static final TagKey<Item> FIERY_INGOT = itemTag("forge", "ingots/fiery");
+        public static final TagKey<Item> ARCTIC_FUR = itemTag("twilightforest", "arctic_fur");
+        public static final TagKey<Item> NAGA_SCALE = itemTag("twilightforest", "naga_scale");
+        public static final TagKey<Item> STEELEAF_INGOT = itemTag("forge", "ingots/steeleaf");
+
+        // Ars Elemental
+        public static final TagKey<Item> AIR_ESSENCE = itemTag("ars_elemental", "air_essence");
+        public static final TagKey<Item> WATER_ESSENCE = itemTag("ars_elemental", "water_essence");
+        public static final TagKey<Item> EARTH_ESSENCE = itemTag("ars_elemental", "earth_essence");
+        public static final TagKey<Item> FIRE_ESSENCE = itemTag("ars_elemental", "fire_essence");
+        public static final TagKey<Item> MARK_OF_MASTERY = itemTag("ars_nouveau", "mark_of_mastery");
+
+        // Immersive Engineering
+        public static final TagKey<Item> VOLTMETER = itemTag("immersiveengineering", "voltmeter");
+
         private static TagKey<Item> itemTag(String modId, String path) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(modId, path));
         }

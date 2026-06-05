@@ -9,7 +9,7 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "item": "minecraft:stone"
+      "tag": "immersiveengineering:voltmeter"
     }
   ],
   "result": "tcintegrations:multivision",

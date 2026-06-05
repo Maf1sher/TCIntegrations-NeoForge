@@ -9,7 +9,7 @@
   "allow_crystal": true,
   "amount_per_item": 1,
   "input": {
-    "item": "minecraft:stone"
+    "tag": "forge:ingots/fiery"
   },
   "level": {
     "max": 7

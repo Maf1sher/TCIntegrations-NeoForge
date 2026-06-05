@@ -79,6 +79,34 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ModIntegration.arsLoc("source_gem"));
         this.tag(TagManager.Items.SOURCE_GEM_BLOCK)
             .addOptional(ModIntegration.arsLoc("source_gem_block"));
+
+        // Alex's Mobs
+        this.tag(TagManager.Items.ROADRUNNER_FEATHER)
+            .addOptional(ModIntegration.alexLoc("roadrunner_feather"));
+        this.tag(TagManager.Items.SPIKED_SCUTE)
+            .addOptional(ModIntegration.alexLoc("spiked_scute"));
+        this.tag(TagManager.Items.BISON_FUR)
+            .addOptional(ModIntegration.alexLoc("bison_fur"));
+        this.tag(TagManager.Items.BEAR_FUR)
+            .addOptional(ModIntegration.alexLoc("bear_fur"));
+        this.tag(TagManager.Items.RACCOON_TAIL)
+            .addOptional(ModIntegration.alexLoc("raccoon_tail"));
+        this.tag(TagManager.Items.SERRATED_SHARK_TOOTH)
+            .addOptional(ModIntegration.alexLoc("serrated_shark_tooth"));
+        this.tag(TagManager.Items.SHARK_TOOTH)
+            .addOptional(ModIntegration.alexLoc("shark_tooth"));
+        this.tag(TagManager.Items.MOSQUITO_PROBOSCIS)
+            .addOptional(ModIntegration.alexLoc("mosquito_proboscis"));
+        this.tag(TagManager.Items.CROCODILE_SCUTE)
+            .addOptional(ModIntegration.alexLoc("crocodile_scute"));
+
+        // Ice and Fire: Dragon Bloods
+        this.tag(TagManager.Items.FIRE_DRAGON_BLOOD)
+            .addOptional(ModIntegration.ifdLoc("fire_dragon_blood"));
+        this.tag(TagManager.Items.ICE_DRAGON_BLOOD)
+            .addOptional(ModIntegration.ifdLoc("ice_dragon_blood"));
+        this.tag(TagManager.Items.LIGHTNING_DRAGON_BLOOD)
+            .addOptional(ModIntegration.ifdLoc("lightning_dragon_blood"));
     }
 
     private void addBotaniaLogVariants(TagKey<Item> tag, String type) {

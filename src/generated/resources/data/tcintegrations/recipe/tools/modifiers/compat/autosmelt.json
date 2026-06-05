@@ -13,13 +13,13 @@
       "tag": "c:raw_materials"
     },
     {
-      "item": "minecraft:stone"
+      "tag": "forge:ingots/fiery"
     },
     {
-      "item": "minecraft:stone"
+      "tag": "forge:ingots/fiery"
     },
     {
-      "item": "minecraft:stone"
+      "tag": "forge:ingots/fiery"
     }
   ],
   "level": 1,
