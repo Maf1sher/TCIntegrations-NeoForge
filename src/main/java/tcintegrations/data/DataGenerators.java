@@ -5,6 +5,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import tcintegrations.TCIntegrations;
+import tcintegrations.util.ModItemRef;
 import tcintegrations.data.client.ModBlockStateProvider;
 import tcintegrations.data.client.ModItemModelProvider;
 import tcintegrations.data.loot.ModLootTables;
@@ -29,6 +30,7 @@ public final class DataGenerators {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
+        ModItemRef.setDataGenMode(true);
         var gen = event.getGenerator();
         var packOutput = gen.getPackOutput();
         var lookupProvider = event.getLookupProvider();
