@@ -7,6 +7,14 @@
         "prop": "force_integration_materials"
       },
       {
+        "type": "neoforge:mod_loaded",
+        "modid": "ad_astra"
+      },
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "beyond_earth"
+      },
+      {
         "type": "mantle:tag_filled",
         "tag": "c:ingots/desh"
       },

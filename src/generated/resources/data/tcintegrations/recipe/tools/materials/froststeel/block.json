@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "undergarden"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:storage_blocks/froststeel"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:storage_blocks/froststeel"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "c:ingots/froststeel"
+  },
+  "material": "tcintegrations:froststeel",
+  "needed": 1,
+  "value": 9
+}

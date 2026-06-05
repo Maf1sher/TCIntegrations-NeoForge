@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "undergarden"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:storage_blocks/cloggrum"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:storage_blocks/cloggrum"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "c:ingots/cloggrum"
+  },
+  "material": "tcintegrations:cloggrum",
+  "needed": 1,
+  "value": 9
+}

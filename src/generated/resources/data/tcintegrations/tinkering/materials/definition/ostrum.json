@@ -7,12 +7,20 @@
         "prop": "force_integration_materials"
       },
       {
-        "type": "mantle:tag_filled",
-        "tag": "c:ingots/ostrum"
+        "type": "neoforge:mod_loaded",
+        "modid": "ad_astra"
+      },
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "beyond_earth"
       },
       {
         "type": "mantle:tag_filled",
-        "tag": "forge:ingots/ostrum"
+        "tag": "c:ingots/desh"
+      },
+      {
+        "type": "mantle:tag_filled",
+        "tag": "forge:ingots/desh"
       }
     ]
   },

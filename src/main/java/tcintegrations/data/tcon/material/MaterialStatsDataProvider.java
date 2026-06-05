@@ -32,6 +32,14 @@ public class MaterialStatsDataProvider extends AbstractMaterialStatsDataProvider
     protected void addMaterialStats() {
         // head order is durability, mining speed, mining level, damage
 
+        // tier 2 (vanilla bronze)
+        addMaterialStats(MaterialIds.bronze,
+            new HeadMaterialStats(350, 5F, IRON, 2F),
+            new LimbMaterialStats(350, -0.05F, 0.05F, 0),
+            new GripMaterialStats(0.05F, 0F, 2F),
+            HandleMaterialStats.multipliers().durability(1.10F).miningSpeed(1.05F).build(),
+            StatlessMaterialStats.BINDING);
+
         // tier 1 (mod integration)
         addMaterialStats(MaterialIds.livingWood,
             new HeadMaterialStats(60, 2F, WOOD,0F),
@@ -135,6 +143,29 @@ public class MaterialStatsDataProvider extends AbstractMaterialStatsDataProvider
                 .armor(6, 9, 12, 7)
                 .toughness(4),
             StatlessMaterialStats.MAILLE);
+
+        // Undergarden
+        addMaterialStats(MaterialIds.cloggrum,
+            new HeadMaterialStats(700, 5.5F, DIAMOND, 2.25F),
+            new LimbMaterialStats(700, -0.25F, 0.15F, -0.1F),
+            new GripMaterialStats(0.05F, 0F, 2.25F),
+            HandleMaterialStats.multipliers().durability(1.05F).miningSpeed(1.1F).build(),
+            StatlessMaterialStats.BINDING);
+        addMaterialStats(MaterialIds.froststeel,
+            new HeadMaterialStats(750, 6F, DIAMOND, 2.5F),
+            new LimbMaterialStats(750, -0.25F, 0.15F, -0.1F),
+            new GripMaterialStats(0.1F, -0.05F, 2.5F),
+            HandleMaterialStats.multipliers().durability(1.1F).miningSpeed(1.1F).attackDamage(1.05F).build(),
+            StatlessMaterialStats.BINDING);
+        addMaterialStats(MaterialIds.forgottenMetal,
+            new HeadMaterialStats(1550, 9F, NETHERITE, 3.5F),
+            new LimbMaterialStats(1550, -0.05F, 0.15F, 0.05F),
+            new GripMaterialStats(0.15F, -0.1F, 3.5F),
+            HandleMaterialStats.multipliers().durability(1.3F).miningSpeed(1.3F).attackDamage(1.2F).build(),
+            StatlessMaterialStats.BINDING);
+
+        // Ars Nouveau
+        addMaterialStats(MaterialIds.sourceGem, StatlessMaterialStats.BINDING);
     }
 
 }

@@ -22,6 +22,11 @@ public final class MaterialIds {
     public static final MaterialId dragonsteelFire = id("dragonsteel_fire");
     public static final MaterialId dragonsteelIce = id("dragonsteel_ice");
     public static final MaterialId dragonsteelLightning = id("dragonsteel_lightning");
+    public static final MaterialId bronze = id("bronze");
+    public static final MaterialId cloggrum = id("cloggrum");
+    public static final MaterialId froststeel = id("froststeel");
+    public static final MaterialId forgottenMetal = id("forgotten_metal");
+    public static final MaterialId sourceGem = id("source_gem");
 
     private static MaterialId id(String name) {
         return new MaterialId(TCIntegrations.MODID, name);

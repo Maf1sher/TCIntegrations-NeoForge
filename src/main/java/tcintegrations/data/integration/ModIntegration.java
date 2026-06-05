@@ -63,6 +63,7 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final Item WATER_ESSENCE = ModItemRef.of(ARS_MODID, "water_essence").get();
     public static final Item EARTH_ESSENCE = ModItemRef.of(ARS_MODID, "earth_essence").get();
     public static final Item FIRE_ESSENCE = ModItemRef.of(ARS_MODID, "fire_essence").get();
+    public static final Item SOURCE_GEM = ModItemRef.of(ARS_MODID, "source_gem").get();
     public static final Item SOURCE_GEM_BLOCK = ModItemRef.of(ARS_MODID, "source_gem_block").get();
 
     // Alex's Mobs items

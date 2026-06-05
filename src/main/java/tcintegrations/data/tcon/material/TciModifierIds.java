@@ -21,6 +21,10 @@ public class TciModifierIds {
     public static final ModifierId flamed = id("flamed");
     public static final ModifierId iced = id("iced");
     public static final ModifierId zapped = id("zapped");
+    public static final ModifierId cloggrumTrait = id("masticate");
+    public static final ModifierId froststeelTrait = id("froststeel");
+    public static final ModifierId forgottenTrait = id("forgotten");
+    public static final ModifierId sourceGem = id("mana");
 
     private TciModifierIds() {}
 

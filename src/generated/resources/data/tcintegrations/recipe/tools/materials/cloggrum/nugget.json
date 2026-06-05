@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "undergarden"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:nuggets/cloggrum"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:nuggets/cloggrum"
+  },
+  "material": "tcintegrations:cloggrum",
+  "needed": 9,
+  "value": 1
+}

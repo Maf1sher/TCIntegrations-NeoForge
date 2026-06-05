@@ -35,12 +35,18 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
 
     private void addMaterialItems(RecipeOutput consumer) {
         String folder = "tools/materials/";
+        RecipeOutput bronzeConsumer = withCondition(consumer, tagCondition("ingots/bronze"));
         RecipeOutput botaniaConsumer = withCondition(consumer, modLoaded(ModIntegration.BOTANIA_MODID));
         RecipeOutput aquacultureConsumer = withCondition(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
         RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
         RecipeOutput brassConsumer = withCondition(consumer, tagCondition("ingots/brass"));
         RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
         RecipeOutput adAstraConsumer = withCondition(consumer, new OrCondition(List.of(modLoaded(ModIntegration.AD_ASTRA_MODID), modLoaded(ModIntegration.BEYOND_EARTH_MODID))));
+        RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
+        RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
+
+        // Bronze
+        metalMaterialRecipe(bronzeConsumer, MaterialIds.bronze, folder, MaterialIds.bronze.getPath(), true);
 
         if (ModIntegration.BOTANIA_LIVINGWOOD_PLANKS != null && ModIntegration.BOTANIA_LIVINGWOOD_PLANKS != Items.AIR)
             materialRecipe(botaniaConsumer, MaterialIds.livingWood, Ingredient.of(ModIntegration.BOTANIA_LIVINGWOOD_PLANKS), 1, 1, folder + "livingwood/planks");
@@ -61,6 +67,15 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         metalMaterialRecipe(adAstraConsumer, MaterialIds.desh, folder, MaterialIds.desh.getPath(), true);
         metalMaterialRecipe(adAstraConsumer, MaterialIds.calorite, folder, MaterialIds.calorite.getPath(), true);
         metalMaterialRecipe(adAstraConsumer, MaterialIds.ostrum, folder, MaterialIds.ostrum.getPath(), true);
+
+        // Undergarden
+        metalMaterialRecipe(undergardenConsumer, MaterialIds.cloggrum, folder, MaterialIds.cloggrum.getPath(), true);
+        metalMaterialRecipe(undergardenConsumer, MaterialIds.froststeel, folder, MaterialIds.froststeel.getPath(), true);
+        metalMaterialRecipe(undergardenConsumer, MaterialIds.forgottenMetal, folder, MaterialIds.forgottenMetal.getPath(), true);
+
+        // Ars Nouveau
+        if (ModIntegration.SOURCE_GEM != null && ModIntegration.SOURCE_GEM != Items.AIR)
+            materialRecipe(arsConsumer, MaterialIds.sourceGem, Ingredient.of(new ItemStack(ModIntegration.SOURCE_GEM)), 1, 1, folder + "source_gem");
     }
 
     private void addMaterialSmeltery(RecipeOutput consumer) {
@@ -76,6 +91,9 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         compatMeltingCasting(consumer, MaterialIds.desh, TCIntegrationsItems.MOLTEN_DESH, folder);
         compatMeltingCasting(consumer, MaterialIds.calorite, TCIntegrationsItems.MOLTEN_CALORITE, folder);
         compatMeltingCasting(consumer, MaterialIds.ostrum, TCIntegrationsItems.MOLTEN_OSTRUM, folder);
+        compatMeltingCasting(consumer, MaterialIds.cloggrum, TCIntegrationsItems.MOLTEN_CLOGGRUM, folder);
+        compatMeltingCasting(consumer, MaterialIds.froststeel, TCIntegrationsItems.MOLTEN_FROSTSTEEL, folder);
+        compatMeltingCasting(consumer, MaterialIds.forgottenMetal, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL, folder);
     }
 
 }

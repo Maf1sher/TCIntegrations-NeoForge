@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/froststeel"
+    }
+  ],
+  "type": "tconstruct:material_melting",
+  "input": "tcintegrations:froststeel",
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_froststeel"
+  },
+  "temperature": 600
+}

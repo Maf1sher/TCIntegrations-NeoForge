@@ -7,6 +7,10 @@
         "prop": "force_integration_materials"
       },
       {
+        "type": "neoforge:mod_loaded",
+        "modid": "botania"
+      },
+      {
         "type": "mantle:tag_filled",
         "tag": "c:ingots/manasteel"
       },

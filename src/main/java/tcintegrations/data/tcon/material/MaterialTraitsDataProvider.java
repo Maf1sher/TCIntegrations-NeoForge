@@ -25,6 +25,7 @@ public class MaterialTraitsDataProvider extends AbstractMaterialTraitDataProvide
     protected void addMaterialTraits() {
         addDefaultTraits(MaterialIds.livingWood, TciModifierIds.livingwood);
         addDefaultTraits(MaterialIds.livingRock, TinkerModifiers.stonebound);
+        addDefaultTraits(MaterialIds.bronze, TciModifierIds.moderate);
         addDefaultTraits(MaterialIds.manaSteel, ModifierIds.ductile, TciModifierIds.mana);
         addDefaultTraits(MaterialIds.manaString, TciModifierIds.mana);
         addDefaultTraits(MaterialIds.brass, TciModifierIds.moderate);
@@ -40,6 +41,11 @@ public class MaterialTraitsDataProvider extends AbstractMaterialTraitDataProvide
         addTraits(MaterialIds.dragonsteelFire, MELEE_HARVEST, TciModifierIds.flamed);
         addTraits(MaterialIds.dragonsteelIce, MELEE_HARVEST, TciModifierIds.iced);
         addTraits(MaterialIds.dragonsteelLightning, MELEE_HARVEST, TciModifierIds.zapped);
+
+        addDefaultTraits(MaterialIds.cloggrum, TciModifierIds.cloggrumTrait);
+        addDefaultTraits(MaterialIds.froststeel, TciModifierIds.froststeelTrait);
+        addDefaultTraits(MaterialIds.forgottenMetal, TciModifierIds.forgottenTrait);
+        addDefaultTraits(MaterialIds.sourceGem, TciModifierIds.sourceGem);
     }
 
 }

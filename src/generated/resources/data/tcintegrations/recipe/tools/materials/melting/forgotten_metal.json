@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/forgotten_metal"
+    }
+  ],
+  "type": "tconstruct:material_melting",
+  "input": "tcintegrations:forgotten_metal",
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_forgotten_metal"
+  },
+  "temperature": 1100
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "undergarden"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/forgotten_metal"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:ingots/forgotten_metal"
+  },
+  "material": "tcintegrations:forgotten_metal",
+  "needed": 1,
+  "value": 1
+}
