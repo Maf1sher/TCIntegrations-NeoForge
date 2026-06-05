@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "undergarden"
+    }
+  ],
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/nugget"
+  },
+  "cast_consumed": true,
+  "cooling_time": 23,
+  "fluid": {
+    "amount": 10,
+    "tag": "c:molten_forgotten_metal"
+  },
+  "result": {
+    "tag": "c:nuggets/forgotten_metal"
+  }
+}

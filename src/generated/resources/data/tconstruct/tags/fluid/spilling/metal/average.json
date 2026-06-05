@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": "#c:molten_manasteel",
+      "required": false
+    },
+    {
+      "id": "#c:molten_soul_stained_steel",
+      "required": false
+    },
+    {
+      "id": "#c:molten_cloggrum",
+      "required": false
+    },
+    {
+      "id": "#c:molten_froststeel",
+      "required": false
+    },
+    {
+      "id": "#c:molten_dragonsteel_fire",
+      "required": false
+    },
+    {
+      "id": "#c:molten_dragonsteel_ice",
+      "required": false
+    },
+    {
+      "id": "#c:molten_dragonsteel_lightning",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_nouveau"
+    }
+  ],
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "c:gems/source_gem"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "tcintegrations:molten_source_gem"
+  },
+  "temperature": 900,
+  "time": 63
+}

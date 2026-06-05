@@ -63,19 +63,19 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
         RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
 
-        if (TCIntegrationsItems.MOLTEN_SOURCE_GEM != null) molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
-        if (TCIntegrationsItems.MOLTEN_MANASTEEL != null) metal(botaniaConsumer, TCIntegrationsItems.MOLTEN_MANASTEEL).metal();
-        if (TCIntegrationsItems.MOLTEN_NEPTUNIUM != null) metal(aquacultureConsumer, TCIntegrationsItems.MOLTEN_NEPTUNIUM).metal();
-        if (TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL != null) metal(malumConsumer, TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL).metal();
-        if (TCIntegrationsItems.MOLTEN_CLOGGRUM != null) metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_CLOGGRUM).ore().metal();
-        if (TCIntegrationsItems.MOLTEN_FROSTSTEEL != null) metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_FROSTSTEEL).ore().metal();
-        if (TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL != null) metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL).metal();
-        if (TCIntegrationsItems.MOLTEN_DESH != null) metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_DESH).ore().metal();
-        if (TCIntegrationsItems.MOLTEN_CALORITE != null) metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_CALORITE).ore().metal();
-        if (TCIntegrationsItems.MOLTEN_OSTRUM != null) metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_OSTRUM).ore().metal();
-        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE != null) metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
-        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE != null) metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
-        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING != null) metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
+        molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
+        metal(botaniaConsumer, TCIntegrationsItems.MOLTEN_MANASTEEL).metal();
+        metal(aquacultureConsumer, TCIntegrationsItems.MOLTEN_NEPTUNIUM).metal();
+        metal(malumConsumer, TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL).metal();
+        metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_CLOGGRUM).ore().metal();
+        metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_FROSTSTEEL).ore().metal();
+        metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL).metal();
+        metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_DESH).ore().metal();
+        metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_CALORITE).ore().metal();
+        metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_OSTRUM).ore().metal();
+        metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
+        metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
+        metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
 
         // IFD Silver & Copper Items (only if mod items are available)
         boolean hasIfdSilverItems = ModIntegration.IFD_SILVER_METAL_HELMET != null && ModIntegration.IFD_SILVER_METAL_HELMET != Items.AIR;

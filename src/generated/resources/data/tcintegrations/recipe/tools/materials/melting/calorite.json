@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/calorite"
+    }
+  ],
+  "type": "tconstruct:material_melting",
+  "input": "tcintegrations:calorite",
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_calorite"
+  },
+  "temperature": 1100
+}

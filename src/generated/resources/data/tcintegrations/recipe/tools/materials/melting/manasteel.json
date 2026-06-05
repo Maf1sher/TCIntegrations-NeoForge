@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/manasteel"
+    }
+  ],
+  "type": "tconstruct:material_melting",
+  "input": "tcintegrations:manasteel",
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_manasteel"
+  },
+  "temperature": 800
+}

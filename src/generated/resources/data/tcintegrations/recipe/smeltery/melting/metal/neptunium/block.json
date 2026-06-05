@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "aquaculture"
+    }
+  ],
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/neptunium"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "c:molten_neptunium"
+  },
+  "temperature": 1000,
+  "time": 199
+}

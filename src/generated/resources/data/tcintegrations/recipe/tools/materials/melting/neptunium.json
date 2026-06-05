@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/neptunium"
+    }
+  ],
+  "type": "tconstruct:material_melting",
+  "input": "tcintegrations:neptunium",
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_neptunium"
+  },
+  "temperature": 1000
+}

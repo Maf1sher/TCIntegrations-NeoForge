@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/dragonsteel_lightning"
+    }
+  ],
+  "type": "tconstruct:material_melting",
+  "input": "tcintegrations:dragonsteel_lightning",
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_dragonsteel_lightning"
+  },
+  "temperature": 1100
+}

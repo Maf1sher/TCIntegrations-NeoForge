@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "c:nuggets/soul_stained_steel"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "c:molten_soul_stained_steel"
+  },
+  "temperature": 800,
+  "time": 20
+}

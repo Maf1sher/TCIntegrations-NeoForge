@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "ad_astra"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "beyond_earth"
+        }
+      ]
+    }
+  ],
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "c:ingots/ostrum"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_ostrum"
+  },
+  "temperature": 1000,
+  "time": 66
+}

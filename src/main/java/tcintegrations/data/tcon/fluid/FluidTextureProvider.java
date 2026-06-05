@@ -29,19 +29,19 @@ public class FluidTextureProvider extends AbstractFluidTextureProvider {
 
     @Override
     public void addTextures() {
-        if (TCIntegrationsItems.MOLTEN_CLOGGRUM != null) tintedStone(TCIntegrationsItems.MOLTEN_CLOGGRUM).color(0xFFB79A7A);
-        if (TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL != null) compatAlloy(TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL);
-        if (TCIntegrationsItems.MOLTEN_FROSTSTEEL != null) compatAlloy(TCIntegrationsItems.MOLTEN_FROSTSTEEL);
-        if (TCIntegrationsItems.MOLTEN_MANASTEEL != null) compatAlloy(TCIntegrationsItems.MOLTEN_MANASTEEL);
-        if (TCIntegrationsItems.MOLTEN_NEPTUNIUM != null) compatAlloy(TCIntegrationsItems.MOLTEN_NEPTUNIUM);
-        if (TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL != null) compatAlloy(TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL);
-        if (TCIntegrationsItems.MOLTEN_SOURCE_GEM != null) compatOre(TCIntegrationsItems.MOLTEN_SOURCE_GEM);
-        if (TCIntegrationsItems.MOLTEN_DESH != null) tintedStone(TCIntegrationsItems.MOLTEN_DESH).color(0xFFCD7F48);
-        if (TCIntegrationsItems.MOLTEN_CALORITE != null) tintedStone(TCIntegrationsItems.MOLTEN_CALORITE).color(0xFFC24148);
-        if (TCIntegrationsItems.MOLTEN_OSTRUM != null) tintedStone(TCIntegrationsItems.MOLTEN_OSTRUM).color(0xFF73515E);
-        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE != null) compatAlloy(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
-        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE != null) compatAlloy(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
-        if (TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING != null) compatAlloy(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
+        tintedStone(TCIntegrationsItems.MOLTEN_CLOGGRUM).color(0xFFB79A7A);
+        compatAlloy(TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL);
+        compatAlloy(TCIntegrationsItems.MOLTEN_FROSTSTEEL);
+        compatAlloy(TCIntegrationsItems.MOLTEN_MANASTEEL);
+        compatAlloy(TCIntegrationsItems.MOLTEN_NEPTUNIUM);
+        compatAlloy(TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL);
+        compatOre(TCIntegrationsItems.MOLTEN_SOURCE_GEM);
+        tintedStone(TCIntegrationsItems.MOLTEN_DESH).color(0xFFCD7F48);
+        tintedStone(TCIntegrationsItems.MOLTEN_CALORITE).color(0xFFC24148);
+        tintedStone(TCIntegrationsItems.MOLTEN_OSTRUM).color(0xFF73515E);
+        compatAlloy(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
+        compatAlloy(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
+        compatAlloy(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
     }
 
     private FluidTexture.Builder named(FluidObject<?> fluid, String name) {

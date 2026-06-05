@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/dragonsteel_ice"
+    }
+  ],
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "tag": "c:molten_dragonsteel_ice"
+  },
+  "output": "tcintegrations:dragonsteel_ice",
+  "temperature": 500
+}

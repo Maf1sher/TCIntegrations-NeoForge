@@ -1,0 +1,52 @@
+{
+  "values": [
+    {
+      "id": "#c:molten_manasteel",
+      "required": false
+    },
+    {
+      "id": "#c:molten_neptunium",
+      "required": false
+    },
+    {
+      "id": "#c:molten_soul_stained_steel",
+      "required": false
+    },
+    {
+      "id": "#c:molten_cloggrum",
+      "required": false
+    },
+    {
+      "id": "#c:molten_froststeel",
+      "required": false
+    },
+    {
+      "id": "#c:molten_forgotten_metal",
+      "required": false
+    },
+    {
+      "id": "#c:molten_desh",
+      "required": false
+    },
+    {
+      "id": "#c:molten_calorite",
+      "required": false
+    },
+    {
+      "id": "#c:molten_ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:molten_dragonsteel_fire",
+      "required": false
+    },
+    {
+      "id": "#c:molten_dragonsteel_ice",
+      "required": false
+    },
+    {
+      "id": "#c:molten_dragonsteel_lightning",
+      "required": false
+    }
+  ]
+}

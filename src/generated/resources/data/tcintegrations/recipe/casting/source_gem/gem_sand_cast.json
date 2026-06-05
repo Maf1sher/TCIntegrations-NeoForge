@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_nouveau"
+    }
+  ],
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gem"
+  },
+  "cast_consumed": true,
+  "cooling_time": 67,
+  "fluid": {
+    "amount": 100,
+    "tag": "tcintegrations:molten_source_gem"
+  },
+  "result": {
+    "tag": "c:gems/source_gem"
+  }
+}

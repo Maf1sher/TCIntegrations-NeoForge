@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/dragonsteel_lightning"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "c:molten_dragonsteel_lightning"
+  },
+  "temperature": 1100,
+  "time": 208
+}

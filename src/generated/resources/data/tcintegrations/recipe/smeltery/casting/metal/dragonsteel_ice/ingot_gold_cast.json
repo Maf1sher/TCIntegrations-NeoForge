@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "cooling_time": 50,
+  "fluid": {
+    "amount": 90,
+    "tag": "c:molten_dragonsteel_ice"
+  },
+  "result": {
+    "tag": "c:ingots/dragonsteel_ice"
+  }
+}

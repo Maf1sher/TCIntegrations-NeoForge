@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "ad_astra"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "beyond_earth"
+        }
+      ]
+    },
+    {
+      "type": "mantle:tag_combination_filled",
+      "match": [
+        "c:ores/calorite",
+        "c:ore_rates/dense"
+      ]
+    }
+  ],
+  "type": "tconstruct:ore_melting",
+  "ingredient": {
+    "type": "neoforge:intersection",
+    "children": [
+      {
+        "tag": "c:ores/calorite"
+      },
+      {
+        "tag": "c:ore_rates/dense"
+      }
+    ]
+  },
+  "rate": "metal",
+  "result": {
+    "amount": 540,
+    "tag": "c:molten_calorite"
+  },
+  "temperature": 1100,
+  "time": 312
+}

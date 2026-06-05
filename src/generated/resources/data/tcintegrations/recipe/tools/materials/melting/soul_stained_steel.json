@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:ingots/soul_stained_steel"
+    }
+  ],
+  "type": "tconstruct:material_melting",
+  "input": "tcintegrations:soul_stained_steel",
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_soul_stained_steel"
+  },
+  "temperature": 800
+}
