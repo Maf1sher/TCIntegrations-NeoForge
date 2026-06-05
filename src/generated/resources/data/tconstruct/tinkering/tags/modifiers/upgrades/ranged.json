@@ -1,3 +1,24 @@
 {
-  "values": []
+  "values": [
+    {
+      "id": "tcintegrations:flamed",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:iced",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:zapped",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:precipitate",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:twilit",
+      "required": false
+    }
+  ]
 }

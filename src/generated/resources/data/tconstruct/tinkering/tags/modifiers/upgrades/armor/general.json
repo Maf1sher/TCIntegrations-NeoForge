@@ -3,6 +3,18 @@
     {
       "id": "tcintegrations:masticate",
       "required": false
+    },
+    {
+      "id": "tcintegrations:soul_stained",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:dragonscales",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:sculking",
+      "required": false
     }
   ]
 }

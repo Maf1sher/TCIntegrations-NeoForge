@@ -7,7 +7,6 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierTagProvider;
 
 import tcintegrations.data.tcon.material.TciModifierIds;
-import tcintegrations.items.TCIntegrationsModifiers;
 
 import static slimeknights.tconstruct.common.TinkerTags.Modifiers.BOOT_UPGRADES;
 import static slimeknights.tconstruct.common.TinkerTags.Modifiers.CHESTPLATE_UPGRADES;
@@ -28,62 +27,75 @@ public class ModifierTagProvider extends AbstractModifierTagProvider {
 
     @Override
     protected void addTags() {
-        var generalUpgrades = this.tag(GENERAL_UPGRADES)
+        // General upgrades (always available + mod-gated)
+        this.tag(GENERAL_UPGRADES)
             .addOptional(TciModifierIds.livingwood.location())
             .addOptional(TciModifierIds.engineersGoggles.location())
-            .addOptional(TciModifierIds.multiVision.location());
-        if (TCIntegrationsModifiers.ALF_MODIFIER != null) generalUpgrades.addOptional(TCIntegrationsModifiers.ALF_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ALFHEIM_MODIFIER != null) generalUpgrades.addOptional(TCIntegrationsModifiers.ALFHEIM_MODIFIER.getId());
-        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) generalUpgrades.addOptional(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId());
+            .addOptional(TciModifierIds.multiVision.location())
+            .addOptional(TciModifierIds.waterPowered.location())
+            .addOptional(TciModifierIds.capturing.location());
 
-        var meleeUpgrades = this.tag(MELEE_UPGRADES);
-        if (TCIntegrationsModifiers.TERRA_MODIFIER != null) meleeUpgrades.addOptional(TCIntegrationsModifiers.TERRA_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ELEMENTAL_MODIFIER != null) meleeUpgrades.addOptional(TCIntegrationsModifiers.ELEMENTAL_MODIFIER.getId());
-        if (TCIntegrationsModifiers.SIREN_MODIFIER != null) meleeUpgrades.addOptional(TCIntegrationsModifiers.SIREN_MODIFIER.getId());
-        if (TCIntegrationsModifiers.UTHERIUM_MODIFIER != null) meleeUpgrades.addOptional(TCIntegrationsModifiers.UTHERIUM_MODIFIER.getId());
-        if (TCIntegrationsModifiers.FLAMED_MODIFIER != null) meleeUpgrades.addOptional(TCIntegrationsModifiers.FLAMED_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ICED_MODIFIER != null) meleeUpgrades.addOptional(TCIntegrationsModifiers.ICED_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ZAPPED_MODIFIER != null) meleeUpgrades.addOptional(TCIntegrationsModifiers.ZAPPED_MODIFIER.getId());
+        // Melee upgrades
+        this.tag(MELEE_UPGRADES)
+            .addOptional(TciModifierIds.soulStained.location())
+            .addOptional(TciModifierIds.siren.location())
+            .addOptional(TciModifierIds.utherium.location())
+            .addOptional(TciModifierIds.flamed.location())
+            .addOptional(TciModifierIds.iced.location())
+            .addOptional(TciModifierIds.zapped.location())
+            .addOptional(TciModifierIds.forgottenTrait.location())
+            .addOptional(TciModifierIds.precipitate.location())
+            .addOptional(TciModifierIds.twilit.location());
 
-        var harvestUpgrades = this.tag(HARVEST_UPGRADES);
-        if (TCIntegrationsModifiers.SIREN_MODIFIER != null) harvestUpgrades.addOptional(TCIntegrationsModifiers.SIREN_MODIFIER.getId());
-        if (TCIntegrationsModifiers.FROSTSTEEL_MODIFIER != null) harvestUpgrades.addOptional(TCIntegrationsModifiers.FROSTSTEEL_MODIFIER.getId());
-        if (TCIntegrationsModifiers.FORGOTTEN_MODIFIER != null) harvestUpgrades.addOptional(TCIntegrationsModifiers.FORGOTTEN_MODIFIER.getId());
+        // Harvest upgrades
+        this.tag(HARVEST_UPGRADES)
+            .addOptional(TciModifierIds.siren.location())
+            .addOptional(TciModifierIds.froststeelTrait.location())
+            .addOptional(TciModifierIds.forgottenTrait.location())
+            .addOptional(TciModifierIds.precipitate.location())
+            .addOptional(TciModifierIds.twilit.location());
 
-        var generalArmor = this.tag(GENERAL_ARMOR_UPGRADES);
-        if (TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER != null) generalArmor.addOptional(TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ALFHEIM_MODIFIER != null) generalArmor.addOptional(TCIntegrationsModifiers.ALFHEIM_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ARS_MODIFIER != null) generalArmor.addOptional(TCIntegrationsModifiers.ARS_MODIFIER.getId());
-        if (TCIntegrationsModifiers.SOUL_STAINED_MODIFIER != null) generalArmor.addOptional(TCIntegrationsModifiers.SOUL_STAINED_MODIFIER.getId());
-        generalArmor.addOptional(TciModifierIds.masticate.location());
+        // Ranged upgrades
+        this.tag(RANGED_UPGRADES)
+            .addOptional(TciModifierIds.flamed.location())
+            .addOptional(TciModifierIds.iced.location())
+            .addOptional(TciModifierIds.zapped.location())
+            .addOptional(TciModifierIds.precipitate.location())
+            .addOptional(TciModifierIds.twilit.location());
 
-        var generalAbilities = this.tag(GENERAL_ABILITIES);
-        if (TCIntegrationsModifiers.MECHANICAL_ARM_MODIFIER != null) generalAbilities.addOptional(TCIntegrationsModifiers.MECHANICAL_ARM_MODIFIER.getId());
-        if (TCIntegrationsModifiers.POSEIDON_MODIFIER != null) generalAbilities.addOptional(TCIntegrationsModifiers.POSEIDON_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ALFHEIM_MODIFIER != null) generalAbilities.addOptional(TCIntegrationsModifiers.ALFHEIM_MODIFIER.getId());
+        // Armor upgrades (general)
+        this.tag(GENERAL_ARMOR_UPGRADES)
+            .addOptional(TciModifierIds.masticate.location())
+            .addOptional(TciModifierIds.soulStained.location())
+            .addOptional(TciModifierIds.dragonScales.location())
+            .addOptional(TciModifierIds.sculking.location());
 
-        var interactionAbilities = this.tag(INTERACTION_ABILITIES);
-        if (TCIntegrationsModifiers.ALF_MODIFIER != null) interactionAbilities.addOptional(TCIntegrationsModifiers.ALF_MODIFIER.getId());
-        if (TCIntegrationsModifiers.GLOWUP_MODIFIER != null) interactionAbilities.addOptional(TCIntegrationsModifiers.GLOWUP_MODIFIER.getId());
+        // Helmet upgrades
+        this.tag(HELMET_UPGRADES)
+            .addOptional(TciModifierIds.frontierCap.location())
+            .addOptional(TciModifierIds.turtleShell.location())
+            .addOptional(TciModifierIds.bisonFur.location());
 
-        var helmetUpgrades = this.tag(HELMET_UPGRADES);
-        if (TCIntegrationsModifiers.FRONTIER_CAP_MODIFIER != null) helmetUpgrades.addOptional(TCIntegrationsModifiers.FRONTIER_CAP_MODIFIER.getId());
-        if (TCIntegrationsModifiers.TURTLE_SHELL_MODIFIER != null) helmetUpgrades.addOptional(TCIntegrationsModifiers.TURTLE_SHELL_MODIFIER.getId());
-        if (TCIntegrationsModifiers.BISON_FUR_MODIFIER != null) helmetUpgrades.addOptional(TCIntegrationsModifiers.BISON_FUR_MODIFIER.getId());
+        // Chestplate upgrades
+        this.tag(CHESTPLATE_UPGRADES)
+            .addOptional(TciModifierIds.shieldOfTheDeep.location())
+            .addOptional(TciModifierIds.crocodile.location());
 
-        var chestplateUpgrades = this.tag(CHESTPLATE_UPGRADES);
-        if (TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER != null) chestplateUpgrades.addOptional(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.getId());
-        if (TCIntegrationsModifiers.SHIELD_OF_THE_DEEP_MODIFIER != null) chestplateUpgrades.addOptional(TCIntegrationsModifiers.SHIELD_OF_THE_DEEP_MODIFIER.getId());
-        if (TCIntegrationsModifiers.CROCODILE_MODIFIER != null) chestplateUpgrades.addOptional(TCIntegrationsModifiers.CROCODILE_MODIFIER.getId());
+        // Boot upgrades
+        this.tag(BOOT_UPGRADES)
+            .addOptional(TciModifierIds.roadrunner.location())
+            .addOptional(TciModifierIds.mosquito.location());
 
-        var bootUpgrades = this.tag(BOOT_UPGRADES);
-        if (TCIntegrationsModifiers.ROADRUNNER_MODIFIER != null) bootUpgrades.addOptional(TCIntegrationsModifiers.ROADRUNNER_MODIFIER.getId());
-        if (TCIntegrationsModifiers.MOSQUITO_MODIFIER != null) bootUpgrades.addOptional(TCIntegrationsModifiers.MOSQUITO_MODIFIER.getId());
+        // General abilities
+        this.tag(GENERAL_ABILITIES)
+            .addOptional(TciModifierIds.mechanicalArm.location())
+            .addOptional(TciModifierIds.poseidon.location())
+            .addOptional(TciModifierIds.kinetic.location())
+            .addOptional(TciModifierIds.phantasmal.location());
 
-        var rangedUpgrades = this.tag(RANGED_UPGRADES);
-        if (TCIntegrationsModifiers.FLAMED_MODIFIER != null) rangedUpgrades.addOptional(TCIntegrationsModifiers.FLAMED_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ICED_MODIFIER != null) rangedUpgrades.addOptional(TCIntegrationsModifiers.ICED_MODIFIER.getId());
-        if (TCIntegrationsModifiers.ZAPPED_MODIFIER != null) rangedUpgrades.addOptional(TCIntegrationsModifiers.ZAPPED_MODIFIER.getId());
+        // Interaction abilities
+        this.tag(INTERACTION_ABILITIES)
+            .addOptional(TciModifierIds.glowup.location());
     }
 
     @Override

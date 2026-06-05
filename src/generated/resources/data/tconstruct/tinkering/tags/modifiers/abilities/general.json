@@ -1,3 +1,20 @@
 {
-  "values": []
+  "values": [
+    {
+      "id": "tcintegrations:mechanical_arm",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:poseidon",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:kinetic",
+      "required": false
+    },
+    {
+      "id": "tcintegrations:phantasmal",
+      "required": false
+    }
+  ]
 }
