@@ -36,6 +36,8 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
 
     public static MetalItemObject BRONZE;
 
+    public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_BRONZE;
+
     // Molten fluid objects
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_MANASTEEL;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_NEPTUNIUM;
@@ -69,6 +71,13 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
             GENERAL_TOOLTIP_BLOCK_ITEM,
             new Item.Properties()
         );
+
+        MOLTEN_BRONZE = FLUID_REGISTRY.register("molten_bronze")
+            .type(hot("molten_bronze").temperature(1000).lightLevel(10))
+            .burningBlock(MapColor.COLOR_ORANGE, 10, 10, 5f)
+            .bucket()
+            .commonTag()
+            .flowing();
 
         // Molten fluids
         MOLTEN_MANASTEEL = FLUID_REGISTRY.register("molten_manasteel")

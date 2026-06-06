@@ -1,6 +1,10 @@
 {
   "values": [
     {
+      "id": "#c:molten_bronze",
+      "required": false
+    },
+    {
       "id": "#c:molten_manasteel",
       "required": false
     },

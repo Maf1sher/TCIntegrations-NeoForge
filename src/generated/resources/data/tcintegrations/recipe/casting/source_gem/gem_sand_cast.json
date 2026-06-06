@@ -1,8 +1,25 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:mod_loaded",
-      "modid": "ars_nouveau"
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "tconstruct:config",
+          "prop": "force_integration_materials"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "ars_nouveau"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "c:ingots/source_gem"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/source_gem"
+        }
+      ]
     }
   ],
   "type": "tconstruct:casting_table",

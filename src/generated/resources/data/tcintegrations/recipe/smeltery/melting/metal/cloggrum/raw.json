@@ -1,8 +1,25 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:mod_loaded",
-      "modid": "undergarden"
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "tconstruct:config",
+          "prop": "force_integration_materials"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "undergarden"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "c:ingots/cloggrum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/cloggrum"
+        }
+      ]
     }
   ],
   "type": "tconstruct:ore_melting",

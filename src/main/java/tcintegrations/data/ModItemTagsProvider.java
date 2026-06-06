@@ -49,6 +49,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         this.tag(TagManager.Items.BRONZE_INGOTS).add(TCIntegrationsItems.BRONZE.getIngot());
         this.tag(TagManager.Items.BRONZE_NUGGETS).add(TCIntegrationsItems.BRONZE.getNugget());
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/bronze")))
+            .add(TCIntegrationsItems.BRONZE.getIngot());
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "nuggets/bronze")))
+            .add(TCIntegrationsItems.BRONZE.getNugget());
+        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/bronze")))
+            .add(TCIntegrationsItems.BRONZE.asItem());
 
         // Botania
         addBotaniaLogVariants(TagManager.Items.BOTANIA_LIVINGWOOD_LOGS, "livingwood");
@@ -59,6 +65,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.copy(TagManager.Blocks.SOUL_STAINED_STEEL, TagManager.Items.SOUL_STAINED_STEEL);
         this.tag(TagManager.Items.SOUL_STAINED_STEEL_INGOTS).addOptional(ModIntegration.malumLoc("soul_stained_steel_ingot"));
         this.tag(TagManager.Items.SOUL_STAINED_STEEL_NUGGETS).addOptional(ModIntegration.malumLoc("soul_stained_steel_nugget"));
+        this.tag(TagManager.Items.SOUL_STAINED_STEEL_BLOCK_C).addOptional(ModIntegration.malumLoc("block_of_soul_stained_steel"));
+        this.tag(TagManager.Items.SOUL_STAINED_STEEL_NUGGET_C).addOptional(ModIntegration.malumLoc("soul_stained_steel_nugget"));
 
         // Ice and Fire: Dragons
         this.tag(TagManager.Items.WITHER_BONES)
@@ -81,6 +89,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ModIntegration.arsLoc("source_gem"));
         this.tag(TagManager.Items.SOURCE_GEM_BLOCK)
             .addOptional(ModIntegration.arsLoc("source_gem_block"));
+        this.tag(TagManager.Items.SOURCE_GEM_C)
+            .addOptional(ModIntegration.arsLoc("source_gem"));
+        this.tag(TagManager.Items.SOURCE_GEM_BLOCK_C)
+            .addOptional(ModIntegration.arsLoc("source_gem_block"));
 
         // Ensure integration metal ingots appear in both c: and forge: ingot tags
         addCompatibilityIngot("manasteel", ModIntegration.botaniaLoc("manasteel_ingot"));
@@ -95,6 +107,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         addCompatibilityIngot("dragonsteel_fire", ModIntegration.ifdLoc("dragonsteel_fire_ingot"));
         addCompatibilityIngot("dragonsteel_ice", ModIntegration.ifdLoc("dragonsteel_ice_ingot"));
         addCompatibilityIngot("dragonsteel_lightning", ModIntegration.ifdLoc("dragonsteel_lightning_ingot"));
+        addCompatibilityIngot("fiery", ModIntegration.twilightLoc("fiery_ingot"));
+        addCompatibilityIngot("steeleaf", ModIntegration.twilightLoc("steeleaf_ingot"));
 
         // Alex's Mobs
         this.tag(TagManager.Items.ROADRUNNER_FEATHER)

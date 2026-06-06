@@ -1,8 +1,25 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:mod_loaded",
-      "modid": "malum"
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "tconstruct:config",
+          "prop": "force_integration_materials"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "malum"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "c:ingots/soul_stained_steel"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/soul_stained_steel"
+        }
+      ]
     }
   ],
   "type": "tconstruct:casting_table",

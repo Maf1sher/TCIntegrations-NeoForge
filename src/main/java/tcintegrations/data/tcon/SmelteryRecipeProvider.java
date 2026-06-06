@@ -6,6 +6,7 @@ import java.util.concurrent.CompletableFuture;
 import org.jetbrains.annotations.NotNull;
 
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -14,12 +15,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.material.Fluid;
 
+import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.conditions.OrCondition;
 import net.neoforged.neoforge.common.conditions.TagEmptyCondition;
 
+import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
 import slimeknights.mantle.recipe.helper.ItemOutput;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.common.json.ConfigEnabledCondition;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
@@ -55,27 +60,35 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
 
         // ores
         String metalFolder = folder + "metal/";
-        RecipeOutput botaniaConsumer = withCondition(consumer, modLoaded(ModIntegration.BOTANIA_MODID));
-        RecipeOutput aquacultureConsumer = withCondition(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
-        RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
-        RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
-        RecipeOutput adAstraConsumer = withCondition(consumer, new OrCondition(List.of(modLoaded(ModIntegration.AD_ASTRA_MODID), modLoaded(ModIntegration.BEYOND_EARTH_MODID))));
+        RecipeOutput botaniaConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.BOTANIA_MODID, "manasteel"));
+        RecipeOutput aquacultureConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.AQUACULTURE_MODID, "neptunium"));
+        RecipeOutput malumConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.MALUM_MODID, "soul_stained_steel"));
+        RecipeOutput undergardenCloggrumConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "cloggrum"));
+        RecipeOutput undergardenFroststeelConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "froststeel"));
+        RecipeOutput undergardenForgottenConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "forgotten"));
+        RecipeOutput adAstraDeshConsumer = withCondition(consumer, modOrTagCondition(List.of(ModIntegration.AD_ASTRA_MODID, ModIntegration.BEYOND_EARTH_MODID), "desh"));
+        RecipeOutput adAstraCaloriteConsumer = withCondition(consumer, modOrTagCondition(List.of(ModIntegration.AD_ASTRA_MODID, ModIntegration.BEYOND_EARTH_MODID), "calorite"));
+        RecipeOutput adAstraOstrumConsumer = withCondition(consumer, modOrTagCondition(List.of(ModIntegration.AD_ASTRA_MODID, ModIntegration.BEYOND_EARTH_MODID), "ostrum"));
+        RecipeOutput ifdFireConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_fire"));
+        RecipeOutput ifdIceConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_ice"));
+        RecipeOutput ifdLightningConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_lightning"));
+        RecipeOutput arsConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.ARS_MODID, "source_gem"));
         RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
-        RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
 
         molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
+        metal(consumer, TCIntegrationsItems.MOLTEN_BRONZE).optional().metal();
         metal(botaniaConsumer, TCIntegrationsItems.MOLTEN_MANASTEEL).metal();
         metal(aquacultureConsumer, TCIntegrationsItems.MOLTEN_NEPTUNIUM).metal();
         metal(malumConsumer, TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL).metal();
-        metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_CLOGGRUM).ore().metal();
-        metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_FROSTSTEEL).ore().metal();
-        metal(undergardenConsumer, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL).metal();
-        metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_DESH).ore().metal();
-        metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_CALORITE).ore().metal();
-        metal(adAstraConsumer, TCIntegrationsItems.MOLTEN_OSTRUM).ore().metal();
-        metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
-        metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
-        metalWithoutNugget(ifdConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
+        metal(undergardenCloggrumConsumer, TCIntegrationsItems.MOLTEN_CLOGGRUM).ore().metal();
+        metal(undergardenFroststeelConsumer, TCIntegrationsItems.MOLTEN_FROSTSTEEL).ore().metal();
+        metal(undergardenForgottenConsumer, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL).metal();
+        metal(adAstraDeshConsumer, TCIntegrationsItems.MOLTEN_DESH).ore().metal();
+        metal(adAstraCaloriteConsumer, TCIntegrationsItems.MOLTEN_CALORITE).ore().metal();
+        metal(adAstraOstrumConsumer, TCIntegrationsItems.MOLTEN_OSTRUM).ore().metal();
+        metalWithoutNugget(ifdFireConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
+        metalWithoutNugget(ifdIceConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
+        metalWithoutNugget(ifdLightningConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
 
         // IFD Silver & Copper Items (only if mod items are available)
         boolean hasIfdSilverItems = ModIntegration.IFD_SILVER_METAL_HELMET != null && ModIntegration.IFD_SILVER_METAL_HELMET != Items.AIR;
@@ -193,4 +206,25 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         return name.withPath(folder + name.getPath() + "/" + variant);
     }
 
+    /** Condition: mod loaded OR c:ingots/X tag filled OR forge:ingots/X tag filled */
+    private static OrCondition modOrTagCondition(String modId, String ingotName) {
+        return new OrCondition(List.of(
+            ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
+            new ModLoadedCondition(modId),
+            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName)),
+            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + ingotName))
+        ));
+    }
+
+    /** Condition: any of the mod IDs loaded OR c:ingots/X tag filled OR forge:ingots/X tag filled */
+    private static OrCondition modOrTagCondition(List<String> modIds, String ingotName) {
+        List<ICondition> conditions = new java.util.ArrayList<>();
+        conditions.add(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS);
+        for (String modId : modIds) {
+            conditions.add(new ModLoadedCondition(modId));
+        }
+        conditions.add(new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName)));
+        conditions.add(new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + ingotName)));
+        return new OrCondition(conditions);
+    }
 }

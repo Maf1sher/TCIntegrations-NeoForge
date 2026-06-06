@@ -35,6 +35,7 @@ public class FluidTagProvider extends FluidTagsProvider {
 
     @Override
     public void addTags(HolderLookup.@NotNull Provider provider) {
+        fluidTag(TCIntegrationsItems.MOLTEN_BRONZE);
         fluidTag(TCIntegrationsItems.MOLTEN_MANASTEEL);
         fluidTag(TCIntegrationsItems.MOLTEN_NEPTUNIUM);
         fluidTag(TCIntegrationsItems.MOLTEN_SOURCE_GEM);
@@ -50,6 +51,7 @@ public class FluidTagProvider extends FluidTagsProvider {
         fluidTag(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
 
         this.tag(TinkerTags.Fluids.METAL_TOOLTIPS)
+            .addOptionalTag(TCIntegrationsItems.MOLTEN_BRONZE.getCommonTag().location())
             .addOptionalTag(TCIntegrationsItems.MOLTEN_MANASTEEL.getCommonTag().location())
             .addOptionalTag(TCIntegrationsItems.MOLTEN_NEPTUNIUM.getCommonTag().location())
             .addOptionalTag(TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL.getCommonTag().location())
@@ -64,6 +66,7 @@ public class FluidTagProvider extends FluidTagsProvider {
             .addOptionalTag(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING.getCommonTag().location());
 
         this.tag(TinkerTags.Fluids.AVERAGE_METAL_SPILLING)
+            .addOptionalTag(TCIntegrationsItems.MOLTEN_BRONZE.getCommonTag().location())
             .addOptionalTag(TCIntegrationsItems.MOLTEN_MANASTEEL.getCommonTag().location())
             .addOptionalTag(TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL.getCommonTag().location())
             .addOptionalTag(TCIntegrationsItems.MOLTEN_CLOGGRUM.getCommonTag().location())

@@ -56,6 +56,11 @@ public class TagManager {
 
         public static final TagKey<Item> SOURCE_GEM = itemTag("forge", "gems/source");
         public static final TagKey<Item> SOURCE_GEM_BLOCK = itemTag("forge", "storage_blocks/source_gem");
+        public static final TagKey<Item> SOURCE_GEM_C = itemTag("c", "gems/source_gem");
+        public static final TagKey<Item> SOURCE_GEM_BLOCK_C = itemTag("c", "storage_blocks/source_gem");
+
+        public static final TagKey<Item> SOUL_STAINED_STEEL_BLOCK_C = itemTag("c", "storage_blocks/soul_stained_steel");
+        public static final TagKey<Item> SOUL_STAINED_STEEL_NUGGET_C = itemTag("c", "nuggets/soul_stained_steel");
 
         // Botania
         public static final TagKey<Item> LIVINGWOOD_PLANKS = itemTag("botania", "livingwood_planks");

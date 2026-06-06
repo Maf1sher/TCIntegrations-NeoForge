@@ -29,6 +29,7 @@ public class FluidTextureProvider extends AbstractFluidTextureProvider {
 
     @Override
     public void addTextures() {
+        compatAlloy(TCIntegrationsItems.MOLTEN_BRONZE);
         tintedStone(TCIntegrationsItems.MOLTEN_CLOGGRUM).color(0xFFB79A7A);
         compatAlloy(TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL);
         compatAlloy(TCIntegrationsItems.MOLTEN_FROSTSTEEL);

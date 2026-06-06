@@ -81,6 +81,7 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
     private void addMaterialSmeltery(RecipeOutput consumer) {
         String folder = "tools/materials/";
 
+        compatMeltingCasting(consumer, MaterialIds.bronze, TCIntegrationsItems.MOLTEN_BRONZE, folder);
         compatMeltingCasting(consumer, MaterialIds.brass, TinkerFluids.moltenBrass, folder);
         compatMeltingCasting(consumer, MaterialIds.manaSteel, TCIntegrationsItems.MOLTEN_MANASTEEL, folder);
         compatMeltingCasting(consumer, MaterialIds.neptunium, TCIntegrationsItems.MOLTEN_NEPTUNIUM, folder);
