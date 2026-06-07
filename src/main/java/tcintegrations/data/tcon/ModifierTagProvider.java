@@ -65,7 +65,6 @@ public class ModifierTagProvider extends AbstractModifierTagProvider {
 
         // Armor upgrades (general)
         this.tag(GENERAL_ARMOR_UPGRADES)
-            .addOptional(TciModifierIds.masticate.location())
             .addOptional(TciModifierIds.soulStained.location())
             .addOptional(TciModifierIds.dragonScales.location())
             .addOptional(TciModifierIds.sculking.location());

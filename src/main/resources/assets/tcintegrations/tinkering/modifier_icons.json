@@ -22,7 +22,6 @@
   "tcintegrations:glowup": ["minecraft:item/glow_berries", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:great_fairy": ["botania:item/elementium_chestplate", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:iced": ["iceandfire:item/dragon_sword_ice", "tcintegrations:gui/modifiers/plus"],
-  "tcintegrations:masticate": ["undergarden:item/masticated_chestplate", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:mechanical_arm": ["create:item/precision_mechanism", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:mosquito": ["alexsmobs:item/mosquito_proboscis", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:multivision": ["immersiveengineering:item/tool_voltmeter", "tcintegrations:gui/modifiers/plus"],

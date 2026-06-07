@@ -105,7 +105,6 @@ public class TagManager {
         public static final TagKey<Item> FROSTSTEEL_INGOT = itemTag("forge", "ingots/froststeel");
         public static final TagKey<Item> FORGOTTEN_INGOT = itemTag("forge", "ingots/forgotten");
         public static final TagKey<Item> UTHERIUM_CRYSTAL = itemTag("undergarden", "utherium_crystal");
-        public static final TagKey<Item> MASTICATOR_SCALES = itemTag("undergarden", "masticator_scales");
 
         // Ice and Fire
         public static final TagKey<Item> DRAGON_BONE = itemTag("forge", "bones/dragon");

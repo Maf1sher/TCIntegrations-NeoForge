@@ -424,14 +424,6 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .saveSalvage(malumConsumer, prefix(TciModifierIds.soulStained.location(), compatSalvage))
             .save(malumConsumer, prefix(TciModifierIds.soulStained.location(), compatFolder));
 
-        IncrementalModifierRecipeBuilder.modifier(TciModifierIds.masticate)
-            .setTools(TinkerTags.Items.ARMOR)
-            .setInput(TagManager.Items.MASTICATOR_SCALES, 1, 2)
-            .setMaxLevel(3)
-            .setSlots(SlotType.UPGRADE, 1)
-            .saveSalvage(undergardenConsumer, prefix(TciModifierIds.masticate.location(), compatSalvage))
-            .save(undergardenConsumer, prefix(TciModifierIds.masticate.location(), compatFolder));
-
         ModifierRecipeBuilder.modifier(TciModifierIds.utherium)
             .setTools(TinkerTags.Items.MELEE_PRIMARY)
             .addInput(TagManager.Items.UTHERIUM_CRYSTAL)

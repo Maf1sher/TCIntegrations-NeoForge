@@ -94,8 +94,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ModIntegration.aquaLoc("fish_fillet_raw"));
 
         // Undergarden
-        this.tag(TagManager.Items.MASTICATOR_SCALES)
-            .addOptional(ModIntegration.ugLoc("masticator_scales"));
         this.tag(TagManager.Items.UTHERIUM_CRYSTAL)
             .addOptional(ModIntegration.ugLoc("utherium_crystal"));
 

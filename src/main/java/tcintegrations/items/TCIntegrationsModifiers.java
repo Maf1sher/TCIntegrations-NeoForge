@@ -18,7 +18,6 @@ import tcintegrations.items.modifiers.armor.PyromancerModifier;
 import tcintegrations.items.modifiers.armor.EnchantersShieldModifier;
 import tcintegrations.items.modifiers.armor.EngineersGogglesModifier;
 import tcintegrations.items.modifiers.armor.FrontierCapModifier;
-import tcintegrations.items.modifiers.armor.MasticateModifier;
 import tcintegrations.items.modifiers.armor.MosquitoModifier;
 import tcintegrations.items.modifiers.armor.PoseidonModifier;
 import tcintegrations.items.modifiers.armor.RoadrunnerModifier;
@@ -70,7 +69,6 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<WaterPowered> WATER_POWERED_MODIFIER;
     public static StaticModifier<PoseidonModifier> POSEIDON_MODIFIER;
     public static StaticModifier<SirenModifier> SIREN_MODIFIER;
-    public static StaticModifier<MasticateModifier> MASTICATE_MODIFIER;
     public static StaticModifier<UtheriumModifier> UTHERIUM_MODIFIER;
     public static StaticModifier<FroststeelModifier> FROSTSTEEL_MODIFIER;
     public static StaticModifier<ForgottenModifier> FORGOTTEN_MODIFIER;
@@ -150,7 +148,6 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
         }
 
         if (ModIntegration.canLoad(ModIntegration.UNDERGARDEN_MODID)) {
-            MASTICATE_MODIFIER = MODIFIERS_REGISTRY.register("masticate", MasticateModifier::new);
             UTHERIUM_MODIFIER = MODIFIERS_REGISTRY.register("utherium", UtheriumModifier::new);
             FROSTSTEEL_MODIFIER = MODIFIERS_REGISTRY.register("froststeel", FroststeelModifier::new);
             FORGOTTEN_MODIFIER = MODIFIERS_REGISTRY.register("forgotten", ForgottenModifier::new);

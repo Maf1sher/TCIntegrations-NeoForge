@@ -11,7 +11,6 @@ public class TciModifierIds {
     public static final ModifierId moderate = id("moderate");
     public static final ModifierId waterPowered = id("water_powered");
     public static final ModifierId soulStained = id("soul_stained");
-    public static final ModifierId masticate = id("masticate");
     public static final ModifierId kinetic = id("kinetic");
     public static final ModifierId engineersGoggles = id("engineers_goggles");
     public static final ModifierId multiVision = id("multivision");

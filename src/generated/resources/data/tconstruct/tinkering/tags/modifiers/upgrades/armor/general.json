@@ -1,10 +1,6 @@
 {
   "values": [
     {
-      "id": "tcintegrations:masticate",
-      "required": false
-    },
-    {
       "id": "tcintegrations:soul_stained",
       "required": false
     },
