@@ -29,9 +29,6 @@ public class FluidEffectProvider extends AbstractFluidEffectProvider {
 
     @Override
     protected void addFluids() {
-        addMetal(TCIntegrationsItems.MOLTEN_MANASTEEL)
-            .addCondition(new ModLoadedCondition(ModIntegration.BOTANIA_MODID))
-            .magicDamage(2F);
         addMetal(TCIntegrationsItems.MOLTEN_NEPTUNIUM)
             .addCondition(new ModLoadedCondition(ModIntegration.AQUACULTURE_MODID))
             .fireDamage(2F)

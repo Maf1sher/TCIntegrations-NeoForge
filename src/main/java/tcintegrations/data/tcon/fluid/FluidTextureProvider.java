@@ -32,7 +32,6 @@ public class FluidTextureProvider extends AbstractFluidTextureProvider {
         tintedStone(TCIntegrationsItems.MOLTEN_CLOGGRUM).color(0xFFB79A7A);
         compatAlloy(TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL);
         compatAlloy(TCIntegrationsItems.MOLTEN_FROSTSTEEL);
-        compatAlloy(TCIntegrationsItems.MOLTEN_MANASTEEL);
         compatAlloy(TCIntegrationsItems.MOLTEN_NEPTUNIUM);
         compatAlloy(TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL);
         compatOre(TCIntegrationsItems.MOLTEN_SOURCE_GEM);

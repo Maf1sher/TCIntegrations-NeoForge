@@ -36,7 +36,6 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
     private void addMaterialItems(RecipeOutput consumer) {
         String folder = "tools/materials/";
         RecipeOutput bronzeConsumer = withCondition(consumer, tagCondition("ingots/bronze"));
-        RecipeOutput botaniaConsumer = withCondition(consumer, modLoaded(ModIntegration.BOTANIA_MODID));
         RecipeOutput aquacultureConsumer = withCondition(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
         RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
         RecipeOutput brassConsumer = withCondition(consumer, tagCondition("ingots/brass"));
@@ -47,16 +46,6 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         // Bronze
         metalMaterialRecipe(bronzeConsumer, MaterialIds.bronze, folder, MaterialIds.bronze.getPath(), true);
 
-        if (ModIntegration.BOTANIA_LIVINGWOOD_PLANKS != null && ModIntegration.BOTANIA_LIVINGWOOD_PLANKS != Items.AIR)
-            materialRecipe(botaniaConsumer, MaterialIds.livingWood, Ingredient.of(ModIntegration.BOTANIA_LIVINGWOOD_PLANKS), 1, 1, folder + "livingwood/planks");
-        if (ModIntegration.BOTANIA_LIVINGWOOD_PLANKS != null && ModIntegration.BOTANIA_LIVINGWOOD_PLANKS != Items.AIR)
-            materialRecipe(botaniaConsumer, MaterialIds.livingWood, Ingredient.of(TagManager.Items.BOTANIA_LIVINGWOOD_LOGS), 4, 1, ItemOutput.fromStack(new ItemStack(ModIntegration.BOTANIA_LIVINGWOOD_PLANKS)), folder + "livingwood/logs");
-        if (ModIntegration.LIVING_ROCK != null && ModIntegration.LIVING_ROCK != Items.AIR)
-            materialRecipe(botaniaConsumer, MaterialIds.livingRock, Ingredient.of(new ItemStack(ModIntegration.LIVING_ROCK)), 1, 1, folder + "livingrock");
-        if (ModIntegration.MANA_STRING != null && ModIntegration.MANA_STRING != Items.AIR)
-            materialRecipe(botaniaConsumer, MaterialIds.manaString, Ingredient.of(new ItemStack(ModIntegration.MANA_STRING)), 1, 1, folder + "manastring");
-
-        metalMaterialRecipe(botaniaConsumer, MaterialIds.manaSteel, folder, MaterialIds.manaSteel.getPath(), true);
         metalMaterialRecipe(aquacultureConsumer, MaterialIds.neptunium, folder, MaterialIds.neptunium.getPath(), true);
         metalMaterialRecipe(malumConsumer, MaterialIds.soulStainedSteel, folder, MaterialIds.soulStainedSteel.getPath(), true);
         metalMaterialRecipe(brassConsumer, MaterialIds.brass, folder, MaterialIds.brass.getPath(), true);
@@ -79,7 +68,6 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
 
         compatMeltingCasting(consumer, MaterialIds.bronze, TinkerFluids.moltenBronze, folder);
         compatMeltingCasting(consumer, MaterialIds.brass, TinkerFluids.moltenBrass, folder);
-        compatMeltingCasting(consumer, MaterialIds.manaSteel, TCIntegrationsItems.MOLTEN_MANASTEEL, folder);
         compatMeltingCasting(consumer, MaterialIds.neptunium, TCIntegrationsItems.MOLTEN_NEPTUNIUM, folder);
         compatMeltingCasting(consumer, MaterialIds.soulStainedSteel, TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL, folder);
         compatMeltingCasting(consumer, MaterialIds.dragonsteelFire, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE, folder);

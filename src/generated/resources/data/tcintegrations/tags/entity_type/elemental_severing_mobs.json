@@ -6,10 +6,6 @@
     "minecraft:zombie_villager",
     "minecraft:husk",
     "minecraft:drowned",
-    "minecraft:creeper",
-    {
-      "id": "botania:doppleganger",
-      "required": false
-    }
+    "minecraft:creeper"
   ]
 }

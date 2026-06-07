@@ -35,10 +35,8 @@ public class EntityTypeTagProvider extends EntityTypeTagsProvider {
             .add(EntityType.ZOMBIE_VILLAGER)
             .add(EntityType.HUSK)
             .add(EntityType.DROWNED)
-            .add(EntityType.CREEPER)
-            .addOptional(ModIntegration.botaniaLoc("doppleganger"));
+            .add(EntityType.CREEPER);
 
-        // Beyond Earth
         this.tag(TagManager.EntityTypes.MILK_PRODUCER).add(EntityType.COW, EntityType.GOAT, EntityType.HORSE);
     }
 

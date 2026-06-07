@@ -43,7 +43,6 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
         // upgrades
         String compatFolder = "tools/modifiers/compat/";
         String compatSalvage = "tools/modifiers/salvage/compat/";
-        RecipeOutput botaniaConsumer = withCondition(consumer, modLoaded(ModIntegration.BOTANIA_MODID));
         RecipeOutput createConsumer = withCondition(consumer, modLoaded(ModIntegration.CREATE_MODID));
         RecipeOutput aquacultureConsumer = withCondition(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
         RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
@@ -52,138 +51,11 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
         RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
         RecipeOutput ieConsumer = withCondition(consumer, modLoaded(ModIntegration.IE_MODID));
         RecipeOutput mekanismConsumer = withCondition(consumer, modLoaded(ModIntegration.MEKANISM_MODID));
-        RecipeOutput mythicBotanyConsumer = withCondition(consumer, modLoaded(ModIntegration.MYTHIC_BOTANY_MODID));
         RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
         RecipeOutput apothConsumer = withCondition(consumer, modLoaded(ModIntegration.APOTH_MODID));
         RecipeOutput arsElementalConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_ELEMENTAL_MODID));
         RecipeOutput deeperDarkerConsumer = withCondition(consumer, modLoaded(ModIntegration.DEEPERDARKER_MODID));
         RecipeOutput twilightForestConsumer = withCondition(consumer, modLoaded(ModIntegration.TWILIGHT_MODID));
-
-        if (TCIntegrationsModifiers.TERRA_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRA_MODIFIER)
-                .setTools(TinkerTags.Items.MELEE_PRIMARY)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.MYSTICAL_FLOWERS)
-                .addInput(TagManager.Items.DOUBLE_MYSTICAL_FLOWERS)
-                .addInput(TagManager.Items.LIVINGWOOD_LOGS)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRA_MODIFIER, compatSalvage))
-                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRA_MODIFIER, compatFolder));
-        }
-
-        if (TCIntegrationsModifiers.ALF_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ALF_MODIFIER)
-                .setTools(TinkerTags.Items.MELEE_PRIMARY)
-                .addInput(TagManager.Items.ALFSTEEL_INGOT)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.MYSTICAL_FLOWERS)
-                .addInput(TagManager.Items.DOUBLE_MYSTICAL_FLOWERS)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(mythicBotanyConsumer, prefix(TCIntegrationsModifiers.ALF_MODIFIER, compatSalvage))
-                .save(mythicBotanyConsumer, prefix(TCIntegrationsModifiers.ALF_MODIFIER, compatFolder));
-        }
-
-        if (TCIntegrationsModifiers.ALFHEIM_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ALFHEIM_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.ALFSTEEL_INGOT)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.MYSTICAL_FLOWERS)
-                .addInput(TagManager.Items.DOUBLE_MYSTICAL_FLOWERS)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(mythicBotanyConsumer, prefix(TCIntegrationsModifiers.ALFHEIM_MODIFIER, compatSalvage))
-                .save(mythicBotanyConsumer, prefix(TCIntegrationsModifiers.ALFHEIM_MODIFIER, compatFolder));
-        }
-
-        if (TCIntegrationsModifiers.ELEMENTAL_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ELEMENTAL_MODIFIER)
-                .setTools(TinkerTags.Items.MELEE_PRIMARY)
-                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
-                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
-                .addInput(TagManager.Items.MYSTICAL_FLOWERS)
-                .addInput(TagManager.Items.DOUBLE_MYSTICAL_FLOWERS)
-                .addInput(TagManager.Items.LIVINGWOOD_LOGS_GLIMMERING)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.ELEMENTAL_MODIFIER, compatSalvage))
-                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.ELEMENTAL_MODIFIER, compatFolder));
-        }
-
-        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER)
-                .setTools(TinkerTags.Items.HELMETS)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.LIVINGWOOD_TWIG)
-                .addInput(TagManager.Items.RUNE_SPRING)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_helmets"), compatSalvage))
-                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_helmets"), compatFolder));
-        }
-
-        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER)
-                .setTools(TinkerTags.Items.CHESTPLATES)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.LIVINGWOOD_TWIG)
-                .addInput(TagManager.Items.RUNE_SUMMER)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_chestplates"), compatSalvage))
-                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_chestplates"), compatFolder));
-        }
-
-        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER)
-                .setTools(TinkerTags.Items.LEGGINGS)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.LIVINGWOOD_TWIG)
-                .addInput(TagManager.Items.RUNE_AUTUMN)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_leggings"), compatSalvage))
-                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_leggings"), compatFolder));
-        }
-
-        if (TCIntegrationsModifiers.TERRESTRIAL_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER)
-                .setTools(TinkerTags.Items.BOOTS)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.INGOTS_TERRASTEEL)
-                .addInput(TagManager.Items.LIVINGWOOD_TWIG)
-                .addInput(TagManager.Items.RUNE_WINTER)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_boots"), compatSalvage))
-                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.TERRESTRIAL_MODIFIER.getId().withSuffix("_boots"), compatFolder));
-        }
-
-        if (TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
-                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
-                .addInput(TagManager.Items.INGOTS_ELEMENTIUM)
-                .addInput(TagManager.Items.LIVINGWOOD_TWIG)
-                .addInput(TagManager.Items.LIVINGWOOD_LOGS_GLIMMERING)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(botaniaConsumer, prefix(TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER, compatSalvage))
-                .save(botaniaConsumer, prefix(TCIntegrationsModifiers.GREAT_FAIRY_MODIFIER, compatFolder));
-        }
 
         ModifierRecipeBuilder.modifier(TciModifierIds.mechanicalArm)
             .setTools(TinkerTags.Items.MELEE_PRIMARY)

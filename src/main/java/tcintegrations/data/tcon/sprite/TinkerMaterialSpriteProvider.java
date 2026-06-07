@@ -15,24 +15,7 @@ public class TinkerMaterialSpriteProvider extends AbstractMaterialSpriteProvider
 
     @Override
     protected void addAllMaterials() {
-        // tier 1
-        buildMaterial(MaterialIds.livingWood)
-            .meleeHarvest()
-            .fallbacks("wood", "stick", "primitive")
-            .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF330704).addARGB(102, 0xFF380A04).addARGB(140, 0xFF4B190A).addARGB(178, 0xFF511E0B).addARGB(216, 0xFF54210D).addARGB(255, 0xFF5E2409).build());
-        buildMaterial(MaterialIds.livingRock)
-            .meleeHarvest()
-            .fallbacks("rock")
-            .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF9B7E64).addARGB(102, 0xFFA89C78).addARGB(140, 0xFFB1A283).addARGB(178, 0xFFB9AA97).addARGB(216, 0xFFCDCBC1).addARGB(255, 0xFFF4F2EC).build());
         // tier 3
-        buildMaterial(MaterialIds.manaSteel)
-            .meleeHarvest().armor()
-            .fallbacks("metal")
-            .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF001944).addARGB(102, 0xFF00296D).addARGB(140, 0xFF0043A5).addARGB(178, 0xFF186ACE).addARGB(216, 0xFF3389FF).addARGB(255, 0xFF59A6EF).build());
-        buildMaterial(MaterialIds.manaString)
-            .statType(StatlessMaterialStats.BINDING.getIdentifier(), StatlessMaterialStats.BOWSTRING.getIdentifier(), StatlessMaterialStats.REPAIR_KIT.getIdentifier())
-            .fallbacks("primitive")
-            .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFFABF1DF).addARGB(102, 0xFFABF1DF).addARGB(140, 0xFFCFFCF1).addARGB(178, 0xFFCFFCF1).addARGB(216, 0xFFE2FCF5).addARGB(255, 0xFFE2FCF5).build());
         buildMaterial(MaterialIds.neptunium)
             .meleeHarvest().armor()
             .fallbacks("metal")

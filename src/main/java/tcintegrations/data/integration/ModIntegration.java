@@ -12,7 +12,6 @@ import static tcintegrations.util.ResourceLocationHelper.location;
 
 public final class ModIntegration extends TCIntegrationsModule {
 
-    public static final String BOTANIA_MODID = "botania";
     public static final String IE_MODID = "immersiveengineering";
     public static final String TCON_MODID = "tconstruct";
     public static final String CREATE_MODID = "create";
@@ -22,26 +21,11 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final String MALUM_MODID = "malum";
     public static final String UNDERGARDEN_MODID = "undergarden";
     public static final String MEKANISM_MODID = "mekanism";
-    public static final String MYTHIC_BOTANY_MODID = "mythicbotany";
     public static final String IFD_MODID = "iceandfire";
-    public static final String CONSECRATION_MODID = "consecration";
     public static final String APOTH_MODID = "apotheosis";
     public static final String ARS_ELEMENTAL_MODID = "ars_elemental";
     public static final String DEEPERDARKER_MODID = "deeperdarker";
     public static final String TWILIGHT_MODID = "twilightforest";
-
-    // Botania items
-    public static final Item BOTANIA_LIVINGWOOD_PLANKS = ModItemRef.of(BOTANIA_MODID, "livingwood_planks").get();
-    public static final Item LIVING_ROCK = ModItemRef.of(BOTANIA_MODID, "livingrock").get();
-    public static final Item MANA_STRING = ModItemRef.of(BOTANIA_MODID, "mana_string").get();
-    public static final Item LIVINGWOOD_TWIG = ModItemRef.of(BOTANIA_MODID, "livingwood_twig").get();
-    public static final Item RUNE_SPRING = ModItemRef.of(BOTANIA_MODID, "rune_spring").get();
-    public static final Item RUNE_SUMMER = ModItemRef.of(BOTANIA_MODID, "rune_summer").get();
-    public static final Item RUNE_AUTUMN = ModItemRef.of(BOTANIA_MODID, "rune_autumn").get();
-    public static final Item RUNE_WINTER = ModItemRef.of(BOTANIA_MODID, "rune_winter").get();
-
-    // MythicBotany items
-    public static final Item ALFSTEEL_INGOT = ModItemRef.of(MYTHIC_BOTANY_MODID, "alfsteel_ingot").get();
 
     // Create items
     public static final Item GOGGLES = ModItemRef.of(CREATE_MODID, "goggles").get();
@@ -79,7 +63,6 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final Item SOUL_STAINED_STEEL_INGOT = ModItemRef.of(MALUM_MODID, "soul_stained_steel_ingot").get();
 
     // Undergarden items
-    public static final Item MASTICATOR_SCALES = ModItemRef.of(UNDERGARDEN_MODID, "masticator_scales").get();
     public static final Item UTHERIUM_CRYSTAL = ModItemRef.of(UNDERGARDEN_MODID, "utherium_crystal").get();
     public static final Item FROSTSTEEL_INGOT = ModItemRef.of(UNDERGARDEN_MODID, "froststeel_ingot").get();
     public static final Item CLOGGRUM_INGOT = ModItemRef.of(UNDERGARDEN_MODID, "cloggrum_ingot").get();
@@ -133,11 +116,9 @@ public final class ModIntegration extends TCIntegrationsModule {
     // Immersive Engineering items
     public static final Item VOLTMETER = ModItemRef.of(IE_MODID, "voltmeter").get();
 
-    public static ResourceLocation botaniaLoc(String name) { return location(BOTANIA_MODID, name); }
-    public static ResourceLocation malumLoc(String name) { return location(MALUM_MODID, name); }
     public static ResourceLocation arsLoc(String name) { return location(ARS_MODID, name); }
+    public static ResourceLocation malumLoc(String name) { return location(MALUM_MODID, name); }
     public static ResourceLocation ifdLoc(String name) { return location(IFD_MODID, name); }
-    public static ResourceLocation mbotLoc(String name) { return location(MYTHIC_BOTANY_MODID, name); }
     public static ResourceLocation ieLoc(String name) { return location(IE_MODID, name); }
     public static ResourceLocation alexLoc(String name) { return location(ALEX_MODID, name); }
     public static ResourceLocation createLoc(String name) { return location(CREATE_MODID, name); }

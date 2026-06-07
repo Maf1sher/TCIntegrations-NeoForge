@@ -32,14 +32,6 @@ public class TagManager {
         public static final TagKey<Item> BRONZE_INGOTS = itemTag("forge", "ingots/bronze");
         public static final TagKey<Item> BRONZE_NUGGETS = itemTag("forge", "nuggets/bronze");
 
-        public static final TagKey<Item> BOTANIA_LIVINGWOOD_LOGS = itemTag("botania", "livingwood_logs");
-        public static final TagKey<Item> MYSTICAL_FLOWERS = itemTag("botania", "mystical_flowers");
-        public static final TagKey<Item> DOUBLE_MYSTICAL_FLOWERS = itemTag("botania", "double_mystical_flowers");
-        public static final TagKey<Item> LIVINGWOOD_LOGS = itemTag("botania", "livingwood_logs");
-        public static final TagKey<Item> LIVINGWOOD_LOGS_GLIMMERING = itemTag("botania", "glimmering_livingwood_logs");
-        public static final TagKey<Item> INGOTS_TERRASTEEL = itemTag("forge", "ingots/terrasteel");
-        public static final TagKey<Item> INGOTS_ELEMENTIUM = itemTag("forge", "ingots/elementium");
-
         public static final TagKey<Item> SOUL_STAINED_STEEL = itemTag("forge", "storage_blocks/soul_stained_steel");
         public static final TagKey<Item> SOUL_STAINED_STEEL_INGOTS = itemTag("forge", "ingots/soul_stained_steel");
         public static final TagKey<Item> SOUL_STAINED_STEEL_NUGGETS = itemTag("forge", "nuggets/soul_stained_steel");
@@ -59,19 +51,6 @@ public class TagManager {
 
         public static final TagKey<Item> SOUL_STAINED_STEEL_BLOCK_C = itemTag("c", "storage_blocks/soul_stained_steel");
         public static final TagKey<Item> SOUL_STAINED_STEEL_NUGGET_C = itemTag("c", "nuggets/soul_stained_steel");
-
-        // Botania
-        public static final TagKey<Item> LIVINGWOOD_PLANKS = itemTag("botania", "livingwood_planks");
-        public static final TagKey<Item> LIVING_ROCK = itemTag("botania", "livingrock");
-        public static final TagKey<Item> MANA_STRING = itemTag("botania", "mana_string");
-        public static final TagKey<Item> LIVINGWOOD_TWIG = itemTag("botania", "livingwood_twigs");
-        public static final TagKey<Item> RUNE_SPRING = itemTag("botania", "rune_spring");
-        public static final TagKey<Item> RUNE_SUMMER = itemTag("botania", "rune_summer");
-        public static final TagKey<Item> RUNE_AUTUMN = itemTag("botania", "rune_autumn");
-        public static final TagKey<Item> RUNE_WINTER = itemTag("botania", "rune_winter");
-
-        // MythicBotany
-        public static final TagKey<Item> ALFSTEEL_INGOT = itemTag("forge", "ingots/alfsteel");
 
         // Ars Nouveau
         public static final TagKey<Item> MAGE_FIBER = itemTag("ars_nouveau", "mage_fiber");

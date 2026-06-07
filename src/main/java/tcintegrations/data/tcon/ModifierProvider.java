@@ -29,10 +29,6 @@ public class ModifierProvider extends AbstractModifierProvider implements ICondi
 
     @Override
     protected void addModifiers() {
-        // livingwood: needs data-driven RepairModule
-        buildModifier(TciModifierIds.livingwood)
-            .addModule(RepairModule.builder().eachLevel(0.75F));
-
         // engineers_goggles: ModifierModule, needs data-driven singleton
         buildModifier(TciModifierIds.engineersGoggles, modLoaded(ModIntegration.CREATE_MODID))
             .levelDisplay(ModifierLevelDisplay.NO_LEVELS)

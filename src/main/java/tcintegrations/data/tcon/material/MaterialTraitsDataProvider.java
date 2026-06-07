@@ -23,11 +23,7 @@ public class MaterialTraitsDataProvider extends AbstractMaterialTraitDataProvide
 
     @Override
     protected void addMaterialTraits() {
-        addDefaultTraits(MaterialIds.livingWood, TciModifierIds.livingwood);
-        addDefaultTraits(MaterialIds.livingRock, TinkerModifiers.stonebound);
         addDefaultTraits(MaterialIds.bronze, TciModifierIds.moderate);
-        addDefaultTraits(MaterialIds.manaSteel, ModifierIds.ductile, TciModifierIds.mana);
-        addDefaultTraits(MaterialIds.manaString, TciModifierIds.mana);
         addDefaultTraits(MaterialIds.brass, TciModifierIds.moderate);
         addDefaultTraits(MaterialIds.neptunium, TciModifierIds.waterPowered);
         addDefaultTraits(MaterialIds.soulStainedSteel, TciModifierIds.soulStained);

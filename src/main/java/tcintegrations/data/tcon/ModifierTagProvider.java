@@ -29,7 +29,6 @@ public class ModifierTagProvider extends AbstractModifierTagProvider {
     protected void addTags() {
         // General upgrades (always available + mod-gated)
         this.tag(GENERAL_UPGRADES)
-            .addOptional(TciModifierIds.livingwood.location())
             .addOptional(TciModifierIds.engineersGoggles.location())
             .addOptional(TciModifierIds.multiVision.location())
             .addOptional(TciModifierIds.waterPowered.location())

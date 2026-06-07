@@ -1,11 +1,5 @@
 {
     "modifier.tcintegrations": {
-        "livingwood": "#5E2409",
-        "mana": "#3389FF",
-        "terra": "#62EF30",
-        "elemental": "#DD59F8",
-        "terrestrial": "#4CCF20",
-        "great_fairy": "#CC5FE4",
         "moderate": "#EDD578",
         "mechanical_arm": "#C4974B",
         "engineers_goggles": "#3A6E7B",
@@ -28,8 +22,6 @@
         "multivision": "#FF5252",
         "kinetic": "#BED3CD",
         "glowup": "#FFE86D",
-        "alfheim": "#C68F19",
-        "alf": "#D39C28",
         "flamed": "#B7552D",
         "iced": "#3D8DC2",
         "zapped": "#F0F610",

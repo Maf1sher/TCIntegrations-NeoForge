@@ -50,11 +50,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(TagManager.Items.BRONZE_INGOTS).add(TCIntegrationsItems.BRONZE.getIngot());
         this.tag(TagManager.Items.BRONZE_NUGGETS).add(TCIntegrationsItems.BRONZE.getNugget());
 
-        // Botania
-        addBotaniaLogVariants(TagManager.Items.BOTANIA_LIVINGWOOD_LOGS, "livingwood");
-        this.tag(TinkerTags.Items.VARIANT_LOGS).addOptionalTag(TagManager.Items.BOTANIA_LIVINGWOOD_LOGS.location());
-        this.tag(TinkerTags.Items.VARIANT_PLANKS).addOptional(ModIntegration.botaniaLoc("livingwood_planks"));
-
         // Malum
         this.copy(TagManager.Blocks.SOUL_STAINED_STEEL, TagManager.Items.SOUL_STAINED_STEEL);
         this.tag(TagManager.Items.SOUL_STAINED_STEEL_INGOTS).addOptional(ModIntegration.malumLoc("soul_stained_steel_ingot"));
@@ -112,7 +107,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ModIntegration.ieLoc("voltmeter"));
 
         // Ensure integration metal ingots appear in both c: and forge: ingot tags
-        addCompatibilityIngot("manasteel", ModIntegration.botaniaLoc("manasteel_ingot"));
         addCompatibilityIngot("neptunium", ModIntegration.aquaLoc("neptunium_ingot"));
         addCompatibilityIngot("soul_stained_steel", ModIntegration.malumLoc("soul_stained_steel_ingot"));
         addCompatibilityIngot("cloggrum", ModIntegration.ugLoc("cloggrum_ingot"));
@@ -191,14 +185,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ingotLoc);
         this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + name)))
             .addOptional(ingotLoc);
-    }
-
-    private void addBotaniaLogVariants(TagKey<Item> tag, String type) {
-        this.tag(tag)
-            .addOptional(ModIntegration.botaniaLoc(type + "_log"))
-            .addOptional(ModIntegration.botaniaLoc("stripped_" + type + "_log"))
-            .addOptional(ModIntegration.botaniaLoc(type))
-            .addOptional(ModIntegration.botaniaLoc("stripped_" + type));
     }
 
 }

@@ -40,7 +40,6 @@ import tcintegrations.items.modifiers.tool.PhantasmalModifier;
 import tcintegrations.items.modifiers.tool.ZappedModifier;
 import tcintegrations.items.modifiers.traits.DragonScalesModifier;
 import tcintegrations.items.modifiers.traits.KineticModifier;
-import tcintegrations.items.modifiers.traits.ManaModifier;
 import tcintegrations.items.modifiers.traits.SoulStained;
 import tcintegrations.items.modifiers.traits.WaterPowered;
 
@@ -75,16 +74,6 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<PrecipitateModifier> PRECIPITATE_MODIFIER;
     public static StaticModifier<TwilitModifier> TWILIT_MODIFIER;
     public static StaticModifier<SculkingModifier> SCULKING_MODIFIER;
-    public static StaticModifier<ManaModifier> MANA_MODIFIER;
-
-    // Botania modifiers (not yet ported)
-    public static StaticModifier<?> TERRA_MODIFIER;
-    public static StaticModifier<?> ALF_MODIFIER;
-    public static StaticModifier<?> ALFHEIM_MODIFIER;
-    public static StaticModifier<?> ELEMENTAL_MODIFIER;
-    public static StaticModifier<?> TERRESTRIAL_MODIFIER;
-    public static StaticModifier<?> GREAT_FAIRY_MODIFIER;
-
     // Ars Elemental modifiers (not yet ported)
     public static StaticModifier<?> AETHERMANCER_MODIFIER;
     public static StaticModifier<?> AQUAMANCER_MODIFIER;
@@ -162,7 +151,5 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
             TWILIT_MODIFIER = MODIFIERS_REGISTRY.register("twilit", TwilitModifier::new);
         }
 
-        MANA_MODIFIER = MODIFIERS_REGISTRY.register("mana", ManaModifier::new);
     }
-
 }

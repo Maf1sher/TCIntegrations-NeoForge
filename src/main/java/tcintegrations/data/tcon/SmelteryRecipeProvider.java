@@ -60,7 +60,6 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
 
         // ores
         String metalFolder = folder + "metal/";
-        RecipeOutput botaniaConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.BOTANIA_MODID, "manasteel"));
         RecipeOutput aquacultureConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.AQUACULTURE_MODID, "neptunium"));
         RecipeOutput malumConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.MALUM_MODID, "soul_stained_steel"));
         RecipeOutput undergardenCloggrumConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "cloggrum"));
@@ -73,7 +72,6 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
 
         molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
-        metal(botaniaConsumer, TCIntegrationsItems.MOLTEN_MANASTEEL).metal();
         metal(aquacultureConsumer, TCIntegrationsItems.MOLTEN_NEPTUNIUM).metal();
         metal(malumConsumer, TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL).metal();
         metal(undergardenCloggrumConsumer, TCIntegrationsItems.MOLTEN_CLOGGRUM).ore().metal();

@@ -1,10 +1,6 @@
 {
   "values": [
     {
-      "id": "#c:molten_manasteel",
-      "required": false
-    },
-    {
       "id": "#c:molten_neptunium",
       "required": false
     },

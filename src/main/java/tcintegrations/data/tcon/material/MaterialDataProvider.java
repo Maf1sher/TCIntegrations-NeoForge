@@ -32,21 +32,13 @@ public class MaterialDataProvider extends AbstractMaterialDataProvider {
         // Bronze: unconditional, always available
         addMaterial(MaterialIds.bronze, 2, ORDER_GENERAL, false);
 
-        // Botania
-        ICondition botaniaCondition = modOrTagCondition(ModIntegration.BOTANIA_MODID, "manasteel");
-        addMaterial(MaterialIds.livingWood, 1, ORDER_GENERAL, true, false, new ModLoadedCondition(ModIntegration.BOTANIA_MODID));
-        addMaterial(MaterialIds.livingRock, 1, ORDER_GENERAL, true, false, new ModLoadedCondition(ModIntegration.BOTANIA_MODID));
-        addMaterial(MaterialIds.manaSteel, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, botaniaCondition);
-        addMaterial(MaterialIds.manaString, 3, ORDER_COMPAT + ORDER_GENERAL, true, false, new ModLoadedCondition(ModIntegration.BOTANIA_MODID));
-        addMaterial(MaterialIds.neptunium, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.AQUACULTURE_MODID, "neptunium"));
-
-        // Malum
-        addMaterial(MaterialIds.soulStainedSteel, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.MALUM_MODID, "soul_stained_steel"));
-
         // Create
         addMaterial(MaterialIds.brass, 3, ORDER_COMPAT + ORDER_REPAIR, false, false, modOrTagCondition(ModIntegration.CREATE_MODID, "brass"));
 
-        // Undergarden
+        // Aquaculture
+        addMaterial(MaterialIds.neptunium, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.AQUACULTURE_MODID, "neptunium"));
+
+        // Malum
         ICondition undergardenCondition = modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "cloggrum");
         addMaterial(MaterialIds.cloggrum, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, undergardenCondition);
         addMaterial(MaterialIds.froststeel, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, undergardenCondition);

@@ -37,7 +37,6 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
     public static MetalItemObject BRONZE;
 
     // Molten fluid objects
-    public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_MANASTEEL;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_NEPTUNIUM;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_SOURCE_GEM;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_SOUL_STAINED_STEEL;
@@ -68,12 +67,6 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
         );
 
         // Molten fluids
-        MOLTEN_MANASTEEL = FLUID_REGISTRY.register("molten_manasteel")
-            .type(hot("molten_manasteel").temperature(1100).lightLevel(12))
-            .burningBlock(MapColor.COLOR_BLUE, 12, 10, 5f)
-            .bucket()
-            .commonTag()
-            .flowing();
         MOLTEN_NEPTUNIUM = FLUID_REGISTRY.register("molten_neptunium")
             .type(hot("molten_neptunium").temperature(1300).lightLevel(10))
             .burningBlock(MapColor.WARPED_NYLIUM, 10, 10, 6f)
