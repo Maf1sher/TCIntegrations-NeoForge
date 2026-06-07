@@ -11,7 +11,6 @@
   "tcintegrations:ars_nouveau": ["ars_nouveau:item/magebloom_fiber", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:bison_fur": ["minecraft:item/powder_snow_bucket", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:capturing": ["minecraft:item/spawn_egg", "tcintegrations:gui/modifiers/plus"],
-  "tcintegrations:cheesy": ["tconstruct:item/materials/cheese_ingot", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:crocodile": ["alexsmobs:item/crocodile_chestplate", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:elemental": ["botania:item/elementium_chestplate", "tcintegrations:gui/modifiers/plus"],
   "tcintegrations:enchanters_shield": ["minecraft:item/empty_armor_slot_shield", "tcintegrations:gui/modifiers/plus"],

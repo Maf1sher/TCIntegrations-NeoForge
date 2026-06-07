@@ -46,19 +46,6 @@ public class MaterialDataProvider extends AbstractMaterialDataProvider {
         // Create
         addMaterial(MaterialIds.brass, 3, ORDER_COMPAT + ORDER_REPAIR, false, false, modOrTagCondition(ModIntegration.CREATE_MODID, "brass"));
 
-        // Ad Astra / Beyond Earth
-        ICondition adAstraCondition = new OrCondition(List.of(
-            ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
-            new ModLoadedCondition(ModIntegration.AD_ASTRA_MODID),
-            new ModLoadedCondition(ModIntegration.BEYOND_EARTH_MODID),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/desh")),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/desh"))
-        ));
-        addMaterial(MaterialIds.desh, 2, ORDER_COMPAT + ORDER_GENERAL, false, false, adAstraCondition);
-        addMaterial(MaterialIds.calorite, 2, ORDER_COMPAT + ORDER_GENERAL, false, false, adAstraCondition);
-        addMaterial(MaterialIds.ostrum, 2, ORDER_COMPAT + ORDER_GENERAL, false, false, adAstraCondition);
-        addMaterial(MaterialIds.pendoriteAlloy, 4, ORDER_COMPAT + ORDER_GENERAL, false, false, dualTagIngotCondition("pendorite_alloy"));
-
         // Undergarden
         ICondition undergardenCondition = modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "cloggrum");
         addMaterial(MaterialIds.cloggrum, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, undergardenCondition);
@@ -83,13 +70,4 @@ public class MaterialDataProvider extends AbstractMaterialDataProvider {
             new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + ingotName))
         ));
     }
-
-    private static ICondition dualTagIngotCondition(String name) {
-        return new OrCondition(List.of(
-            ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + name)),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + name))
-        ));
-    }
-
 }

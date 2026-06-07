@@ -41,7 +41,6 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
         RecipeOutput brassConsumer = withCondition(consumer, tagCondition("ingots/brass"));
         RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
-        RecipeOutput adAstraConsumer = withCondition(consumer, new OrCondition(List.of(modLoaded(ModIntegration.AD_ASTRA_MODID), modLoaded(ModIntegration.BEYOND_EARTH_MODID))));
         RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
         RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
 
@@ -64,9 +63,6 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         metalMaterialRecipe(ifdConsumer, MaterialIds.dragonsteelFire, folder, MaterialIds.dragonsteelFire.getPath(), true);
         metalMaterialRecipe(ifdConsumer, MaterialIds.dragonsteelIce, folder, MaterialIds.dragonsteelIce.getPath(), true);
         metalMaterialRecipe(ifdConsumer, MaterialIds.dragonsteelLightning, folder, MaterialIds.dragonsteelLightning.getPath(), true);
-        metalMaterialRecipe(adAstraConsumer, MaterialIds.desh, folder, MaterialIds.desh.getPath(), true);
-        metalMaterialRecipe(adAstraConsumer, MaterialIds.calorite, folder, MaterialIds.calorite.getPath(), true);
-        metalMaterialRecipe(adAstraConsumer, MaterialIds.ostrum, folder, MaterialIds.ostrum.getPath(), true);
 
         // Undergarden
         metalMaterialRecipe(undergardenConsumer, MaterialIds.cloggrum, folder, MaterialIds.cloggrum.getPath(), true);
@@ -81,7 +77,7 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
     private void addMaterialSmeltery(RecipeOutput consumer) {
         String folder = "tools/materials/";
 
-        compatMeltingCasting(consumer, MaterialIds.bronze, TCIntegrationsItems.MOLTEN_BRONZE, folder);
+        compatMeltingCasting(consumer, MaterialIds.bronze, TinkerFluids.moltenBronze, folder);
         compatMeltingCasting(consumer, MaterialIds.brass, TinkerFluids.moltenBrass, folder);
         compatMeltingCasting(consumer, MaterialIds.manaSteel, TCIntegrationsItems.MOLTEN_MANASTEEL, folder);
         compatMeltingCasting(consumer, MaterialIds.neptunium, TCIntegrationsItems.MOLTEN_NEPTUNIUM, folder);
@@ -89,9 +85,6 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         compatMeltingCasting(consumer, MaterialIds.dragonsteelFire, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE, folder);
         compatMeltingCasting(consumer, MaterialIds.dragonsteelIce, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE, folder);
         compatMeltingCasting(consumer, MaterialIds.dragonsteelLightning, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING, folder);
-        compatMeltingCasting(consumer, MaterialIds.desh, TCIntegrationsItems.MOLTEN_DESH, folder);
-        compatMeltingCasting(consumer, MaterialIds.calorite, TCIntegrationsItems.MOLTEN_CALORITE, folder);
-        compatMeltingCasting(consumer, MaterialIds.ostrum, TCIntegrationsItems.MOLTEN_OSTRUM, folder);
         compatMeltingCasting(consumer, MaterialIds.cloggrum, TCIntegrationsItems.MOLTEN_CLOGGRUM, folder);
         compatMeltingCasting(consumer, MaterialIds.froststeel, TCIntegrationsItems.MOLTEN_FROSTSTEEL, folder);
         compatMeltingCasting(consumer, MaterialIds.forgottenMetal, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL, folder);

@@ -36,8 +36,6 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
 
     public static MetalItemObject BRONZE;
 
-    public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_BRONZE;
-
     // Molten fluid objects
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_MANASTEEL;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_NEPTUNIUM;
@@ -46,9 +44,6 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_CLOGGRUM;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_FROSTSTEEL;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_FORGOTTEN_METAL;
-    public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_DESH;
-    public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_CALORITE;
-    public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_OSTRUM;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_DRAGONSTEEL_FIRE;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_DRAGONSTEEL_ICE;
     public static FlowingFluidObject<BaseFlowingFluid> MOLTEN_DRAGONSTEEL_LIGHTNING;
@@ -71,13 +66,6 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
             GENERAL_TOOLTIP_BLOCK_ITEM,
             new Item.Properties()
         );
-
-        MOLTEN_BRONZE = FLUID_REGISTRY.register("molten_bronze")
-            .type(hot("molten_bronze").temperature(1000).lightLevel(10))
-            .burningBlock(MapColor.COLOR_ORANGE, 10, 10, 5f)
-            .bucket()
-            .commonTag()
-            .flowing();
 
         // Molten fluids
         MOLTEN_MANASTEEL = FLUID_REGISTRY.register("molten_manasteel")
@@ -118,24 +106,6 @@ public final class TCIntegrationsItems extends TCIntegrationsModule {
         MOLTEN_FORGOTTEN_METAL = FLUID_REGISTRY.register("molten_forgotten_metal")
             .type(hot("molten_forgotten_metal").temperature(1400).lightLevel(13))
             .burningBlock(MapColor.COLOR_GREEN, 13, 10, 7f)
-            .bucket()
-            .commonTag()
-            .flowing();
-        MOLTEN_DESH = FLUID_REGISTRY.register("molten_desh")
-            .type(hot("molten_desh").temperature(1200).lightLevel(10))
-            .burningBlock(MapColor.TERRACOTTA_BROWN, 10, 10, 6f)
-            .bucket()
-            .commonTag()
-            .flowing();
-        MOLTEN_CALORITE = FLUID_REGISTRY.register("molten_calorite")
-            .type(hot("molten_calorite").temperature(1400).lightLevel(12))
-            .burningBlock(MapColor.COLOR_RED, 12, 10, 7f)
-            .bucket()
-            .commonTag()
-            .flowing();
-        MOLTEN_OSTRUM = FLUID_REGISTRY.register("molten_ostrum")
-            .type(hot("molten_ostrum").temperature(1300).lightLevel(11))
-            .burningBlock(MapColor.TERRACOTTA_MAGENTA, 11, 10, 6f)
             .bucket()
             .commonTag()
             .flowing();

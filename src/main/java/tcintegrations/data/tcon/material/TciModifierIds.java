@@ -12,8 +12,6 @@ public class TciModifierIds {
     public static final ModifierId waterPowered = id("water_powered");
     public static final ModifierId soulStained = id("soul_stained");
     public static final ModifierId masticate = id("masticate");
-    public static final ModifierId oxygenated = id("oxygenated");
-    public static final ModifierId hellish = id("hellish");
     public static final ModifierId kinetic = id("kinetic");
     public static final ModifierId engineersGoggles = id("engineers_goggles");
     public static final ModifierId multiVision = id("multivision");
@@ -21,10 +19,10 @@ public class TciModifierIds {
     public static final ModifierId flamed = id("flamed");
     public static final ModifierId iced = id("iced");
     public static final ModifierId zapped = id("zapped");
-    public static final ModifierId cloggrumTrait = id("masticate");
+    public static final ModifierId cloggrumTrait = id("cloggrum");
     public static final ModifierId froststeelTrait = id("froststeel");
     public static final ModifierId forgottenTrait = id("forgotten");
-    public static final ModifierId sourceGem = id("mana");
+    public static final ModifierId sourceGem = id("source_gem");
     public static final ModifierId mechanicalArm = id("mechanical_arm");
     public static final ModifierId glowup = id("glowup");
     public static final ModifierId phantasmal = id("phantasmal");

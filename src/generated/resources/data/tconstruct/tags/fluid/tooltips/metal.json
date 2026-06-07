@@ -1,10 +1,6 @@
 {
   "values": [
     {
-      "id": "#c:molten_bronze",
-      "required": false
-    },
-    {
       "id": "#c:molten_manasteel",
       "required": false
     },
@@ -26,18 +22,6 @@
     },
     {
       "id": "#c:molten_forgotten_metal",
-      "required": false
-    },
-    {
-      "id": "#c:molten_desh",
-      "required": false
-    },
-    {
-      "id": "#c:molten_calorite",
-      "required": false
-    },
-    {
-      "id": "#c:molten_ostrum",
       "required": false
     },
     {

@@ -50,7 +50,6 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
         RecipeOutput alexConsumer = withCondition(consumer, modLoaded(ModIntegration.ALEX_MODID));
         RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
         RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
-        RecipeOutput cheeseConsumer = withCondition(consumer, tagCondition(TagManager.Items.CHEESE.location().getPath()));
         RecipeOutput ieConsumer = withCondition(consumer, modLoaded(ModIntegration.IE_MODID));
         RecipeOutput mekanismConsumer = withCondition(consumer, modLoaded(ModIntegration.MEKANISM_MODID));
         RecipeOutput mythicBotanyConsumer = withCondition(consumer, modLoaded(ModIntegration.MYTHIC_BOTANY_MODID));
@@ -466,20 +465,6 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .setMaxLevel(1)
             .saveSalvage(undergardenConsumer, prefix(TciModifierIds.forgottenTrait.location(), compatSalvage))
             .save(undergardenConsumer, prefix(TciModifierIds.forgottenTrait.location(), compatFolder));
-
-        if (TCIntegrationsModifiers.CHEESY_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.CHEESY_MODIFIER)
-                .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
-                .addInput(TagManager.Items.CHEESE)
-                .addInput(TagManager.Items.CHEESE)
-                .addInput(TagManager.Items.CHEESE)
-                .addInput(TagManager.Items.CHEESE)
-                .addInput(TagManager.Items.CHEESE)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(3)
-                .saveSalvage(cheeseConsumer, prefix(TCIntegrationsModifiers.CHEESY_MODIFIER, compatSalvage))
-                .save(cheeseConsumer, prefix(TCIntegrationsModifiers.CHEESY_MODIFIER, compatFolder));
-        }
 
         ModifierRecipeBuilder.modifier(TciModifierIds.multiVision)
             .setTools(TinkerTags.Items.HELMETS)

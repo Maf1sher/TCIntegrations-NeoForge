@@ -31,10 +31,6 @@ public class MaterialTraitsDataProvider extends AbstractMaterialTraitDataProvide
         addDefaultTraits(MaterialIds.brass, TciModifierIds.moderate);
         addDefaultTraits(MaterialIds.neptunium, TciModifierIds.waterPowered);
         addDefaultTraits(MaterialIds.soulStainedSteel, TciModifierIds.soulStained);
-        addDefaultTraits(MaterialIds.desh, TciModifierIds.oxygenated);
-        addDefaultTraits(MaterialIds.calorite, TciModifierIds.oxygenated);
-        addDefaultTraits(MaterialIds.ostrum, TciModifierIds.oxygenated);
-        addDefaultTraits(MaterialIds.pendoriteAlloy, TciModifierIds.hellish);
         addTraits(MaterialIds.dragonsteelFire, ARMOR, ModifierIds.ductile, TciModifierIds.dragonScales);
         addTraits(MaterialIds.dragonsteelIce, ARMOR, ModifierIds.ductile, TciModifierIds.dragonScales);
         addTraits(MaterialIds.dragonsteelLightning, ARMOR, ModifierIds.ductile, TciModifierIds.dragonScales);

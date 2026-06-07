@@ -24,19 +24,6 @@ public class TinkerMaterialSpriteProvider extends AbstractMaterialSpriteProvider
             .meleeHarvest()
             .fallbacks("rock")
             .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF9B7E64).addARGB(102, 0xFFA89C78).addARGB(140, 0xFFB1A283).addARGB(178, 0xFFB9AA97).addARGB(216, 0xFFCDCBC1).addARGB(255, 0xFFF4F2EC).build());
-        // tier 2
-        buildMaterial(MaterialIds.desh)
-            .meleeHarvest().armor()
-            .fallbacks("metal")
-            .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF652E3E).addARGB(102, 0xFF7A3045).addARGB(140, 0xFF9E3543).addARGB(178, 0xFFC77142).addARGB(216, 0xFFE1A755).addARGB(255, 0xFFF0D161).build());
-        buildMaterial(MaterialIds.calorite)
-            .meleeHarvest().armor()
-            .fallbacks("metal")
-            .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF470d2F).addARGB(102, 0xFF5B1130).addARGB(140, 0xFF871638).addARGB(178, 0xFFB42A43).addARGB(216, 0xFFC44249).addARGB(255, 0xFFDF6D5C).build());
-        buildMaterial(MaterialIds.ostrum)
-            .meleeHarvest().armor()
-            .fallbacks("metal")
-            .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF2C1F2D).addARGB(102, 0xFF382938).addARGB(140, 0xFF473544).addARGB(178, 0xFF654A59).addARGB(216, 0xFF835963).addARGB(255, 0xFF966062).build());
         // tier 3
         buildMaterial(MaterialIds.manaSteel)
             .meleeHarvest().armor()
@@ -59,10 +46,6 @@ public class TinkerMaterialSpriteProvider extends AbstractMaterialSpriteProvider
             .fallbacks("metal")
             .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF563B1F).addARGB(102, 0xFF775633).addARGB(140, 0xFFA0763E).addARGB(178, 0xFFCCA353).addARGB(216, 0xFFEDD578).addARGB(255, 0xFFFCF7AE).build());
         // tier 4
-        buildMaterial(MaterialIds.pendoriteAlloy)
-            .meleeHarvest().armor()
-            .fallbacks("metal")
-            .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF2F164B).addARGB(102, 0xFF3A245E).addARGB(140, 0xFF503981).addARGB(178, 0xFF776DC0).addARGB(216, 0xFF949FE1).addARGB(255, 0xFF98ABE6).build());
         buildMaterial(MaterialIds.dragonsteelFire)
             .meleeHarvest().armor()
             .fallbacks("metal")

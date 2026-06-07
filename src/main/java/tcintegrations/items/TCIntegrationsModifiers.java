@@ -93,9 +93,6 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<?> GEOMANCER_MODIFIER;
     public static StaticModifier<?> PYROMANCER_MODIFIER;
 
-    // Ad Astra / Beyond Earth modifiers (not yet ported)
-    public static StaticModifier<?> CHEESY_MODIFIER;
-
     public static void init() {
         MODERATE_MODIFIER = MODIFIERS_REGISTRY.register("moderate", ModerateModifier::new);
 

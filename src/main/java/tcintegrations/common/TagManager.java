@@ -52,8 +52,6 @@ public class TagManager {
         public static final TagKey<Item> DRAGONSTEEL_LIGHTNING = itemTag("forge", "storage_blocks/dragonsteel_lightning");
         public static final TagKey<Item> DRAGONSTEEL_LIGHTNING_INGOTS = itemTag("forge", "ingots/dragonsteel_lightning");
 
-        public static final TagKey<Item> CHEESE = itemTag("forge", "cheese");
-
         public static final TagKey<Item> SOURCE_GEM = itemTag("forge", "gems/source");
         public static final TagKey<Item> SOURCE_GEM_BLOCK = itemTag("forge", "storage_blocks/source_gem");
         public static final TagKey<Item> SOURCE_GEM_C = itemTag("c", "gems/source_gem");

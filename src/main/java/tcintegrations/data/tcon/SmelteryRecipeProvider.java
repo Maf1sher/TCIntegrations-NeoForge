@@ -66,9 +66,6 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         RecipeOutput undergardenCloggrumConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "cloggrum"));
         RecipeOutput undergardenFroststeelConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "froststeel"));
         RecipeOutput undergardenForgottenConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "forgotten"));
-        RecipeOutput adAstraDeshConsumer = withCondition(consumer, modOrTagCondition(List.of(ModIntegration.AD_ASTRA_MODID, ModIntegration.BEYOND_EARTH_MODID), "desh"));
-        RecipeOutput adAstraCaloriteConsumer = withCondition(consumer, modOrTagCondition(List.of(ModIntegration.AD_ASTRA_MODID, ModIntegration.BEYOND_EARTH_MODID), "calorite"));
-        RecipeOutput adAstraOstrumConsumer = withCondition(consumer, modOrTagCondition(List.of(ModIntegration.AD_ASTRA_MODID, ModIntegration.BEYOND_EARTH_MODID), "ostrum"));
         RecipeOutput ifdFireConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_fire"));
         RecipeOutput ifdIceConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_ice"));
         RecipeOutput ifdLightningConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_lightning"));
@@ -76,16 +73,12 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
 
         molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
-        metal(consumer, TCIntegrationsItems.MOLTEN_BRONZE).optional().metal();
         metal(botaniaConsumer, TCIntegrationsItems.MOLTEN_MANASTEEL).metal();
         metal(aquacultureConsumer, TCIntegrationsItems.MOLTEN_NEPTUNIUM).metal();
         metal(malumConsumer, TCIntegrationsItems.MOLTEN_SOUL_STAINED_STEEL).metal();
         metal(undergardenCloggrumConsumer, TCIntegrationsItems.MOLTEN_CLOGGRUM).ore().metal();
         metal(undergardenFroststeelConsumer, TCIntegrationsItems.MOLTEN_FROSTSTEEL).ore().metal();
         metal(undergardenForgottenConsumer, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL).metal();
-        metal(adAstraDeshConsumer, TCIntegrationsItems.MOLTEN_DESH).ore().metal();
-        metal(adAstraCaloriteConsumer, TCIntegrationsItems.MOLTEN_CALORITE).ore().metal();
-        metal(adAstraOstrumConsumer, TCIntegrationsItems.MOLTEN_OSTRUM).ore().metal();
         metalWithoutNugget(ifdFireConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
         metalWithoutNugget(ifdIceConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
         metalWithoutNugget(ifdLightningConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);
@@ -214,17 +207,5 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
             new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName)),
             new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + ingotName))
         ));
-    }
-
-    /** Condition: any of the mod IDs loaded OR c:ingots/X tag filled OR forge:ingots/X tag filled */
-    private static OrCondition modOrTagCondition(List<String> modIds, String ingotName) {
-        List<ICondition> conditions = new java.util.ArrayList<>();
-        conditions.add(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS);
-        for (String modId : modIds) {
-            conditions.add(new ModLoadedCondition(modId));
-        }
-        conditions.add(new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName)));
-        conditions.add(new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + ingotName)));
-        return new OrCondition(conditions);
     }
 }

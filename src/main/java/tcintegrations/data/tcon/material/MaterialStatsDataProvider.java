@@ -56,26 +56,6 @@ public class MaterialStatsDataProvider extends AbstractMaterialStatsDataProvider
             StatlessMaterialStats.BINDING,
             StatlessMaterialStats.SHIELD_CORE);
         
-        // tier 2 (mod integration)
-        addMaterialStats(MaterialIds.desh,
-            new HeadMaterialStats(250, 6F, IRON, 2F),
-            new LimbMaterialStats(250, -0.2F, 0.1F, 0),
-            new GripMaterialStats(0.1F, 0F, 2F),
-            HandleMaterialStats.multipliers().durability(1.10F).build(),
-            StatlessMaterialStats.BINDING);
-        addMaterialStats(MaterialIds.calorite,
-            new HeadMaterialStats(250, 6F, IRON, 2F),
-            new LimbMaterialStats(250, -0.2F, 0.1F, 0),
-            new GripMaterialStats(0.1F, 0F, 2F),
-            HandleMaterialStats.multipliers().durability(1.10F).build(),
-            StatlessMaterialStats.BINDING);
-        addMaterialStats(MaterialIds.ostrum,
-            new HeadMaterialStats(250, 6F, IRON, 2F),
-            new LimbMaterialStats(250, -0.2F, 0.1F, 0),
-            new GripMaterialStats(0.1F, 0F, 2F),
-            HandleMaterialStats.multipliers().durability(1.10F).build(),
-            StatlessMaterialStats.BINDING);
-
         // tier 3 (mod integration)
         addMaterialStats(MaterialIds.manaSteel,
             new HeadMaterialStats(775, 6F, DIAMOND, 2.75F),
@@ -116,12 +96,6 @@ public class MaterialStatsDataProvider extends AbstractMaterialStatsDataProvider
         addMaterialStats(MaterialIds.manaString, StatlessMaterialStats.BINDING);
 
         // tier 4 (mod integration)
-        addMaterialStats(MaterialIds.pendoriteAlloy,
-            new HeadMaterialStats(1450, 8f, NETHERITE, 3.0F),
-            new LimbMaterialStats(1450, 0, -0.20F,0.05F),
-            new GripMaterialStats(0.2F, -0.15F, 3.0F),
-            HandleMaterialStats.multipliers().durability(1.4F).miningSpeed(1.2F).attackSpeed(1.1F).attackDamage(1.25F).build(),
-            StatlessMaterialStats.BINDING);
         addMaterialStats(MaterialIds.dragonsteelFire, new HeadMaterialStats(2500, 6.5F, NETHERITE, 20F));
         addArmorShieldStats(MaterialIds.dragonsteelFire,
             PlatingMaterialStats.builder()

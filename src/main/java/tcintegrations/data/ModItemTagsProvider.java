@@ -49,12 +49,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         this.tag(TagManager.Items.BRONZE_INGOTS).add(TCIntegrationsItems.BRONZE.getIngot());
         this.tag(TagManager.Items.BRONZE_NUGGETS).add(TCIntegrationsItems.BRONZE.getNugget());
-        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/bronze")))
-            .add(TCIntegrationsItems.BRONZE.getIngot());
-        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "nuggets/bronze")))
-            .add(TCIntegrationsItems.BRONZE.getNugget());
-        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/bronze")))
-            .add(TCIntegrationsItems.BRONZE.asItem());
 
         // Botania
         addBotaniaLogVariants(TagManager.Items.BOTANIA_LIVINGWOOD_LOGS, "livingwood");
@@ -79,11 +73,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.copy(TagManager.Blocks.DRAGONSTEEL_LIGHTNING, TagManager.Items.DRAGONSTEEL_LIGHTNING);
         this.tag(TagManager.Items.DRAGONSTEEL_LIGHTNING_INGOTS).addOptional(ModIntegration.ifdLoc("dragonsteel_lightning_ingot"));
 
-        // Ad Astra & Beyond Earth
-        this.tag(TagManager.Items.CHEESE)
-            .addOptional(ModIntegration.adAstraLoc("cheese"))
-            .addOptional(ModIntegration.beyondEarthLoc("cheese"));
-
         // Ars Nouveau
         this.tag(TagManager.Items.SOURCE_GEM)
             .addOptional(ModIntegration.arsLoc("source_gem"));
@@ -94,6 +83,36 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(TagManager.Items.SOURCE_GEM_BLOCK_C)
             .addOptional(ModIntegration.arsLoc("source_gem_block"));
 
+        // Aquaculture
+        this.tag(TagManager.Items.TIN_CAN)
+            .addOptional(ModIntegration.aquaLoc("tin_can"));
+        this.tag(TagManager.Items.REDSTONE_HOOK)
+            .addOptional(ModIntegration.aquaLoc("redstone_hook"));
+        this.tag(TagManager.Items.IRON_HOOK)
+            .addOptional(ModIntegration.aquaLoc("iron_hook"));
+        this.tag(TagManager.Items.FISH_FILLET_RAW)
+            .addOptional(ModIntegration.aquaLoc("fish_fillet_raw"));
+
+        // Undergarden
+        this.tag(TagManager.Items.MASTICATOR_SCALES)
+            .addOptional(ModIntegration.ugLoc("masticator_scales"));
+        this.tag(TagManager.Items.UTHERIUM_CRYSTAL)
+            .addOptional(ModIntegration.ugLoc("utherium_crystal"));
+
+        // Twilight Forest
+        this.tag(TagManager.Items.NAGA_SCALE)
+            .addOptional(ModIntegration.twilightLoc("naga_scale"));
+        this.tag(TagManager.Items.ARCTIC_FUR)
+            .addOptional(ModIntegration.twilightLoc("arctic_fur"));
+
+        // Deeper and Darker
+        this.tag(TagManager.Items.REINFORCED_ECHO_SHARD)
+            .addOptional(ModIntegration.deeperDarkerLoc("reinforced_echo_shard"));
+
+        // Immersive Engineering
+        this.tag(TagManager.Items.VOLTMETER)
+            .addOptional(ModIntegration.ieLoc("voltmeter"));
+
         // Ensure integration metal ingots appear in both c: and forge: ingot tags
         addCompatibilityIngot("manasteel", ModIntegration.botaniaLoc("manasteel_ingot"));
         addCompatibilityIngot("neptunium", ModIntegration.aquaLoc("neptunium_ingot"));
@@ -101,9 +120,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         addCompatibilityIngot("cloggrum", ModIntegration.ugLoc("cloggrum_ingot"));
         addCompatibilityIngot("froststeel", ModIntegration.ugLoc("froststeel_ingot"));
         addCompatibilityIngot("forgotten", ModIntegration.ugLoc("forgotten_ingot"));
-        addCompatibilityIngot("desh", ModIntegration.adAstraLoc("desh_ingot"));
-        addCompatibilityIngot("calorite", ModIntegration.adAstraLoc("calorite_ingot"));
-        addCompatibilityIngot("ostrum", ModIntegration.adAstraLoc("ostrum_ingot"));
         addCompatibilityIngot("dragonsteel_fire", ModIntegration.ifdLoc("dragonsteel_fire_ingot"));
         addCompatibilityIngot("dragonsteel_ice", ModIntegration.ifdLoc("dragonsteel_ice_ingot"));
         addCompatibilityIngot("dragonsteel_lightning", ModIntegration.ifdLoc("dragonsteel_lightning_ingot"));
