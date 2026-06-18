@@ -33,10 +33,12 @@ import tcintegrations.items.modifiers.tool.SirenModifier;
 import tcintegrations.items.modifiers.tool.TwilitModifier;
 import tcintegrations.items.modifiers.tool.UtheriumModifier;
 import tcintegrations.items.modifiers.tool.CapturingModifier;
+import tcintegrations.items.modifiers.tool.CloggrumModifier;
 import tcintegrations.items.modifiers.tool.FlamedModifier;
 import tcintegrations.items.modifiers.tool.GlowUpModifier;
 import tcintegrations.items.modifiers.tool.IcedModifier;
 import tcintegrations.items.modifiers.tool.PhantasmalModifier;
+import tcintegrations.items.modifiers.tool.SourceGemModifier;
 import tcintegrations.items.modifiers.tool.ZappedModifier;
 import tcintegrations.items.modifiers.traits.DragonScalesModifier;
 import tcintegrations.items.modifiers.traits.KineticModifier;
@@ -73,6 +75,8 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<ForgottenModifier> FORGOTTEN_MODIFIER;
     public static StaticModifier<PrecipitateModifier> PRECIPITATE_MODIFIER;
     public static StaticModifier<TwilitModifier> TWILIT_MODIFIER;
+    public static StaticModifier<CloggrumModifier> CLOGGRUM_MODIFIER;
+    public static StaticModifier<SourceGemModifier> SOURCE_GEM_MODIFIER;
     public static StaticModifier<SculkingModifier> SCULKING_MODIFIER;
     // Ars Elemental modifiers (not yet ported)
     public static StaticModifier<?> AETHERMANCER_MODIFIER;
@@ -98,6 +102,7 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
             AQUAMANCER_MODIFIER = MODIFIERS_REGISTRY.register("aquamancer", AquamancerModifier::new);
             GEOMANCER_MODIFIER = MODIFIERS_REGISTRY.register("geomancer", GeomancerModifier::new);
             PYROMANCER_MODIFIER = MODIFIERS_REGISTRY.register("pyromancer", PyromancerModifier::new);
+            SOURCE_GEM_MODIFIER = MODIFIERS_REGISTRY.register("source_gem", SourceGemModifier::new);
         }
 
         if (ModIntegration.canLoad(ModIntegration.IFD_MODID)) {
@@ -140,6 +145,7 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
             UTHERIUM_MODIFIER = MODIFIERS_REGISTRY.register("utherium", UtheriumModifier::new);
             FROSTSTEEL_MODIFIER = MODIFIERS_REGISTRY.register("froststeel", FroststeelModifier::new);
             FORGOTTEN_MODIFIER = MODIFIERS_REGISTRY.register("forgotten", ForgottenModifier::new);
+            CLOGGRUM_MODIFIER = MODIFIERS_REGISTRY.register("cloggrum", CloggrumModifier::new);
         }
 
         if (ModIntegration.canLoad(ModIntegration.DEEPERDARKER_MODID)) {
