@@ -24,8 +24,8 @@ repositories {
     }
     // Local Mantle-NeoForge and TinkersConstruct-NeoForge builds
     flatDir {
-        dirs '../Tinkers-1.21.1-NeoForge/Mantle-NeoForge/build/libs',
-             '../Tinkers-1.21.1-NeoForge/TinkersConstruct-NeoForge/build/libs'
+        dirs '../../Tinkers-1.21.1-NeoForge/Mantle-NeoForge/build/libs',
+             '../../Tinkers-1.21.1-NeoForge/TinkersConstruct-NeoForge/build/libs'
     }
 }
 
@@ -79,8 +79,10 @@ sourceSets.main.resources {
 }
 
 dependencies {
-    implementation fileTree(dir: '../Tinkers-1.21.1-NeoForge/Mantle-NeoForge/build/libs', include: 'Mantle-*.jar')
-    implementation fileTree(dir: '../Tinkers-1.21.1-NeoForge/TinkersConstruct-NeoForge/build/libs', include: 'TinkersConstruct-*.jar')
+    implementation files(
+        '../../Tinkers-1.21.1-NeoForge/Mantle-NeoForge/build/libs/Mantle-1.21.1-1.12.DEV.4bdbb116.jar',
+        '../../Tinkers-1.21.1-NeoForge/TinkersConstruct-NeoForge/build/libs/TinkersConstruct-1.21.1-3.12.0.DEV.2a9a1fd27b.jar'
+    )
 
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
