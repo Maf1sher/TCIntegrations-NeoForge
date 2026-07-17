@@ -5,7 +5,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import tcintegrations.TCIntegrations;
-import tcintegrations.util.ModItemRef;
 import tcintegrations.data.client.FluidBlockstateModelProvider;
 import tcintegrations.data.client.FluidBucketModelProvider;
 import tcintegrations.data.client.ModBlockStateProvider;
@@ -13,6 +12,7 @@ import tcintegrations.data.client.ModItemModelProvider;
 import tcintegrations.data.loot.ModLootTables;
 import tcintegrations.data.recipes.ModRecipesProvider;
 import tcintegrations.data.tcon.CombinedRecipeProvider;
+import tcintegrations.data.tcon.IfdMeltingRecipeProvider;
 import tcintegrations.data.tcon.EnchantmentToModifierProvider;
 import tcintegrations.data.tcon.ModifierProvider;
 import tcintegrations.data.tcon.ModifierTagProvider;
@@ -33,7 +33,6 @@ public final class DataGenerators {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
-        ModItemRef.setDataGenMode(true);
         ModIntegration.setForceLoaded();
         var gen = event.getGenerator();
         var packOutput = gen.getPackOutput();
@@ -53,6 +52,7 @@ public final class DataGenerators {
         // TCon providers
         gen.addProvider(event.includeServer(), new ModifierProvider(packOutput));
         gen.addProvider(event.includeServer(), new CombinedRecipeProvider(packOutput, lookupProvider));
+        gen.addProvider(event.includeServer(), new IfdMeltingRecipeProvider(packOutput));
         gen.addProvider(event.includeServer(), new EnchantmentToModifierProvider(packOutput));
         gen.addProvider(event.includeServer(), new ModifierTagProvider(packOutput, TCIntegrations.MODID, existingFileHelper));
 

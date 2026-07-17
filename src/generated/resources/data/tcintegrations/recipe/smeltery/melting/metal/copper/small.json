@@ -7,13 +7,13 @@
   ],
   "type": "tconstruct:damagable_melting",
   "ingredient": {
-    "item": "minecraft:stone"
+    "item": "iceandfire:copper_shovel"
   },
   "result": {
-    "amount": 90,
     "fluid": "tconstruct:molten_copper",
+    "amount": 90,
     "unit_size": 10
   },
   "temperature": 500,
-  "time": 50
+  "time": 22
 }
