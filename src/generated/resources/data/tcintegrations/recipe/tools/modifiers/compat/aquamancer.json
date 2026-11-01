@@ -1,0 +1,36 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_elemental"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "count": 1,
+      "tag": "ars_elemental:mark_of_mastery"
+    },
+    {
+      "count": 1,
+      "tag": "ars_nouveau:water_essence"
+    },
+    {
+      "count": 1,
+      "tag": "ars_nouveau:water_essence"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:netherite_ingot"
+    }
+  ],
+  "level": 1,
+  "result": "tcintegrations:aquamancer",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/worn"
+  }
+}

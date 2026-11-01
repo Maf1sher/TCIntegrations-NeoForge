@@ -12,7 +12,7 @@
       },
       {
         "type": "mantle:tag_filled",
-        "tag": "c:ingots/source_gem"
+        "tag": "c:gems/source_gem"
       }
     ]
   },

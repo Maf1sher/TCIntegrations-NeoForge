@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_nouveau"
+    }
+  ],
+  "type": "tconstruct:modifier",
+  "allow_crystal": false,
+  "inputs": [
+    {
+      "count": 1,
+      "tag": "ars_nouveau:mage_fiber"
+    },
+    {
+      "count": 1,
+      "tag": "ars_nouveau:mage_fiber"
+    },
+    {
+      "count": 1,
+      "tag": "ars_nouveau:mage_fiber"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:blaze_rod"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:blaze_rod"
+    }
+  ],
+  "level": 2,
+  "result": "tcintegrations:ars_nouveau",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/armor/worn"
+  }
+}

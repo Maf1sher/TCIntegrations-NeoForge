@@ -1,0 +1,18 @@
+{
+  "condition": {
+    "type": "neoforge:mod_loaded",
+    "modid": "ars_nouveau"
+  },
+  "level_display": {
+    "type": "tconstruct:unique",
+    "first_unique": false,
+    "unique_until": 3
+  },
+  "modules": [
+    {
+      "type": "tconstruct:modifier_slot",
+      "each_level": 1,
+      "name": "upgrades"
+    }
+  ]
+}
