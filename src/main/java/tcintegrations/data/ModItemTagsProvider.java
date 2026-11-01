@@ -54,8 +54,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.copy(TagManager.Blocks.SOUL_STAINED_STEEL, TagManager.Items.SOUL_STAINED_STEEL);
         this.tag(TagManager.Items.SOUL_STAINED_STEEL_INGOTS).addOptional(ModIntegration.malumLoc("soul_stained_steel_ingot"));
         this.tag(TagManager.Items.SOUL_STAINED_STEEL_NUGGETS).addOptional(ModIntegration.malumLoc("soul_stained_steel_nugget"));
-        this.tag(TagManager.Items.SOUL_STAINED_STEEL_BLOCK_C).addOptional(ModIntegration.malumLoc("block_of_soul_stained_steel"));
-        this.tag(TagManager.Items.SOUL_STAINED_STEEL_NUGGET_C).addOptional(ModIntegration.malumLoc("soul_stained_steel_nugget"));
 
         // Ice and Fire: Dragons
         this.tag(TagManager.Items.WITHER_BONES)
@@ -72,10 +70,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(TagManager.Items.SOURCE_GEM)
             .addOptional(ModIntegration.arsLoc("source_gem"));
         this.tag(TagManager.Items.SOURCE_GEM_BLOCK)
-            .addOptional(ModIntegration.arsLoc("source_gem_block"));
-        this.tag(TagManager.Items.SOURCE_GEM_C)
-            .addOptional(ModIntegration.arsLoc("source_gem"));
-        this.tag(TagManager.Items.SOURCE_GEM_BLOCK_C)
             .addOptional(ModIntegration.arsLoc("source_gem_block"));
 
         // Aquaculture
@@ -106,7 +100,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(TagManager.Items.VOLTMETER)
             .addOptional(ModIntegration.ieLoc("voltmeter"));
 
-        // Ensure integration metal ingots appear in both c: and forge: ingot tags
+        // Ensure integration metal ingots appear in c: common ingot tags
         addCompatibilityIngot("neptunium", ModIntegration.aquaLoc("neptunium_ingot"));
         addCompatibilityIngot("soul_stained_steel", ModIntegration.malumLoc("soul_stained_steel_ingot"));
         addCompatibilityIngot("cloggrum", ModIntegration.ugLoc("cloggrum_ingot"));
@@ -149,25 +143,17 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Ice and Fire: Dragon Bone (item id is "dragonbone", not "dragon_bone")
         this.tag(TagManager.Items.DRAGON_BONE)
             .addOptional(ModIntegration.ifdLoc("dragonbone"));
-        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "bones/dragon")))
-            .addOptional(ModIntegration.ifdLoc("dragonbone"));
 
         // Ice and Fire: Ghost Ingot
         this.tag(TagManager.Items.GHOST_INGOT)
             .addOptional(ModIntegration.ifdLoc("ghost_ingot"));
 
-        // Ice and Fire: Dragonsteel storage blocks (both forge: and c:)
+        // Ice and Fire: Dragonsteel storage blocks
         this.tag(TagManager.Items.DRAGONSTEEL_FIRE)
             .addOptional(ModIntegration.ifdLoc("dragonsteel_fire_block"));
         this.tag(TagManager.Items.DRAGONSTEEL_ICE)
             .addOptional(ModIntegration.ifdLoc("dragonsteel_ice_block"));
         this.tag(TagManager.Items.DRAGONSTEEL_LIGHTNING)
-            .addOptional(ModIntegration.ifdLoc("dragonsteel_lightning_block"));
-        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/dragonsteel_fire")))
-            .addOptional(ModIntegration.ifdLoc("dragonsteel_fire_block"));
-        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/dragonsteel_ice")))
-            .addOptional(ModIntegration.ifdLoc("dragonsteel_ice_block"));
-        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/dragonsteel_lightning")))
             .addOptional(ModIntegration.ifdLoc("dragonsteel_lightning_block"));
 
         // Mekanism: Refined Glowstone Ingot
@@ -179,11 +165,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ModIntegration.createLoc("mechanical_arm"));
     }
 
-    /** Adds an ingot to both c:ingots/<name> and forge:ingots/<name> tags */
+    /** Adds an ingot to the c:ingots/<name> common tag */
     private void addCompatibilityIngot(String name, ResourceLocation ingotLoc) {
         this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + name)))
-            .addOptional(ingotLoc);
-        this.tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + name)))
             .addOptional(ingotLoc);
     }
 

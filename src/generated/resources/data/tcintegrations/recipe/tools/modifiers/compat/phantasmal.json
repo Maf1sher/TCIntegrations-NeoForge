@@ -9,16 +9,20 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "tag": "forge:bones/dragon"
+      "count": 1,
+      "tag": "c:bones/dragon"
     },
     {
-      "tag": "forge:bones/dragon"
+      "count": 1,
+      "tag": "c:bones/dragon"
     },
     {
-      "tag": "forge:wither_bones"
+      "count": 1,
+      "tag": "c:wither_bones"
     },
     {
-      "tag": "forge:ingots/ghost"
+      "count": 1,
+      "tag": "c:ingots/ghost"
     }
   ],
   "level": 1,

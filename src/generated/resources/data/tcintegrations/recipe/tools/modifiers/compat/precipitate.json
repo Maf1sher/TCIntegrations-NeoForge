@@ -9,18 +9,23 @@
   "allow_crystal": true,
   "inputs": [
     {
+      "count": 1,
       "tag": "twilightforest:naga_scale"
     },
     {
+      "count": 1,
       "tag": "twilightforest:naga_scale"
     },
     {
+      "count": 1,
       "tag": "twilightforest:naga_scale"
     },
     {
+      "count": 1,
       "tag": "twilightforest:naga_scale"
     },
     {
+      "count": 1,
       "tag": "twilightforest:naga_scale"
     }
   ],

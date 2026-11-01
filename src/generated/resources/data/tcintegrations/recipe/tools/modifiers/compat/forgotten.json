@@ -9,19 +9,24 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "tag": "forge:ingots/forgotten"
+      "count": 1,
+      "tag": "c:ingots/forgotten"
     },
     {
-      "tag": "forge:ingots/cloggrum"
+      "count": 1,
+      "tag": "c:ingots/cloggrum"
     },
     {
-      "tag": "forge:ingots/cloggrum"
+      "count": 1,
+      "tag": "c:ingots/cloggrum"
     },
     {
-      "tag": "forge:ingots/cloggrum"
+      "count": 1,
+      "tag": "c:ingots/cloggrum"
     },
     {
-      "tag": "forge:ingots/cloggrum"
+      "count": 1,
+      "tag": "c:ingots/cloggrum"
     }
   ],
   "level": 1,

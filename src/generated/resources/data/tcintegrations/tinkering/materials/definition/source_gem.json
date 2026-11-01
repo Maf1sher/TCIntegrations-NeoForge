@@ -13,10 +13,6 @@
       {
         "type": "mantle:tag_filled",
         "tag": "c:ingots/source_gem"
-      },
-      {
-        "type": "mantle:tag_filled",
-        "tag": "forge:ingots/source_gem"
       }
     ]
   },

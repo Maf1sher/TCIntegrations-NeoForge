@@ -14,17 +14,15 @@
         {
           "type": "mantle:tag_filled",
           "tag": "c:ingots/cloggrum"
-        },
-        {
-          "type": "mantle:tag_filled",
-          "tag": "forge:ingots/cloggrum"
         }
       ]
     },
     {
       "type": "mantle:tag_combination_filled",
       "ignore": "tconstruct:non_singular_ore_rates",
-      "match": "c:ores/cloggrum"
+      "match": [
+        "c:ores/cloggrum"
+      ]
     }
   ],
   "type": "tconstruct:ore_melting",

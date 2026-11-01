@@ -9,6 +9,7 @@
   "allow_crystal": true,
   "inputs": [
     {
+      "count": 1,
       "tag": "twilightforest:arctic_fur"
     }
   ],

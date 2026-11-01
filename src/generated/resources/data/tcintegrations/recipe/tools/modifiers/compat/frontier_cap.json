@@ -9,18 +9,23 @@
   "allow_crystal": true,
   "inputs": [
     {
+      "count": 1,
       "tag": "tcintegrations:bear_fur"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:bear_fur"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:bear_fur"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:bear_fur"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:raccoon_tail"
     }
   ],

@@ -8,6 +8,5 @@
     {
       "type": "tcintegrations:multivision"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

@@ -156,7 +156,7 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         String folder = "smeltery/alloys/";
 
         // Update Recipe to use Obsidian instead of Quartz to not interfere with Hepatizon
-        RecipeOutput wrapped = withConditions(consumer, new TagEmptyCondition(ResourceLocationHelper.location("forge", "ingots/tin")));
+        RecipeOutput wrapped = withConditions(consumer, new TagEmptyCondition(ResourceLocationHelper.location("c", "ingots/tin")));
 
         AlloyRecipeBuilder.alloy(TinkerFluids.moltenBronze.get(), FluidValues.INGOT * 4)
             .addInput(TinkerFluids.moltenCopper.ingredient(FluidValues.INGOT * 3))
@@ -197,13 +197,12 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         return name.withPath(folder + name.getPath() + "/" + variant);
     }
 
-    /** Condition: mod loaded OR c:ingots/X tag filled OR forge:ingots/X tag filled */
+    /** Condition: mod loaded OR c:ingots/X tag filled */
     private static OrCondition modOrTagCondition(String modId, String ingotName) {
         return new OrCondition(List.of(
             ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
             new ModLoadedCondition(modId),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName)),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + ingotName))
+            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName))
         ));
     }
 }

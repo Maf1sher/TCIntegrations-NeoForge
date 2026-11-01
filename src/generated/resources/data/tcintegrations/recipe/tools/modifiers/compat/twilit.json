@@ -9,18 +9,23 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "tag": "forge:ingots/fiery"
+      "count": 1,
+      "tag": "c:ingots/fiery"
     },
     {
-      "tag": "forge:ingots/fiery"
+      "count": 1,
+      "tag": "c:ingots/fiery"
     },
     {
-      "tag": "forge:ingots/fiery"
+      "count": 1,
+      "tag": "c:ingots/fiery"
     },
     {
-      "tag": "forge:ingots/steeleaf"
+      "count": 1,
+      "tag": "c:ingots/steeleaf"
     },
     {
+      "count": 1,
       "tag": "twilightforest:naga_scale"
     }
   ],

@@ -14,10 +14,6 @@
         {
           "type": "mantle:tag_filled",
           "tag": "c:ingots/dragonsteel_ice"
-        },
-        {
-          "type": "mantle:tag_filled",
-          "tag": "forge:ingots/dragonsteel_ice"
         }
       ]
     }

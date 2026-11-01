@@ -9,18 +9,23 @@
   "allow_crystal": true,
   "inputs": [
     {
+      "count": 1,
       "item": "minecraft:chiseled_sandstone"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:roadrunner_feather"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:roadrunner_feather"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:roadrunner_feather"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:roadrunner_feather"
     }
   ],

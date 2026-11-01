@@ -9,18 +9,23 @@
   "allow_crystal": true,
   "inputs": [
     {
+      "count": 1,
       "tag": "deeperdarker:reinforced_echo_shard"
     },
     {
+      "count": 1,
       "item": "minecraft:netherite_ingot"
     },
     {
+      "count": 1,
       "item": "minecraft:diamond"
     },
     {
+      "count": 1,
       "item": "minecraft:diamond"
     },
     {
+      "count": 1,
       "item": "minecraft:diamond"
     }
   ],

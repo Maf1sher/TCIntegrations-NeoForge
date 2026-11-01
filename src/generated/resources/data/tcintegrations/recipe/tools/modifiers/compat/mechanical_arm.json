@@ -9,6 +9,7 @@
   "allow_crystal": true,
   "inputs": [
     {
+      "count": 1,
       "tag": "create:mechanical_arm"
     }
   ],

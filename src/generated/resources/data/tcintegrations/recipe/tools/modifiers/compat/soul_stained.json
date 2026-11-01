@@ -9,19 +9,24 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "tag": "forge:ingots/soul_stained_steel"
+      "count": 1,
+      "tag": "c:ingots/soul_stained_steel"
     },
     {
-      "tag": "forge:ingots/soul_stained_steel"
+      "count": 1,
+      "tag": "c:ingots/soul_stained_steel"
     },
     {
-      "tag": "forge:ingots/soul_stained_steel"
+      "count": 1,
+      "tag": "c:ingots/soul_stained_steel"
     },
     {
-      "tag": "forge:ingots/soul_stained_steel"
+      "count": 1,
+      "tag": "c:ingots/soul_stained_steel"
     },
     {
-      "tag": "forge:ingots/soul_stained_steel"
+      "count": 1,
+      "tag": "c:ingots/soul_stained_steel"
     }
   ],
   "level": 1,

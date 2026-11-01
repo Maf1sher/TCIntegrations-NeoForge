@@ -9,18 +9,23 @@
   "allow_crystal": true,
   "inputs": [
     {
+      "count": 1,
       "tag": "tcintegrations:spiked_scute"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:spiked_scute"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:spiked_scute"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:spiked_scute"
     },
     {
+      "count": 1,
       "tag": "tcintegrations:spiked_scute"
     }
   ],

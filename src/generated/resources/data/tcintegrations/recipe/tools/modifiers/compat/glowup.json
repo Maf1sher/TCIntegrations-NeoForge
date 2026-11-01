@@ -9,19 +9,24 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "tag": "forge:ingots/refined_glowstone"
+      "count": 1,
+      "tag": "c:ingots/refined_glowstone"
     },
     {
-      "tag": "forge:ingots/refined_glowstone"
+      "count": 1,
+      "tag": "c:ingots/refined_glowstone"
     },
     {
-      "tag": "forge:ingots/refined_glowstone"
+      "count": 1,
+      "tag": "c:ingots/refined_glowstone"
     },
     {
-      "tag": "forge:ingots/refined_glowstone"
+      "count": 1,
+      "tag": "c:ingots/refined_glowstone"
     },
     {
-      "tag": "forge:ingots/refined_glowstone"
+      "count": 1,
+      "tag": "c:ingots/refined_glowstone"
     }
   ],
   "level": {

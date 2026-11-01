@@ -9,19 +9,24 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "tag": "tcintegrations:mosquito_probosis"
+      "count": 1,
+      "tag": "tcintegrations:mosquito_proboscis"
     },
     {
-      "tag": "tcintegrations:mosquito_probosis"
+      "count": 1,
+      "tag": "tcintegrations:mosquito_proboscis"
     },
     {
-      "tag": "tcintegrations:mosquito_probosis"
+      "count": 1,
+      "tag": "tcintegrations:mosquito_proboscis"
     },
     {
-      "tag": "tcintegrations:mosquito_probosis"
+      "count": 1,
+      "tag": "tcintegrations:mosquito_proboscis"
     },
     {
-      "tag": "tcintegrations:mosquito_probosis"
+      "count": 1,
+      "tag": "tcintegrations:mosquito_proboscis"
     }
   ],
   "level": {

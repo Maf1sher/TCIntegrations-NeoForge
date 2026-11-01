@@ -10,16 +10,20 @@
   "check_trait_level": true,
   "inputs": [
     {
+      "count": 1,
       "tag": "c:raw_materials"
     },
     {
-      "tag": "forge:ingots/fiery"
+      "count": 1,
+      "tag": "c:ingots/fiery"
     },
     {
-      "tag": "forge:ingots/fiery"
+      "count": 1,
+      "tag": "c:ingots/fiery"
     },
     {
-      "tag": "forge:ingots/fiery"
+      "count": 1,
+      "tag": "c:ingots/fiery"
     }
   ],
   "level": 1,

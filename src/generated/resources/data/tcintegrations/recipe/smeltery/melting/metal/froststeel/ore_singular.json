@@ -14,17 +14,15 @@
         {
           "type": "mantle:tag_filled",
           "tag": "c:ingots/froststeel"
-        },
-        {
-          "type": "mantle:tag_filled",
-          "tag": "forge:ingots/froststeel"
         }
       ]
     },
     {
       "type": "mantle:tag_combination_filled",
       "ignore": "tconstruct:non_singular_ore_rates",
-      "match": "c:ores/froststeel"
+      "match": [
+        "c:ores/froststeel"
+      ]
     }
   ],
   "type": "tconstruct:ore_melting",

@@ -53,13 +53,12 @@ public class MaterialDataProvider extends AbstractMaterialDataProvider {
         addMaterial(MaterialIds.dragonsteelLightning, 4, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_lightning"));
     }
 
-    /** Condition: mod loaded OR c:ingots/X tag filled OR forge:ingots/X tag filled */
+    /** Condition: mod loaded OR c:ingots/X tag filled */
     private static ICondition modOrTagCondition(String modId, String ingotName) {
         return new OrCondition(List.of(
             ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
             new ModLoadedCondition(modId),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName)),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + ingotName))
+            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName))
         ));
     }
 }

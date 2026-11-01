@@ -9,19 +9,24 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "tag": "forge:ingots/froststeel"
+      "count": 1,
+      "tag": "c:ingots/froststeel"
     },
     {
-      "tag": "forge:ingots/froststeel"
+      "count": 1,
+      "tag": "c:ingots/froststeel"
     },
     {
-      "tag": "forge:ingots/froststeel"
+      "count": 1,
+      "tag": "c:ingots/froststeel"
     },
     {
-      "tag": "forge:ingots/froststeel"
+      "count": 1,
+      "tag": "c:ingots/froststeel"
     },
     {
-      "tag": "forge:ingots/froststeel"
+      "count": 1,
+      "tag": "c:ingots/froststeel"
     }
   ],
   "level": 1,

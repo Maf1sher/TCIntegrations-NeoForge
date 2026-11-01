@@ -14,10 +14,6 @@
         {
           "type": "mantle:tag_filled",
           "tag": "c:ingots/froststeel"
-        },
-        {
-          "type": "mantle:tag_filled",
-          "tag": "forge:ingots/froststeel"
         }
       ]
     }

@@ -9,18 +9,23 @@
   "allow_crystal": true,
   "inputs": [
     {
-      "tag": "forge:ingots/neptunium"
+      "count": 1,
+      "tag": "c:ingots/neptunium"
     },
     {
-      "tag": "forge:ingots/neptunium"
+      "count": 1,
+      "tag": "c:ingots/neptunium"
     },
     {
-      "tag": "forge:ingots/neptunium"
+      "count": 1,
+      "tag": "c:ingots/neptunium"
     },
     {
+      "count": 1,
       "tag": "aquaculture:fish_fillet_raw"
     },
     {
+      "count": 1,
       "tag": "aquaculture:iron_hook"
     }
   ],
