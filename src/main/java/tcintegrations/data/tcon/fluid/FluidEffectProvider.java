@@ -1,5 +1,8 @@
 package tcintegrations.data.tcon.fluid;
 
+import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.effect.MobEffects;
 
@@ -18,8 +21,8 @@ import tcintegrations.items.TCIntegrationsItems;
 
 public class FluidEffectProvider extends AbstractFluidEffectProvider {
 
-    public FluidEffectProvider(PackOutput packOutput, String modId) {
-        super(packOutput, modId);
+    public FluidEffectProvider(PackOutput packOutput, String modId, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(packOutput, modId, lookupProvider);
     }
 
     @Override

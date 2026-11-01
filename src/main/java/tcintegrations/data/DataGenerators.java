@@ -25,6 +25,7 @@ import tcintegrations.data.tcon.material.MaterialStatsDataProvider;
 import tcintegrations.data.tcon.material.MaterialTraitsDataProvider;
 import tcintegrations.data.tcon.sprite.TinkerMaterialSpriteProvider;
 import tcintegrations.data.integration.ModIntegration;
+import tcintegrations.data.integration.ProjectEConversionProvider;
 
 @EventBusSubscriber(modid = TCIntegrations.MODID, bus = EventBusSubscriber.Bus.MOD)
 public final class DataGenerators {
@@ -55,6 +56,7 @@ public final class DataGenerators {
         gen.addProvider(event.includeServer(), new IfdMeltingRecipeProvider(packOutput));
         gen.addProvider(event.includeServer(), new EnchantmentToModifierProvider(packOutput));
         gen.addProvider(event.includeServer(), new ModifierTagProvider(packOutput, TCIntegrations.MODID, existingFileHelper));
+        gen.addProvider(event.includeServer(), new ProjectEConversionProvider(packOutput, lookupProvider));
 
         // TCon material providers (ordered by dependencies)
         var materialData = new MaterialDataProvider(packOutput);
@@ -63,7 +65,7 @@ public final class DataGenerators {
         gen.addProvider(event.includeServer(), new MaterialTraitsDataProvider(packOutput, materialData));
 
         // TCon fluid providers
-        gen.addProvider(event.includeServer(), new FluidEffectProvider(packOutput, TCIntegrations.MODID));
+        gen.addProvider(event.includeServer(), new FluidEffectProvider(packOutput, TCIntegrations.MODID, lookupProvider));
         gen.addProvider(event.includeServer(), new FluidTagProvider(packOutput, lookupProvider, existingFileHelper));
 
         // TCon sprite/render providers

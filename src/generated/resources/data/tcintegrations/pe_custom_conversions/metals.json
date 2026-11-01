@@ -1,0 +1,11 @@
+{
+  "values": {
+    "before": [
+      {
+        "type": "projecte:item",
+        "emc_value": 6144,
+        "id": "tconstruct:cobalt_ingot"
+      }
+    ]
+  }
+}

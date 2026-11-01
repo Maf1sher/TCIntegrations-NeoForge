@@ -117,6 +117,10 @@ dependencies {
     // Runtime mods for testing
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
     runtimeOnly "curse.maven:geckolib-388172:8893490"
+    // ProjectE is compileOnly for the add-on code, but its provider class must be loadable
+    // during datagen. ModDevGradle only loads external jars as mods from the standard runtime
+    // classpath (a per-run classpath is treated as legacy, non-mod), so the jar lives here.
+    runtimeOnly "curse.maven:projecte-226410:6611984"
 }
 
 def resourceTargets = ['META-INF/neoforge.mods.toml', 'pack.mcmeta']
