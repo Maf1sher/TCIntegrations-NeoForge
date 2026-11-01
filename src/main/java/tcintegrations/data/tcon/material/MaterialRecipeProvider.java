@@ -35,13 +35,13 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
 
     private void addMaterialItems(RecipeOutput consumer) {
         String folder = "tools/materials/";
-        RecipeOutput bronzeConsumer = withCondition(consumer, tagCondition("ingots/bronze"));
-        RecipeOutput aquacultureConsumer = withCondition(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
-        RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
-        RecipeOutput brassConsumer = withCondition(consumer, tagCondition("ingots/brass"));
-        RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
-        RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
-        RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
+        RecipeOutput bronzeConsumer = withConditions(consumer, tagCondition("ingots/bronze"));
+        RecipeOutput aquacultureConsumer = withConditions(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
+        RecipeOutput malumConsumer = withConditions(consumer, modLoaded(ModIntegration.MALUM_MODID));
+        RecipeOutput brassConsumer = withConditions(consumer, tagCondition("ingots/brass"));
+        RecipeOutput ifdConsumer = withConditions(consumer, modLoaded(ModIntegration.IFD_MODID));
+        RecipeOutput undergardenConsumer = withConditions(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
+        RecipeOutput arsConsumer = withConditions(consumer, modLoaded(ModIntegration.ARS_MODID));
 
         // Bronze
         metalMaterialRecipe(bronzeConsumer, MaterialIds.bronze, folder, MaterialIds.bronze.getPath(), true);

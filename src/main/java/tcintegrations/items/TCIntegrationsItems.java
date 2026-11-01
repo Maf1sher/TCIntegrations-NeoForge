@@ -20,7 +20,7 @@ import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-import slimeknights.mantle.item.BlockTooltipItem;
+import slimeknights.mantle.item.tooltip.BlockTooltipItem;
 import slimeknights.mantle.registration.object.FlowingFluidObject;
 import slimeknights.mantle.registration.object.MetalItemObject;
 

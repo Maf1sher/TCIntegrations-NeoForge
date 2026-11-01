@@ -60,16 +60,16 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
 
         // ores
         String metalFolder = folder + "metal/";
-        RecipeOutput aquacultureConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.AQUACULTURE_MODID, "neptunium"));
-        RecipeOutput malumConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.MALUM_MODID, "soul_stained_steel"));
-        RecipeOutput undergardenCloggrumConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "cloggrum"));
-        RecipeOutput undergardenFroststeelConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "froststeel"));
-        RecipeOutput undergardenForgottenConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "forgotten"));
-        RecipeOutput ifdFireConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_fire"));
-        RecipeOutput ifdIceConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_ice"));
-        RecipeOutput ifdLightningConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_lightning"));
-        RecipeOutput arsConsumer = withCondition(consumer, modOrTagCondition(ModIntegration.ARS_MODID, "source_gem"));
-        RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
+        RecipeOutput aquacultureConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.AQUACULTURE_MODID, "neptunium"));
+        RecipeOutput malumConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.MALUM_MODID, "soul_stained_steel"));
+        RecipeOutput undergardenCloggrumConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "cloggrum"));
+        RecipeOutput undergardenFroststeelConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "froststeel"));
+        RecipeOutput undergardenForgottenConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.UNDERGARDEN_MODID, "forgotten"));
+        RecipeOutput ifdFireConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_fire"));
+        RecipeOutput ifdIceConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_ice"));
+        RecipeOutput ifdLightningConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_lightning"));
+        RecipeOutput arsConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.ARS_MODID, "source_gem"));
+        RecipeOutput ifdConsumer = withConditions(consumer, modLoaded(ModIntegration.IFD_MODID));
 
         molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
         metal(aquacultureConsumer, TCIntegrationsItems.MOLTEN_NEPTUNIUM).metal();
@@ -156,7 +156,7 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         String folder = "smeltery/alloys/";
 
         // Update Recipe to use Obsidian instead of Quartz to not interfere with Hepatizon
-        RecipeOutput wrapped = withCondition(consumer, new TagEmptyCondition(ResourceLocationHelper.location("forge", "ingots/tin")));
+        RecipeOutput wrapped = withConditions(consumer, new TagEmptyCondition(ResourceLocationHelper.location("forge", "ingots/tin")));
 
         AlloyRecipeBuilder.alloy(TinkerFluids.moltenBronze.get(), FluidValues.INGOT * 4)
             .addInput(TinkerFluids.moltenCopper.ingredient(FluidValues.INGOT * 3))
@@ -176,7 +176,7 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
 
     private void metalWithoutNugget(RecipeOutput consumer, FluidObject<?> fluid) {
         SmelteryRecipeBuilder builder = molten(consumer, fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
-        ResourceLocation name = this.location(fluid.getId().getPath().substring("molten_".length()));
+        ResourceLocation name = this.location(fluid.id().getPath().substring("molten_".length()));
 
         builder.oreRate(IMeltingContainer.OreRateType.METAL);
         builder.baseUnit(90);

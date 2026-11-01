@@ -10,7 +10,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
 
-import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
 import slimeknights.tconstruct.common.registration.BlockDeferredRegisterExtension;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 
@@ -23,7 +22,7 @@ public abstract class TCIntegrationsModule {
     protected static ModifierDeferredRegister MODIFIERS_REGISTRY;
     protected static FluidDeferredRegister FLUID_REGISTRY;
     protected static DeferredRegister<MobEffect> EFFECTS_REGISTRY;
-    protected static final SynchronizedDeferredRegister<CreativeModeTab> CREATIVE_TABS = SynchronizedDeferredRegister.create(Registries.CREATIVE_MODE_TAB, TCIntegrations.MODID);
+    protected static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TCIntegrations.MODID);
 
     public static void initRegistries(IEventBus bus) {
         METAL_BLOCK_REGISTRY = new BlockDeferredRegisterExtension(TCIntegrations.MODID);

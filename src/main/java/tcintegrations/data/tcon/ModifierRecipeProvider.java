@@ -43,27 +43,27 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
         // upgrades
         String compatFolder = "tools/modifiers/compat/";
         String compatSalvage = "tools/modifiers/salvage/compat/";
-        RecipeOutput createConsumer = withCondition(consumer, modLoaded(ModIntegration.CREATE_MODID));
-        RecipeOutput aquacultureConsumer = withCondition(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
-        RecipeOutput arsConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_MODID));
-        RecipeOutput alexConsumer = withCondition(consumer, modLoaded(ModIntegration.ALEX_MODID));
-        RecipeOutput malumConsumer = withCondition(consumer, modLoaded(ModIntegration.MALUM_MODID));
-        RecipeOutput undergardenConsumer = withCondition(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
-        RecipeOutput ieConsumer = withCondition(consumer, modLoaded(ModIntegration.IE_MODID));
-        RecipeOutput mekanismConsumer = withCondition(consumer, modLoaded(ModIntegration.MEKANISM_MODID));
-        RecipeOutput ifdConsumer = withCondition(consumer, modLoaded(ModIntegration.IFD_MODID));
-        RecipeOutput apothConsumer = withCondition(consumer, modLoaded(ModIntegration.APOTH_MODID));
-        RecipeOutput arsElementalConsumer = withCondition(consumer, modLoaded(ModIntegration.ARS_ELEMENTAL_MODID));
-        RecipeOutput deeperDarkerConsumer = withCondition(consumer, modLoaded(ModIntegration.DEEPERDARKER_MODID));
-        RecipeOutput twilightForestConsumer = withCondition(consumer, modLoaded(ModIntegration.TWILIGHT_MODID));
+        RecipeOutput createConsumer = withConditions(consumer, modLoaded(ModIntegration.CREATE_MODID));
+        RecipeOutput aquacultureConsumer = withConditions(consumer, modLoaded(ModIntegration.AQUACULTURE_MODID));
+        RecipeOutput arsConsumer = withConditions(consumer, modLoaded(ModIntegration.ARS_MODID));
+        RecipeOutput alexConsumer = withConditions(consumer, modLoaded(ModIntegration.ALEX_MODID));
+        RecipeOutput malumConsumer = withConditions(consumer, modLoaded(ModIntegration.MALUM_MODID));
+        RecipeOutput undergardenConsumer = withConditions(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
+        RecipeOutput ieConsumer = withConditions(consumer, modLoaded(ModIntegration.IE_MODID));
+        RecipeOutput mekanismConsumer = withConditions(consumer, modLoaded(ModIntegration.MEKANISM_MODID));
+        RecipeOutput ifdConsumer = withConditions(consumer, modLoaded(ModIntegration.IFD_MODID));
+        RecipeOutput apothConsumer = withConditions(consumer, modLoaded(ModIntegration.APOTH_MODID));
+        RecipeOutput arsElementalConsumer = withConditions(consumer, modLoaded(ModIntegration.ARS_ELEMENTAL_MODID));
+        RecipeOutput deeperDarkerConsumer = withConditions(consumer, modLoaded(ModIntegration.DEEPERDARKER_MODID));
+        RecipeOutput twilightForestConsumer = withConditions(consumer, modLoaded(ModIntegration.TWILIGHT_MODID));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.mechanicalArm)
             .setTools(TinkerTags.Items.MELEE_PRIMARY)
             .addInput(TagManager.Items.MECHANICAL_ARM)
             .setSlots(SlotType.ABILITY, 1)
             .setMaxLevel(1)
-            .saveSalvage(createConsumer, prefix(TciModifierIds.mechanicalArm.location(), compatSalvage))
-            .save(createConsumer, prefix(TciModifierIds.mechanicalArm.location(), compatFolder));
+            .saveSalvage(createConsumer, prefix(TciModifierIds.mechanicalArm.getLocation(), compatSalvage))
+            .save(createConsumer, prefix(TciModifierIds.mechanicalArm.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.poseidon)
             .setTools(TinkerTags.Items.WORN_ARMOR)
@@ -74,8 +74,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.REDSTONE_HOOK)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(aquacultureConsumer, prefix(TciModifierIds.poseidon.location(), compatSalvage))
-            .save(aquacultureConsumer, prefix(TciModifierIds.poseidon.location(), compatFolder));
+            .saveSalvage(aquacultureConsumer, prefix(TciModifierIds.poseidon.getLocation(), compatSalvage))
+            .save(aquacultureConsumer, prefix(TciModifierIds.poseidon.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.siren)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
@@ -86,8 +86,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.IRON_HOOK)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(aquacultureConsumer, prefix(TciModifierIds.siren.location(), compatSalvage))
-            .save(aquacultureConsumer, prefix(TciModifierIds.siren.location(), compatFolder));
+            .saveSalvage(aquacultureConsumer, prefix(TciModifierIds.siren.getLocation(), compatSalvage))
+            .save(aquacultureConsumer, prefix(TciModifierIds.siren.getLocation(), compatFolder));
 
         if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
             ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ARS_MODIFIER)
@@ -100,8 +100,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
                 .setMaxLevel(1)
                 .setSlots(SlotType.UPGRADE, 1)
                 .disallowCrystal()
-                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatSalvage, "_level_1"))
-                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatFolder, "_level_1"));
+                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatSalvage, "_level_1"))
+                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatFolder, "_level_1"));
         }
 
         if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
@@ -115,8 +115,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
                 .exactLevel(2)
                 .setSlots(SlotType.UPGRADE, 1)
                 .disallowCrystal()
-                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatSalvage, "_level_2"))
-                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatFolder, "_level_2"));
+                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatSalvage, "_level_2"))
+                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatFolder, "_level_2"));
         }
 
         if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
@@ -130,8 +130,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
                 .exactLevel(3)
                 .setSlots(SlotType.UPGRADE, 1)
                 .disallowCrystal()
-                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatSalvage, "_level_3"))
-                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.getId(), compatFolder, "_level_3"));
+                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatSalvage, "_level_3"))
+                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatFolder, "_level_3"));
         }
 
         if (TCIntegrationsModifiers.AETHERMANCER_MODIFIER != null) {
@@ -196,8 +196,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
                 .addInput(Items.SHIELD)
                 .setSlots(SlotType.UPGRADE, 1)
                 .setMaxLevel(1)
-                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.getId().withSuffix("_chestplates"), compatSalvage))
-                .save(arsConsumer, prefix(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.getId().withSuffix("_chestplates"), compatFolder));
+                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.id().withSuffix("_chestplates"), compatSalvage))
+                .save(arsConsumer, prefix(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.id().withSuffix("_chestplates"), compatFolder));
         }
 
         ModifierRecipeBuilder.modifier(TciModifierIds.roadrunner)
@@ -209,8 +209,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.ROADRUNNER_FEATHER)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(3)
-            .saveSalvage(alexConsumer, prefix(TciModifierIds.roadrunner.location(), compatSalvage))
-            .save(alexConsumer, prefix(TciModifierIds.roadrunner.location(), compatFolder));
+            .saveSalvage(alexConsumer, prefix(TciModifierIds.roadrunner.getLocation(), compatSalvage))
+            .save(alexConsumer, prefix(TciModifierIds.roadrunner.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.frontierCap)
             .setTools(TinkerTags.Items.HELMETS)
@@ -221,8 +221,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.RACCOON_TAIL)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(3)
-            .saveSalvage(alexConsumer, prefix(TciModifierIds.frontierCap.location(), compatSalvage))
-            .save(alexConsumer, prefix(TciModifierIds.frontierCap.location(), compatFolder));
+            .saveSalvage(alexConsumer, prefix(TciModifierIds.frontierCap.getLocation(), compatSalvage))
+            .save(alexConsumer, prefix(TciModifierIds.frontierCap.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.turtleShell)
             .setTools(TinkerTags.Items.HELMETS)
@@ -233,8 +233,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.SPIKED_SCUTE)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(alexConsumer, prefix(TciModifierIds.turtleShell.location(), compatSalvage))
-            .save(alexConsumer, prefix(TciModifierIds.turtleShell.location(), compatFolder));
+            .saveSalvage(alexConsumer, prefix(TciModifierIds.turtleShell.getLocation(), compatSalvage))
+            .save(alexConsumer, prefix(TciModifierIds.turtleShell.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.bisonFur)
             .setTools(TinkerTags.Items.BOOTS)
@@ -245,8 +245,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.BISON_FUR)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(alexConsumer, prefix(TciModifierIds.bisonFur.location(), compatSalvage))
-            .save(alexConsumer, prefix(TciModifierIds.bisonFur.location(), compatFolder));
+            .saveSalvage(alexConsumer, prefix(TciModifierIds.bisonFur.getLocation(), compatSalvage))
+            .save(alexConsumer, prefix(TciModifierIds.bisonFur.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.shieldOfTheDeep)
             .setTools(TinkerTags.Items.CHESTPLATES)
@@ -257,8 +257,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.SHARK_TOOTH)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(alexConsumer, prefix(TciModifierIds.shieldOfTheDeep.location(), compatSalvage))
-            .save(alexConsumer, prefix(TciModifierIds.shieldOfTheDeep.location(), compatFolder));
+            .saveSalvage(alexConsumer, prefix(TciModifierIds.shieldOfTheDeep.getLocation(), compatSalvage))
+            .save(alexConsumer, prefix(TciModifierIds.shieldOfTheDeep.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.mosquito)
             .setTools(TinkerTags.Items.BOOTS)
@@ -269,8 +269,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.MOSQUITO_PROBOSCIS)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(3)
-            .saveSalvage(alexConsumer, prefix(TciModifierIds.mosquito.location(), compatSalvage))
-            .save(alexConsumer, prefix(TciModifierIds.mosquito.location(), compatFolder));
+            .saveSalvage(alexConsumer, prefix(TciModifierIds.mosquito.getLocation(), compatSalvage))
+            .save(alexConsumer, prefix(TciModifierIds.mosquito.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.crocodile)
             .setTools(TinkerTags.Items.CHESTPLATES)
@@ -281,8 +281,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.CROCODILE_SCUTE)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(alexConsumer, prefix(TciModifierIds.crocodile.location(), compatSalvage))
-            .save(alexConsumer, prefix(TciModifierIds.crocodile.location(), compatFolder));
+            .saveSalvage(alexConsumer, prefix(TciModifierIds.crocodile.getLocation(), compatSalvage))
+            .save(alexConsumer, prefix(TciModifierIds.crocodile.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.soulStained)
             .setTools(TinkerTags.Items.WORN_ARMOR)
@@ -293,8 +293,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.SOUL_STAINED_STEEL_INGOTS)
             .setSlots(SlotType.DEFENSE, 1)
             .setMaxLevel(1)
-            .saveSalvage(malumConsumer, prefix(TciModifierIds.soulStained.location(), compatSalvage))
-            .save(malumConsumer, prefix(TciModifierIds.soulStained.location(), compatFolder));
+            .saveSalvage(malumConsumer, prefix(TciModifierIds.soulStained.getLocation(), compatSalvage))
+            .save(malumConsumer, prefix(TciModifierIds.soulStained.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.utherium)
             .setTools(TinkerTags.Items.MELEE_PRIMARY)
@@ -303,8 +303,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.UTHERIUM_CRYSTAL)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(undergardenConsumer, prefix(TciModifierIds.utherium.location(), compatSalvage))
-            .save(undergardenConsumer, prefix(TciModifierIds.utherium.location(), compatFolder));
+            .saveSalvage(undergardenConsumer, prefix(TciModifierIds.utherium.getLocation(), compatSalvage))
+            .save(undergardenConsumer, prefix(TciModifierIds.utherium.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.froststeelTrait)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
@@ -315,8 +315,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.FROSTSTEEL_INGOT)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(undergardenConsumer, prefix(TciModifierIds.froststeelTrait.location(), compatSalvage))
-            .save(undergardenConsumer, prefix(TciModifierIds.froststeelTrait.location(), compatFolder));
+            .saveSalvage(undergardenConsumer, prefix(TciModifierIds.froststeelTrait.getLocation(), compatSalvage))
+            .save(undergardenConsumer, prefix(TciModifierIds.froststeelTrait.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.forgottenTrait)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
@@ -327,13 +327,13 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.CLOGGRUM_INGOT)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(undergardenConsumer, prefix(TciModifierIds.forgottenTrait.location(), compatSalvage))
-            .save(undergardenConsumer, prefix(TciModifierIds.forgottenTrait.location(), compatFolder));
+            .saveSalvage(undergardenConsumer, prefix(TciModifierIds.forgottenTrait.getLocation(), compatSalvage))
+            .save(undergardenConsumer, prefix(TciModifierIds.forgottenTrait.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.multiVision)
             .setTools(TinkerTags.Items.HELMETS)
             .addInput(TagManager.Items.VOLTMETER)
-            .save(ieConsumer, prefix(TciModifierIds.multiVision.location(), compatFolder));
+            .save(ieConsumer, prefix(TciModifierIds.multiVision.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.glowup)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
@@ -344,8 +344,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.INGOT_REFINED_GLOWSTONE)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(3)
-            .saveSalvage(mekanismConsumer, prefix(TciModifierIds.glowup.location(), compatSalvage))
-            .save(mekanismConsumer, prefix(TciModifierIds.glowup.location(), compatFolder));
+            .saveSalvage(mekanismConsumer, prefix(TciModifierIds.glowup.getLocation(), compatSalvage))
+            .save(mekanismConsumer, prefix(TciModifierIds.glowup.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.flamed)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.RANGED))
@@ -355,8 +355,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.FIRE_DRAGON_BLOOD)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(ifdConsumer, prefix(TciModifierIds.flamed.location(), compatSalvage))
-            .save(ifdConsumer, prefix(TciModifierIds.flamed.location(), compatFolder));
+            .saveSalvage(ifdConsumer, prefix(TciModifierIds.flamed.getLocation(), compatSalvage))
+            .save(ifdConsumer, prefix(TciModifierIds.flamed.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.iced)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.RANGED))
@@ -366,8 +366,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.ICE_DRAGON_BLOOD)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(ifdConsumer, prefix(TciModifierIds.iced.location(), compatSalvage))
-            .save(ifdConsumer, prefix(TciModifierIds.iced.location(), compatFolder));
+            .saveSalvage(ifdConsumer, prefix(TciModifierIds.iced.getLocation(), compatSalvage))
+            .save(ifdConsumer, prefix(TciModifierIds.iced.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.zapped)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.RANGED))
@@ -377,8 +377,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.LIGHTNING_DRAGON_BLOOD)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(ifdConsumer, prefix(TciModifierIds.zapped.location(), compatSalvage))
-            .save(ifdConsumer, prefix(TciModifierIds.zapped.location(), compatFolder));
+            .saveSalvage(ifdConsumer, prefix(TciModifierIds.zapped.getLocation(), compatSalvage))
+            .save(ifdConsumer, prefix(TciModifierIds.zapped.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.phantasmal)
             .setTools(TinkerTags.Items.SWORD)
@@ -388,16 +388,16 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(TagManager.Items.GHOST_INGOT)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(ifdConsumer, prefix(TciModifierIds.phantasmal.location(), compatSalvage))
-            .save(ifdConsumer, prefix(TciModifierIds.phantasmal.location(), compatFolder));
+            .saveSalvage(ifdConsumer, prefix(TciModifierIds.phantasmal.getLocation(), compatSalvage))
+            .save(ifdConsumer, prefix(TciModifierIds.phantasmal.getLocation(), compatFolder));
 
         IncrementalModifierRecipeBuilder.modifier(TciModifierIds.capturing)
             .setTools(TinkerTags.Items.MELEE_PRIMARY)
             .setInput(Items.EXPERIENCE_BOTTLE, 1, 28)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(7)
-            .saveSalvage(apothConsumer, prefix(TciModifierIds.capturing.location(), compatSalvage))
-            .save(apothConsumer, prefix(TciModifierIds.capturing.location(), compatFolder));
+            .saveSalvage(apothConsumer, prefix(TciModifierIds.capturing.getLocation(), compatSalvage))
+            .save(apothConsumer, prefix(TciModifierIds.capturing.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.sculking)
             .setTools(TinkerTags.Items.WORN_ARMOR)
@@ -408,8 +408,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .addInput(Items.DIAMOND)
             .setSlots(SlotType.UPGRADE, 1)
             .setMaxLevel(1)
-            .saveSalvage(deeperDarkerConsumer, prefix(TciModifierIds.sculking.location(), compatSalvage))
-            .save(deeperDarkerConsumer, prefix(TciModifierIds.sculking.location(), compatFolder));
+            .saveSalvage(deeperDarkerConsumer, prefix(TciModifierIds.sculking.getLocation(), compatSalvage))
+            .save(deeperDarkerConsumer, prefix(TciModifierIds.sculking.getLocation(), compatFolder));
 
         IncrementalModifierRecipeBuilder.modifier(TinkerModifiers.fiery)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.BOWS, TinkerTags.Items.WORN_ARMOR, TinkerTags.Items.SHIELDS))
@@ -447,8 +447,8 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .setMaxLevel(1)
             .setSlots(SlotType.ABILITY, 1)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.HARVEST, TinkerTags.Items.RANGED))
-            .saveSalvage(twilightForestConsumer, prefix(TciModifierIds.precipitate.location(), compatSalvage))
-            .save(twilightForestConsumer, prefix(TciModifierIds.precipitate.location(), compatFolder));
+            .saveSalvage(twilightForestConsumer, prefix(TciModifierIds.precipitate.getLocation(), compatSalvage))
+            .save(twilightForestConsumer, prefix(TciModifierIds.precipitate.getLocation(), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.twilit)
             .addInput(TagManager.Items.FIERY_INGOT)
@@ -459,12 +459,12 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .setMaxLevel(1)
             .setSlots(SlotType.ABILITY, 1)
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.HARVEST, TinkerTags.Items.RANGED))
-            .saveSalvage(twilightForestConsumer, prefix(TciModifierIds.twilit.location(), compatSalvage))
-            .save(twilightForestConsumer, prefix(TciModifierIds.twilit.location(), compatFolder));
+            .saveSalvage(twilightForestConsumer, prefix(TciModifierIds.twilit.getLocation(), compatSalvage))
+            .save(twilightForestConsumer, prefix(TciModifierIds.twilit.getLocation(), compatFolder));
     }
 
     public ResourceLocation prefix(LazyModifier modifier, String prefix) {
-        return prefix(modifier.getId(), prefix);
+        return prefix(modifier.id(), prefix);
     }
 
     @SafeVarargs

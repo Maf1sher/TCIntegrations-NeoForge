@@ -7,6 +7,11 @@ import tcintegrations.TCIntegrations;
 public class TciModifierIds {
 
     public static final ModifierId moderate = id("moderate");
+    public static final ModifierId arsNouveau = id("ars_nouveau");
+    public static final ModifierId aethermancer = id("aethermancer");
+    public static final ModifierId aquamancer = id("aquamancer");
+    public static final ModifierId geomancer = id("geomancer");
+    public static final ModifierId pyromancer = id("pyromancer");
     public static final ModifierId waterPowered = id("water_powered");
     public static final ModifierId soulStained = id("soul_stained");
     public static final ModifierId kinetic = id("kinetic");

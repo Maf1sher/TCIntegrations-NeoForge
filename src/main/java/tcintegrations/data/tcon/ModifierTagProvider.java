@@ -29,71 +29,71 @@ public class ModifierTagProvider extends AbstractModifierTagProvider {
     protected void addTags() {
         // General upgrades (always available + mod-gated)
         this.tag(GENERAL_UPGRADES)
-            .addOptional(TciModifierIds.engineersGoggles.location())
-            .addOptional(TciModifierIds.multiVision.location())
-            .addOptional(TciModifierIds.waterPowered.location())
-            .addOptional(TciModifierIds.capturing.location());
+            .addOptional(TciModifierIds.engineersGoggles.getLocation())
+            .addOptional(TciModifierIds.multiVision.getLocation())
+            .addOptional(TciModifierIds.waterPowered.getLocation())
+            .addOptional(TciModifierIds.capturing.getLocation());
 
         // Melee upgrades
         this.tag(MELEE_UPGRADES)
-            .addOptional(TciModifierIds.soulStained.location())
-            .addOptional(TciModifierIds.siren.location())
-            .addOptional(TciModifierIds.utherium.location())
-            .addOptional(TciModifierIds.flamed.location())
-            .addOptional(TciModifierIds.iced.location())
-            .addOptional(TciModifierIds.zapped.location())
-            .addOptional(TciModifierIds.forgottenTrait.location())
-            .addOptional(TciModifierIds.precipitate.location())
-            .addOptional(TciModifierIds.twilit.location());
+            .addOptional(TciModifierIds.soulStained.getLocation())
+            .addOptional(TciModifierIds.siren.getLocation())
+            .addOptional(TciModifierIds.utherium.getLocation())
+            .addOptional(TciModifierIds.flamed.getLocation())
+            .addOptional(TciModifierIds.iced.getLocation())
+            .addOptional(TciModifierIds.zapped.getLocation())
+            .addOptional(TciModifierIds.forgottenTrait.getLocation())
+            .addOptional(TciModifierIds.precipitate.getLocation())
+            .addOptional(TciModifierIds.twilit.getLocation());
 
         // Harvest upgrades
         this.tag(HARVEST_UPGRADES)
-            .addOptional(TciModifierIds.siren.location())
-            .addOptional(TciModifierIds.froststeelTrait.location())
-            .addOptional(TciModifierIds.forgottenTrait.location())
-            .addOptional(TciModifierIds.precipitate.location())
-            .addOptional(TciModifierIds.twilit.location());
+            .addOptional(TciModifierIds.siren.getLocation())
+            .addOptional(TciModifierIds.froststeelTrait.getLocation())
+            .addOptional(TciModifierIds.forgottenTrait.getLocation())
+            .addOptional(TciModifierIds.precipitate.getLocation())
+            .addOptional(TciModifierIds.twilit.getLocation());
 
         // Ranged upgrades
         this.tag(RANGED_UPGRADES)
-            .addOptional(TciModifierIds.flamed.location())
-            .addOptional(TciModifierIds.iced.location())
-            .addOptional(TciModifierIds.zapped.location())
-            .addOptional(TciModifierIds.precipitate.location())
-            .addOptional(TciModifierIds.twilit.location());
+            .addOptional(TciModifierIds.flamed.getLocation())
+            .addOptional(TciModifierIds.iced.getLocation())
+            .addOptional(TciModifierIds.zapped.getLocation())
+            .addOptional(TciModifierIds.precipitate.getLocation())
+            .addOptional(TciModifierIds.twilit.getLocation());
 
         // Armor upgrades (general)
         this.tag(GENERAL_ARMOR_UPGRADES)
-            .addOptional(TciModifierIds.soulStained.location())
-            .addOptional(TciModifierIds.dragonScales.location())
-            .addOptional(TciModifierIds.sculking.location());
+            .addOptional(TciModifierIds.soulStained.getLocation())
+            .addOptional(TciModifierIds.dragonScales.getLocation())
+            .addOptional(TciModifierIds.sculking.getLocation());
 
         // Helmet upgrades
         this.tag(HELMET_UPGRADES)
-            .addOptional(TciModifierIds.frontierCap.location())
-            .addOptional(TciModifierIds.turtleShell.location())
-            .addOptional(TciModifierIds.bisonFur.location());
+            .addOptional(TciModifierIds.frontierCap.getLocation())
+            .addOptional(TciModifierIds.turtleShell.getLocation())
+            .addOptional(TciModifierIds.bisonFur.getLocation());
 
         // Chestplate upgrades
         this.tag(CHESTPLATE_UPGRADES)
-            .addOptional(TciModifierIds.shieldOfTheDeep.location())
-            .addOptional(TciModifierIds.crocodile.location());
+            .addOptional(TciModifierIds.shieldOfTheDeep.getLocation())
+            .addOptional(TciModifierIds.crocodile.getLocation());
 
         // Boot upgrades
         this.tag(BOOT_UPGRADES)
-            .addOptional(TciModifierIds.roadrunner.location())
-            .addOptional(TciModifierIds.mosquito.location());
+            .addOptional(TciModifierIds.roadrunner.getLocation())
+            .addOptional(TciModifierIds.mosquito.getLocation());
 
         // General abilities
         this.tag(GENERAL_ABILITIES)
-            .addOptional(TciModifierIds.mechanicalArm.location())
-            .addOptional(TciModifierIds.poseidon.location())
-            .addOptional(TciModifierIds.kinetic.location())
-            .addOptional(TciModifierIds.phantasmal.location());
+            .addOptional(TciModifierIds.mechanicalArm.getLocation())
+            .addOptional(TciModifierIds.poseidon.getLocation())
+            .addOptional(TciModifierIds.kinetic.getLocation())
+            .addOptional(TciModifierIds.phantasmal.getLocation());
 
         // Interaction abilities
         this.tag(INTERACTION_ABILITIES)
-            .addOptional(TciModifierIds.glowup.location());
+            .addOptional(TciModifierIds.glowup.getLocation());
     }
 
     @Override

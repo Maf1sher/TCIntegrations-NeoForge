@@ -40,7 +40,7 @@ public class ModRecipesProvider extends BaseRecipeProvider {
             .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(TCIntegrations.MODID, "bronze_block_from_ingots"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,TCIntegrationsItems.BRONZE.getIngot(), 9)
-            .requires(TCIntegrationsItems.BRONZE.getBlockItemTag())
+            .requires(TCIntegrationsItems.BRONZE.getBlockTag().item())
             .unlockedBy("has_bronze_ingot", RecipeProvider.inventoryTrigger(ItemPredicate.Builder.item().of(TCIntegrationsItems.BRONZE.getIngotTag()).build()))
             .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(TCIntegrations.MODID, "bronze_ingots_from_block"));
     }

@@ -36,7 +36,7 @@ public class ModifierProvider extends AbstractModifierProvider implements ICondi
 
         // ars_nouveau: needs data-driven ModifierSlotModule
         if (TCIntegrationsModifiers.ARS_MODIFIER != null)
-            buildModifier(TCIntegrationsModifiers.ARS_MODIFIER.getModifierId())
+            buildModifier(TciModifierIds.arsNouveau)
                 .levelDisplay(new ModifierLevelDisplay.UniqueForLevels(3))
                 .addModule(new ModifierSlotModule(SlotType.UPGRADE));
 

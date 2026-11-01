@@ -71,7 +71,7 @@ public class FluidTagProvider extends FluidTagsProvider {
             .addOptionalTag(TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING.getCommonTag().location());
 
         this.tag(TinkerTags.Fluids.SMALL_GEM_TOOLTIPS)
-            .addOptionalTag(TCIntegrationsItems.MOLTEN_SOURCE_GEM.getId());
+            .addOptionalTag(TCIntegrationsItems.MOLTEN_SOURCE_GEM.id());
     }
 
     private void fluidTag(FluidObject<?> fluid) {

@@ -32,6 +32,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import tcintegrations.common.attachments.ArsElementalSet;
+import tcintegrations.data.tcon.material.TciModifierIds;
 import tcintegrations.common.attachments.TCIntegrationAttachments;
 import tcintegrations.items.TCIntegrationsModifiers;
 import tcintegrations.network.ArsElementalSetData;
@@ -117,7 +118,7 @@ public class ArsElementalSetBase extends Modifier implements EquipmentChangeModi
     }
 
     public ModifierId getModifierId() {
-        return new ModifierId(TCIntegrationsModifiers.AETHERMANCER_MODIFIER.getId());
+        return TciModifierIds.aethermancer;
     }
 
     public boolean hasArmorSetItem(ServerPlayer sp, EquipmentSlot slot) {

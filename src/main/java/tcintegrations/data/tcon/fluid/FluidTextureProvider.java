@@ -41,15 +41,15 @@ public class FluidTextureProvider extends AbstractFluidTextureProvider {
     }
 
     private FluidTexture.Builder named(FluidObject<?> fluid, String name) {
-        return texture(fluid).textures(resource("fluid/" + name + "/"), false, false);
+        return texture(fluid).root(resource("fluid/" + name + "/")).still().flowing();
     }
 
     private FluidTexture.Builder namedTcon(FluidObject<?> fluid, String name) {
-        return texture(fluid).textures(getResource("fluid/" + name + "/"), false, false);
+        return texture(fluid).root(getResource("fluid/" + name + "/")).still().flowing();
     }
 
     private FluidTexture.Builder moltenFolder(FluidObject<?> fluid, String folder) {
-        return named(fluid, "molten/" + folder + "/" + fluid.getId().getPath());
+        return named(fluid, "molten/" + folder + "/" + fluid.id().getPath());
     }
 
     private FluidTexture.Builder compatAlloy(FluidObject<?> fluid) {

@@ -13,6 +13,7 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import tcintegrations.common.attachments.ArsElementalSet;
+import tcintegrations.data.tcon.material.TciModifierIds;
 import tcintegrations.items.TCIntegrationsModifiers;
 import tcintegrations.util.ArsElementalClientHelper;
 import tcintegrations.util.ArsElementalHelper;
@@ -37,7 +38,7 @@ public class GeomancerModifier extends ArsElementalSetBase implements InventoryT
 
     @Override
     public ModifierId getModifierId() {
-        return new ModifierId(TCIntegrationsModifiers.GEOMANCER_MODIFIER.getId());
+        return TciModifierIds.geomancer;
     }
 
     @Override

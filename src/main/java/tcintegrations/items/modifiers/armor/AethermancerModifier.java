@@ -5,6 +5,7 @@ import net.minecraft.world.entity.player.Player;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 
 import tcintegrations.common.attachments.ArsElementalSet;
+import tcintegrations.data.tcon.material.TciModifierIds;
 import tcintegrations.items.TCIntegrationsModifiers;
 import tcintegrations.util.ArsElementalClientHelper;
 import tcintegrations.util.ArsElementalHelper;
@@ -23,7 +24,7 @@ public class AethermancerModifier extends ArsElementalSetBase {
 
     @Override
     public ModifierId getModifierId() {
-        return new ModifierId(TCIntegrationsModifiers.AETHERMANCER_MODIFIER.getId());
+        return TciModifierIds.aethermancer;
     }
 
     @Override
