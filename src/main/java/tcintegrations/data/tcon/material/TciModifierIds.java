@@ -12,6 +12,7 @@ public class TciModifierIds {
     public static final ModifierId aquamancer = id("aquamancer");
     public static final ModifierId geomancer = id("geomancer");
     public static final ModifierId pyromancer = id("pyromancer");
+    public static final ModifierId enchantersShield = id("enchanters_shield");
     public static final ModifierId waterPowered = id("water_powered");
     public static final ModifierId soulStained = id("soul_stained");
     public static final ModifierId kinetic = id("kinetic");
@@ -24,7 +25,6 @@ public class TciModifierIds {
     public static final ModifierId cloggrumTrait = id("cloggrum");
     public static final ModifierId froststeelTrait = id("froststeel");
     public static final ModifierId forgottenTrait = id("forgotten");
-    public static final ModifierId sourceGem = id("source_gem");
     public static final ModifierId mechanicalArm = id("mechanical_arm");
     public static final ModifierId glowup = id("glowup");
     public static final ModifierId phantasmal = id("phantasmal");

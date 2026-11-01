@@ -10,7 +10,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.material.Fluid;
@@ -36,6 +38,7 @@ import slimeknights.tconstruct.library.recipe.melting.IMeltingRecipe;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
+import tcintegrations.common.TagManager;
 import tcintegrations.data.BaseRecipeProvider;
 import tcintegrations.data.integration.ModIntegration;
 import tcintegrations.items.TCIntegrationsItems;
@@ -68,7 +71,7 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         RecipeOutput ifdFireConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_fire"));
         RecipeOutput ifdIceConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_ice"));
         RecipeOutput ifdLightningConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_lightning"));
-        RecipeOutput arsConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.ARS_MODID, "source_gem"));
+        RecipeOutput arsConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.ARS_MODID, TagManager.Items.SOURCE_GEM));
         RecipeOutput ifdConsumer = withConditions(consumer, modLoaded(ModIntegration.IFD_MODID));
 
         molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
@@ -199,10 +202,15 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
 
     /** Condition: mod loaded OR c:ingots/X tag filled */
     private static OrCondition modOrTagCondition(String modId, String ingotName) {
+        return modOrTagCondition(modId, ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName)));
+    }
+
+    /** Condition: mod loaded OR the given item tag filled */
+    private static OrCondition modOrTagCondition(String modId, TagKey<Item> tag) {
         return new OrCondition(List.of(
             ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
             new ModLoadedCondition(modId),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName))
+            new TagFilledCondition<>(Registries.ITEM, tag.location())
         ));
     }
 }

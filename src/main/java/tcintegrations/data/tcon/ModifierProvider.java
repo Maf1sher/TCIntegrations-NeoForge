@@ -12,7 +12,6 @@ import slimeknights.tconstruct.library.tools.SlotType;
 
 import tcintegrations.data.integration.ModIntegration;
 import tcintegrations.data.tcon.material.TciModifierIds;
-import tcintegrations.items.TCIntegrationsModifiers;
 import tcintegrations.items.modifiers.armor.EngineersGogglesModifier;
 import tcintegrations.items.modifiers.armor.MultiVisionModifier;
 
@@ -34,11 +33,10 @@ public class ModifierProvider extends AbstractModifierProvider implements ICondi
             .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
             .addModule(EngineersGogglesModifier.INSTANCE);
 
-        // ars_nouveau: needs data-driven ModifierSlotModule
-        if (TCIntegrationsModifiers.ARS_MODIFIER != null)
-            buildModifier(TciModifierIds.arsNouveau)
-                .levelDisplay(new ModifierLevelDisplay.UniqueForLevels(3))
-                .addModule(new ModifierSlotModule(SlotType.UPGRADE));
+        // ars_nouveau: data-driven ModifierSlotModule
+        buildModifier(TciModifierIds.arsNouveau, modLoaded(ModIntegration.ARS_MODID))
+            .levelDisplay(new ModifierLevelDisplay.UniqueForLevels(3))
+            .addModule(new ModifierSlotModule(SlotType.UPGRADE));
 
         // multivision: ModifierModule, needs data-driven singleton
         buildModifier(TciModifierIds.multiVision, modLoaded(ModIntegration.IE_MODID))

@@ -1,12 +1,10 @@
 package tcintegrations.common;
 
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
@@ -96,27 +94,20 @@ public class TagManager {
         public static final TagKey<Item> NAGA_SCALE = itemTag("twilightforest", "naga_scale");
         public static final TagKey<Item> STEELEAF_INGOT = itemTag("c", "ingots/steeleaf");
 
+        // Ars Nouveau
+        public static final TagKey<Item> AIR_ESSENCE = itemTag("ars_nouveau", "air_essence");
+        public static final TagKey<Item> WATER_ESSENCE = itemTag("ars_nouveau", "water_essence");
+        public static final TagKey<Item> EARTH_ESSENCE = itemTag("ars_nouveau", "earth_essence");
+        public static final TagKey<Item> FIRE_ESSENCE = itemTag("ars_nouveau", "fire_essence");
+
         // Ars Elemental
-        public static final TagKey<Item> AIR_ESSENCE = itemTag("ars_elemental", "air_essence");
-        public static final TagKey<Item> WATER_ESSENCE = itemTag("ars_elemental", "water_essence");
-        public static final TagKey<Item> EARTH_ESSENCE = itemTag("ars_elemental", "earth_essence");
-        public static final TagKey<Item> FIRE_ESSENCE = itemTag("ars_elemental", "fire_essence");
-        public static final TagKey<Item> MARK_OF_MASTERY = itemTag("ars_nouveau", "mark_of_mastery");
+        public static final TagKey<Item> MARK_OF_MASTERY = itemTag("ars_elemental", "mark_of_mastery");
 
         // Immersive Engineering
         public static final TagKey<Item> VOLTMETER = itemTag("immersiveengineering", "voltmeter");
 
         private static TagKey<Item> itemTag(String modId, String path) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(modId, path));
-        }
-    }
-
-    public static class EntityTypes {
-        public static final TagKey<EntityType<?>> ELEMENTAL_SEVERING_MOBS = entityTypeTag(TCIntegrations.MODID, "elemental_severing_mobs");
-        public static final TagKey<EntityType<?>> MILK_PRODUCER = entityTypeTag(TCIntegrations.MODID, "milk_producer");
-
-        private static TagKey<EntityType<?>> entityTypeTag(String modId, String path) {
-            return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(modId, path));
         }
     }
 }

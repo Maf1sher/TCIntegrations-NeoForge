@@ -6,6 +6,7 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 import tcintegrations.TCIntegrations;
+import tcintegrations.util.ArsElementalClientHelper;
 
 @EventBusSubscriber(modid = TCIntegrations.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class NetworkHandler {
@@ -16,9 +17,7 @@ public class NetworkHandler {
         reg.playToClient(
             ArsElementalSetData.TYPE,
             ArsElementalSetData.STREAM_CODEC,
-            (data, context) -> {
-                // Client-side handling will be added when porting client helpers
-            }
+            (data, context) -> context.enqueueWork(() -> ArsElementalClientHelper.apply(data))
         );
     }
 

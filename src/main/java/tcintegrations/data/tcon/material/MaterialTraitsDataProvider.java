@@ -37,7 +37,8 @@ public class MaterialTraitsDataProvider extends AbstractMaterialTraitDataProvide
         addDefaultTraits(MaterialIds.cloggrum, TciModifierIds.cloggrumTrait);
         addDefaultTraits(MaterialIds.froststeel, TciModifierIds.froststeelTrait);
         addDefaultTraits(MaterialIds.forgottenMetal, TciModifierIds.forgottenTrait);
-        addDefaultTraits(MaterialIds.sourceGem, TciModifierIds.sourceGem);
+        // The source gem trait was removed; the material only provides binding stats
+        noTraits(MaterialIds.sourceGem);
     }
 
 }

@@ -26,7 +26,6 @@ import tcintegrations.common.TagManager;
 import tcintegrations.data.BaseRecipeProvider;
 import tcintegrations.data.integration.ModIntegration;
 import tcintegrations.data.tcon.material.TciModifierIds;
-import tcintegrations.items.TCIntegrationsModifiers;
 
 public class ModifierRecipeProvider extends BaseRecipeProvider {
 
@@ -89,116 +88,100 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .saveSalvage(aquacultureConsumer, prefix(TciModifierIds.siren.getLocation(), compatSalvage))
             .save(aquacultureConsumer, prefix(TciModifierIds.siren.getLocation(), compatFolder));
 
-        if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ARS_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .setMaxLevel(1)
-                .setSlots(SlotType.UPGRADE, 1)
-                .disallowCrystal()
-                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatSalvage, "_level_1"))
-                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatFolder, "_level_1"));
-        }
+        ModifierRecipeBuilder.modifier(TciModifierIds.arsNouveau)
+            .setTools(TinkerTags.Items.WORN_ARMOR)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .setMaxLevel(1)
+            .setSlots(SlotType.UPGRADE, 1)
+            .disallowCrystal()
+            .saveSalvage(arsConsumer, wrap(TciModifierIds.arsNouveau, compatSalvage, "_level_1"))
+            .save(arsConsumer, wrap(TciModifierIds.arsNouveau, compatFolder, "_level_1"));
 
-        if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ARS_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(Items.BLAZE_ROD)
-                .addInput(Items.BLAZE_ROD)
-                .exactLevel(2)
-                .setSlots(SlotType.UPGRADE, 1)
-                .disallowCrystal()
-                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatSalvage, "_level_2"))
-                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatFolder, "_level_2"));
-        }
+        ModifierRecipeBuilder.modifier(TciModifierIds.arsNouveau)
+            .setTools(TinkerTags.Items.WORN_ARMOR)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(Items.BLAZE_ROD)
+            .addInput(Items.BLAZE_ROD)
+            .exactLevel(2)
+            .setSlots(SlotType.UPGRADE, 1)
+            .disallowCrystal()
+            .saveSalvage(arsConsumer, wrap(TciModifierIds.arsNouveau, compatSalvage, "_level_2"))
+            .save(arsConsumer, wrap(TciModifierIds.arsNouveau, compatFolder, "_level_2"));
 
-        if (TCIntegrationsModifiers.ARS_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ARS_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(TagManager.Items.MAGE_FIBER)
-                .addInput(Items.CHORUS_FRUIT)
-                .addInput(Items.ENDER_PEARL)
-                .addInput(Items.ENDER_PEARL)
-                .exactLevel(3)
-                .setSlots(SlotType.UPGRADE, 1)
-                .disallowCrystal()
-                .saveSalvage(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatSalvage, "_level_3"))
-                .save(arsConsumer, wrap(TCIntegrationsModifiers.ARS_MODIFIER.id(), compatFolder, "_level_3"));
-        }
+        ModifierRecipeBuilder.modifier(TciModifierIds.arsNouveau)
+            .setTools(TinkerTags.Items.WORN_ARMOR)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(TagManager.Items.MAGE_FIBER)
+            .addInput(Items.CHORUS_FRUIT)
+            .addInput(Items.ENDER_PEARL)
+            .addInput(Items.ENDER_PEARL)
+            .exactLevel(3)
+            .setSlots(SlotType.UPGRADE, 1)
+            .disallowCrystal()
+            .saveSalvage(arsConsumer, wrap(TciModifierIds.arsNouveau, compatSalvage, "_level_3"))
+            .save(arsConsumer, wrap(TciModifierIds.arsNouveau, compatFolder, "_level_3"));
 
-        if (TCIntegrationsModifiers.AETHERMANCER_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.AETHERMANCER_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.MARK_OF_MASTERY)
-                .addInput(TagManager.Items.AIR_ESSENCE)
-                .addInput(TagManager.Items.AIR_ESSENCE)
-                .addInput(Items.NETHERITE_INGOT)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.AETHERMANCER_MODIFIER, compatSalvage))
-                .save(arsElementalConsumer, prefix(TCIntegrationsModifiers.AETHERMANCER_MODIFIER, compatFolder));
-        }
+        ModifierRecipeBuilder.modifier(TciModifierIds.aethermancer)
+            .setTools(TinkerTags.Items.WORN_ARMOR)
+            .addInput(TagManager.Items.MARK_OF_MASTERY)
+            .addInput(TagManager.Items.AIR_ESSENCE)
+            .addInput(TagManager.Items.AIR_ESSENCE)
+            .addInput(Items.NETHERITE_INGOT)
+            .setSlots(SlotType.UPGRADE, 1)
+            .setMaxLevel(1)
+            .saveSalvage(arsElementalConsumer, prefix(TciModifierIds.aethermancer, compatSalvage))
+            .save(arsElementalConsumer, prefix(TciModifierIds.aethermancer, compatFolder));
 
-        if (TCIntegrationsModifiers.AQUAMANCER_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.AQUAMANCER_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.MARK_OF_MASTERY)
-                .addInput(TagManager.Items.WATER_ESSENCE)
-                .addInput(TagManager.Items.WATER_ESSENCE)
-                .addInput(Items.NETHERITE_INGOT)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.AQUAMANCER_MODIFIER, compatSalvage))
-                .save(arsElementalConsumer, prefix(TCIntegrationsModifiers.AQUAMANCER_MODIFIER, compatFolder));
-        }
+        ModifierRecipeBuilder.modifier(TciModifierIds.aquamancer)
+            .setTools(TinkerTags.Items.WORN_ARMOR)
+            .addInput(TagManager.Items.MARK_OF_MASTERY)
+            .addInput(TagManager.Items.WATER_ESSENCE)
+            .addInput(TagManager.Items.WATER_ESSENCE)
+            .addInput(Items.NETHERITE_INGOT)
+            .setSlots(SlotType.UPGRADE, 1)
+            .setMaxLevel(1)
+            .saveSalvage(arsElementalConsumer, prefix(TciModifierIds.aquamancer, compatSalvage))
+            .save(arsElementalConsumer, prefix(TciModifierIds.aquamancer, compatFolder));
 
-        if (TCIntegrationsModifiers.GEOMANCER_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.GEOMANCER_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.MARK_OF_MASTERY)
-                .addInput(TagManager.Items.EARTH_ESSENCE)
-                .addInput(TagManager.Items.EARTH_ESSENCE)
-                .addInput(Items.NETHERITE_INGOT)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.GEOMANCER_MODIFIER, compatSalvage))
-                .save(arsElementalConsumer, prefix(TCIntegrationsModifiers.GEOMANCER_MODIFIER, compatFolder));
-        }
+        ModifierRecipeBuilder.modifier(TciModifierIds.geomancer)
+            .setTools(TinkerTags.Items.WORN_ARMOR)
+            .addInput(TagManager.Items.MARK_OF_MASTERY)
+            .addInput(TagManager.Items.EARTH_ESSENCE)
+            .addInput(TagManager.Items.EARTH_ESSENCE)
+            .addInput(Items.NETHERITE_INGOT)
+            .setSlots(SlotType.UPGRADE, 1)
+            .setMaxLevel(1)
+            .saveSalvage(arsElementalConsumer, prefix(TciModifierIds.geomancer, compatSalvage))
+            .save(arsElementalConsumer, prefix(TciModifierIds.geomancer, compatFolder));
 
-        if (TCIntegrationsModifiers.PYROMANCER_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.PYROMANCER_MODIFIER)
-                .setTools(TinkerTags.Items.WORN_ARMOR)
-                .addInput(TagManager.Items.MARK_OF_MASTERY)
-                .addInput(TagManager.Items.FIRE_ESSENCE)
-                .addInput(TagManager.Items.FIRE_ESSENCE)
-                .addInput(Items.NETHERITE_INGOT)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.PYROMANCER_MODIFIER, compatSalvage))
-                .save(arsElementalConsumer, prefix(TCIntegrationsModifiers.PYROMANCER_MODIFIER, compatFolder));
-        }
+        ModifierRecipeBuilder.modifier(TciModifierIds.pyromancer)
+            .setTools(TinkerTags.Items.WORN_ARMOR)
+            .addInput(TagManager.Items.MARK_OF_MASTERY)
+            .addInput(TagManager.Items.FIRE_ESSENCE)
+            .addInput(TagManager.Items.FIRE_ESSENCE)
+            .addInput(Items.NETHERITE_INGOT)
+            .setSlots(SlotType.UPGRADE, 1)
+            .setMaxLevel(1)
+            .saveSalvage(arsElementalConsumer, prefix(TciModifierIds.pyromancer, compatSalvage))
+            .save(arsElementalConsumer, prefix(TciModifierIds.pyromancer, compatFolder));
 
-        if (TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER != null) {
-            ModifierRecipeBuilder.modifier(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER)
-                .setTools(TinkerTags.Items.CHESTPLATES)
-                .addInput(TagManager.Items.SOURCE_GEM_BLOCK)
-                .addInput(TagManager.Items.SOURCE_GEM_BLOCK)
-                .addInput(Ingredient.of(Tags.Items.STORAGE_BLOCKS_GOLD))
-                .addInput(Ingredient.of(Tags.Items.STORAGE_BLOCKS_GOLD))
-                .addInput(Items.SHIELD)
-                .setSlots(SlotType.UPGRADE, 1)
-                .setMaxLevel(1)
-                .saveSalvage(arsConsumer, prefix(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.id().withSuffix("_chestplates"), compatSalvage))
-                .save(arsConsumer, prefix(TCIntegrationsModifiers.ENCHANTERS_SHIELD_MODIFIER.id().withSuffix("_chestplates"), compatFolder));
-        }
+        ModifierRecipeBuilder.modifier(TciModifierIds.enchantersShield)
+            .setTools(TinkerTags.Items.CHESTPLATES)
+            .addInput(TagManager.Items.SOURCE_GEM_BLOCK)
+            .addInput(TagManager.Items.SOURCE_GEM_BLOCK)
+            .addInput(Ingredient.of(Tags.Items.STORAGE_BLOCKS_GOLD))
+            .addInput(Ingredient.of(Tags.Items.STORAGE_BLOCKS_GOLD))
+            .addInput(Items.SHIELD)
+            .setSlots(SlotType.UPGRADE, 1)
+            .setMaxLevel(1)
+            .saveSalvage(arsConsumer, prefix(TciModifierIds.enchantersShield.getLocation().withSuffix("_chestplates"), compatSalvage))
+            .save(arsConsumer, prefix(TciModifierIds.enchantersShield.getLocation().withSuffix("_chestplates"), compatFolder));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.roadrunner)
             .setTools(TinkerTags.Items.BOOTS)

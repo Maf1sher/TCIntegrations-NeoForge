@@ -3,6 +3,9 @@ package tcintegrations.data.tcon.material;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
@@ -12,6 +15,7 @@ import slimeknights.mantle.recipe.condition.TagFilledCondition;
 import slimeknights.tconstruct.common.json.ConfigEnabledCondition;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 
+import tcintegrations.common.TagManager;
 import tcintegrations.data.integration.ModIntegration;
 
 import java.util.List;
@@ -45,7 +49,7 @@ public class MaterialDataProvider extends AbstractMaterialDataProvider {
         addMaterial(MaterialIds.forgottenMetal, 4, ORDER_COMPAT + ORDER_GENERAL, false, false, undergardenCondition);
 
         // Ars Nouveau
-        addMaterial(MaterialIds.sourceGem, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.ARS_MODID, "source_gem"));
+        addMaterial(MaterialIds.sourceGem, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.ARS_MODID, TagManager.Items.SOURCE_GEM));
 
         // Ice and Fire
         addMaterial(MaterialIds.dragonsteelFire, 4, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_fire"));
@@ -55,10 +59,15 @@ public class MaterialDataProvider extends AbstractMaterialDataProvider {
 
     /** Condition: mod loaded OR c:ingots/X tag filled */
     private static ICondition modOrTagCondition(String modId, String ingotName) {
+        return modOrTagCondition(modId, ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName)));
+    }
+
+    /** Condition: mod loaded OR the given item tag filled */
+    private static ICondition modOrTagCondition(String modId, TagKey<Item> tag) {
         return new OrCondition(List.of(
             ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS,
             new ModLoadedCondition(modId),
-            new TagFilledCondition<>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/" + ingotName))
+            new TagFilledCondition<>(Registries.ITEM, tag.location())
         ));
     }
 }

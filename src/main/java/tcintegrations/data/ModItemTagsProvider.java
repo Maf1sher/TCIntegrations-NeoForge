@@ -71,6 +71,20 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             .addOptional(ModIntegration.arsLoc("source_gem"));
         this.tag(TagManager.Items.SOURCE_GEM_BLOCK)
             .addOptional(ModIntegration.arsLoc("source_gem_block"));
+        this.tag(TagManager.Items.MAGE_FIBER)
+            .addOptional(ModIntegration.arsLoc("mage_fiber"));
+        this.tag(TagManager.Items.AIR_ESSENCE)
+            .addOptional(ModIntegration.arsLoc("air_essence"));
+        this.tag(TagManager.Items.WATER_ESSENCE)
+            .addOptional(ModIntegration.arsLoc("water_essence"));
+        this.tag(TagManager.Items.EARTH_ESSENCE)
+            .addOptional(ModIntegration.arsLoc("earth_essence"));
+        this.tag(TagManager.Items.FIRE_ESSENCE)
+            .addOptional(ModIntegration.arsLoc("fire_essence"));
+
+        // Ars Elemental
+        this.tag(TagManager.Items.MARK_OF_MASTERY)
+            .addOptional(ModIntegration.arsElementalLoc("mark_of_mastery"));
 
         // Aquaculture
         this.tag(TagManager.Items.TIN_CAN)
