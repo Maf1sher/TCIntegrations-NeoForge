@@ -86,36 +86,37 @@ dependencies {
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
 
     // Integration mods (compileOnly)
-    compileOnly "curse.maven:ars-nouveau-401955:8081100"
+    compileOnly "curse.maven:ars-nouveau-401955:9052154"
     compileOnly "curse.maven:create-328085:7963363"
     compileOnly "curse.maven:mekanism-268560:7904058"
     compileOnly "curse.maven:immersive-engineering-231951:6733669"
     compileOnly "curse.maven:projecte-226410:6611984"
-    compileOnly "curse.maven:apotheosis-313970:7703848"
+    compileOnly "curse.maven:apotheosis-313970:8993983"
     compileOnly "curse.maven:the-twilight-forest-227639:7797302"
     compileOnly "curse.maven:the-undergarden-379849:7862546"
-    compileOnly "curse.maven:alexs-mobs-1-21-1-port-1415721:7528193"
-    compileOnly "curse.maven:iceandfire-ce-1040076:7722420"
+    // Alex's Mobs (continued port)
+    compileOnly "curse.maven:alexs-mobs-continued-1635121:9256253"
+    compileOnly "curse.maven:iceandfire-ce-1040076:9128508"
     compileOnly "curse.maven:aquaculture-60028:7901588"
-    compileOnly "curse.maven:deeperdarker-659011:7940538"
+    compileOnly "curse.maven:deeperdarker-659011:8201775"
     compileOnly "curse.maven:malum-484064:7307339"
     compileOnly "curse.maven:curios-309927:6529130"
     compileOnly "curse.maven:patchouli-306770:7730942"
 
     // Support libs
-    compileOnly "curse.maven:citadel-1-21-1-port-1415723:7982052"
+    compileOnly "curse.maven:codxlib-1633207:8893360"
     compileOnly "curse.maven:lodestone-616457:7264731"
-    compileOnly "curse.maven:placebo-283644:6926281"
-    compileOnly "curse.maven:apothic-attributes-898963:7445079"
+    compileOnly "curse.maven:placebo-283644:9153039"
+    compileOnly "curse.maven:apothic-attributes-898963:9006294"
 
     // IFD CE support libs
     compileOnly "curse.maven:jupiter-1072905:7738312"
     compileOnly "curse.maven:uranus-1010827:8008516"
-    compileOnly "curse.maven:architectury-api-419699:5786327"
+    compileOnly "curse.maven:architectury-api-419699:8492726"
 
     // Runtime mods for testing
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
-    runtimeOnly "curse.maven:geckolib-388172:7707149"
+    runtimeOnly "curse.maven:geckolib-388172:8893490"
 }
 
 def resourceTargets = ['META-INF/neoforge.mods.toml', 'pack.mcmeta']

@@ -2,8 +2,11 @@ package tcintegrations.items.modifiers.armor;
 
 import com.github.alexthe666.alexsmobs.effect.AMEffectRegistry;
 
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -32,10 +35,11 @@ public class ShieldOfTheDeepModifier extends NoLevelsModifier implements OnAttac
                 && source.getEntity() instanceof LivingEntity attacker
                 && isDirectDamage) {
             final ServerPlayer sp = (ServerPlayer) player;
+            final Holder<MobEffect> exsanguination = BuiltInRegistries.MOB_EFFECT.wrapAsHolder(AMEffectRegistry.EXSANGUINATION.get());
 
             if (sp.distanceTo(attacker) <= 4
-                    && !attacker.hasEffect(AMEffectRegistry.EXSANGUINATION)) {
-                attacker.addEffect(new MobEffectInstance(AMEffectRegistry.EXSANGUINATION, 60, 2));
+                    && !attacker.hasEffect(exsanguination)) {
+                attacker.addEffect(new MobEffectInstance(exsanguination, 60, 2));
             }
             if (sp.isInWaterOrBubble()) {
                 sp.setAirSupply(Math.min(sp.getMaxAirSupply(), sp.getMaxAirSupply() + 150));
