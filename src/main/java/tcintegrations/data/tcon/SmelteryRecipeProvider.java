@@ -66,6 +66,9 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         RecipeOutput ifdIceConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_ice"));
         RecipeOutput ifdLightningConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.IFD_MODID, "dragonsteel_lightning"));
         RecipeOutput arsConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.ARS_MODID, TagManager.Items.SOURCE_GEM));
+        RecipeOutput adAstraDeshConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.AD_ASTRA_MODID, "desh"));
+        RecipeOutput adAstraCaloriteConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.AD_ASTRA_MODID, "calorite"));
+        RecipeOutput adAstraOstrumConsumer = withConditions(consumer, modOrTagCondition(ModIntegration.AD_ASTRA_MODID, "ostrum"));
 
         molten(arsConsumer, TCIntegrationsItems.MOLTEN_SOURCE_GEM).smallGem();
         metal(aquacultureConsumer, TCIntegrationsItems.MOLTEN_NEPTUNIUM).metal();
@@ -73,6 +76,9 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
         metal(undergardenCloggrumConsumer, TCIntegrationsItems.MOLTEN_CLOGGRUM).ore().metal();
         metal(undergardenFroststeelConsumer, TCIntegrationsItems.MOLTEN_FROSTSTEEL).ore().metal();
         metal(undergardenForgottenConsumer, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL).metal();
+        metal(adAstraDeshConsumer, TCIntegrationsItems.MOLTEN_DESH).ore().metal();
+        metal(adAstraCaloriteConsumer, TCIntegrationsItems.MOLTEN_CALORITE).ore().metal();
+        metal(adAstraOstrumConsumer, TCIntegrationsItems.MOLTEN_OSTRUM).ore().metal();
         metalWithoutNugget(ifdFireConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_FIRE);
         metalWithoutNugget(ifdIceConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_ICE);
         metalWithoutNugget(ifdLightningConsumer, TCIntegrationsItems.MOLTEN_DRAGONSTEEL_LIGHTNING);

@@ -45,6 +45,7 @@ public final class DataGenerators {
         gen.addProvider(event.includeServer(), ModLootTables.create(packOutput, lookupProvider));
         gen.addProvider(event.includeServer(), blockTags);
         gen.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTags, existingFileHelper));
+        gen.addProvider(event.includeServer(), new EntityTypeTagProvider(packOutput, lookupProvider, existingFileHelper));
 
         // Mod recipes (use PackGenerator to avoid duplicate name conflict with CombinedRecipeProvider)
         gen.getVanillaPack(event.includeServer()).addProvider(output -> new ModRecipesProvider(output, lookupProvider));

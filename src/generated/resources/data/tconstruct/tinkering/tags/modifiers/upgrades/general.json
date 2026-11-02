@@ -15,6 +15,10 @@
     {
       "id": "tcintegrations:capturing",
       "required": false
+    },
+    {
+      "id": "tcintegrations:cheesy",
+      "required": false
     }
   ]
 }

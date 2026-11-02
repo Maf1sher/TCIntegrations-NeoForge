@@ -24,6 +24,9 @@ public class MaterialTraitsDataProvider extends AbstractMaterialTraitDataProvide
     @Override
     protected void addMaterialTraits() {
         addDefaultTraits(MaterialIds.bronze, TciModifierIds.moderate);
+        addDefaultTraits(MaterialIds.desh, TciModifierIds.oxygenated);
+        addDefaultTraits(MaterialIds.calorite, TciModifierIds.oxygenated);
+        addDefaultTraits(MaterialIds.ostrom, TciModifierIds.oxygenated);
         addDefaultTraits(MaterialIds.brass, TciModifierIds.moderate);
         addDefaultTraits(MaterialIds.neptunium, TciModifierIds.waterPowered);
         addDefaultTraits(MaterialIds.soulStainedSteel, TciModifierIds.soulStained);

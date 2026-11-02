@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "tconstruct:config",
+          "prop": "force_integration_materials"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "ad_astra"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "c:ingots/ostrum"
+        }
+      ]
+    }
+  ],
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "c:ingots/ostrum"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "c:molten_ostrum"
+  },
+  "temperature": 500,
+  "time": 50
+}

@@ -19,6 +19,9 @@ public final class MaterialIds {
     public static final MaterialId froststeel = id("froststeel");
     public static final MaterialId forgottenMetal = id("forgotten_metal");
     public static final MaterialId sourceGem = id("source_gem");
+    public static final MaterialId desh = id("desh");
+    public static final MaterialId calorite = id("calorite");
+    public static final MaterialId ostrom = id("ostrum");
 
     private static MaterialId id(String name) {
         return new MaterialId(TCIntegrations.MODID, name);

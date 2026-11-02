@@ -177,6 +177,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Create: Mechanical Arm
         this.tag(TagManager.Items.MECHANICAL_ARM)
             .addOptional(ModIntegration.createLoc("mechanical_arm"));
+
+        // Ad Astra
+        this.tag(TagManager.Items.CHEESE)
+            .addOptional(ModIntegration.adAstraLoc("cheese"));
     }
 
     /** Adds an ingot to the c:ingots/<name> common tag */

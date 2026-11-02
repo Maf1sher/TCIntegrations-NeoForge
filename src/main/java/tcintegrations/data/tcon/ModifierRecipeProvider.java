@@ -55,6 +55,7 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
         RecipeOutput arsElementalConsumer = withConditions(consumer, modLoaded(ModIntegration.ARS_ELEMENTAL_MODID));
         RecipeOutput deeperDarkerConsumer = withConditions(consumer, modLoaded(ModIntegration.DEEPERDARKER_MODID));
         RecipeOutput twilightForestConsumer = withConditions(consumer, modLoaded(ModIntegration.TWILIGHT_MODID));
+        RecipeOutput adAstraConsumer = withConditions(consumer, modLoaded(ModIntegration.AD_ASTRA_MODID));
 
         ModifierRecipeBuilder.modifier(TciModifierIds.mechanicalArm)
             .setTools(TinkerTags.Items.MELEE_PRIMARY)
@@ -444,6 +445,18 @@ public class ModifierRecipeProvider extends BaseRecipeProvider {
             .setTools(ingredientFromTags(TinkerTags.Items.MELEE, TinkerTags.Items.HARVEST, TinkerTags.Items.RANGED))
             .saveSalvage(twilightForestConsumer, prefix(TciModifierIds.twilit.getLocation(), compatSalvage))
             .save(twilightForestConsumer, prefix(TciModifierIds.twilit.getLocation(), compatFolder));
+
+        ModifierRecipeBuilder.modifier(TciModifierIds.cheesy)
+            .setTools(ingredientFromTags(TinkerTags.Items.MELEE_PRIMARY, TinkerTags.Items.HARVEST_PRIMARY))
+            .addInput(TagManager.Items.CHEESE)
+            .addInput(TagManager.Items.CHEESE)
+            .addInput(TagManager.Items.CHEESE)
+            .addInput(TagManager.Items.CHEESE)
+            .addInput(TagManager.Items.CHEESE)
+            .setSlots(SlotType.UPGRADE, 1)
+            .setMaxLevel(3)
+            .saveSalvage(adAstraConsumer, prefix(TciModifierIds.cheesy.getLocation(), compatSalvage))
+            .save(adAstraConsumer, prefix(TciModifierIds.cheesy.getLocation(), compatFolder));
     }
 
     public ResourceLocation prefix(LazyModifier modifier, String prefix) {

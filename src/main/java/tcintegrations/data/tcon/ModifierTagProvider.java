@@ -32,7 +32,8 @@ public class ModifierTagProvider extends AbstractModifierTagProvider {
             .addOptional(TciModifierIds.engineersGoggles.getLocation())
             .addOptional(TciModifierIds.multiVision.getLocation())
             .addOptional(TciModifierIds.waterPowered.getLocation())
-            .addOptional(TciModifierIds.capturing.getLocation());
+            .addOptional(TciModifierIds.capturing.getLocation())
+            .addOptional(TciModifierIds.cheesy.getLocation());
 
         // Melee upgrades
         this.tag(MELEE_UPGRADES)

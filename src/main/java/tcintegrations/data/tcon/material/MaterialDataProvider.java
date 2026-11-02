@@ -39,6 +39,11 @@ public class MaterialDataProvider extends AbstractMaterialDataProvider {
         // Create
         addMaterial(MaterialIds.brass, 3, ORDER_COMPAT + ORDER_REPAIR, false, false, modOrTagCondition(ModIntegration.CREATE_MODID, "brass"));
 
+        // Ad Astra
+        addMaterial(MaterialIds.desh, 2, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.AD_ASTRA_MODID, "desh"));
+        addMaterial(MaterialIds.calorite, 2, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.AD_ASTRA_MODID, "calorite"));
+        addMaterial(MaterialIds.ostrom, 2, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.AD_ASTRA_MODID, "ostrum"));
+
         // Aquaculture
         addMaterial(MaterialIds.neptunium, 3, ORDER_COMPAT + ORDER_GENERAL, false, false, modOrTagCondition(ModIntegration.AQUACULTURE_MODID, "neptunium"));
 

@@ -25,6 +25,7 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final String ARS_ELEMENTAL_MODID = "ars_elemental";
     public static final String DEEPERDARKER_MODID = "deeperdarker";
     public static final String TWILIGHT_MODID = "twilightforest";
+    public static final String AD_ASTRA_MODID = "ad_astra";
 
     // Create items
     public static final Item GOGGLES = ModItemRef.of(CREATE_MODID, "goggles").get();
@@ -86,6 +87,9 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final Item NAGA_SCALE = ModItemRef.of(TWILIGHT_MODID, "naga_scale").get();
     public static final Item STEELEAF_INGOT = ModItemRef.of(TWILIGHT_MODID, "steeleaf_ingot").get();
 
+    // Ad Astra items
+    public static final Item CHEESE = ModItemRef.of(AD_ASTRA_MODID, "cheese").get();
+
     // Immersive Engineering items
     public static final Item VOLTMETER = ModItemRef.of(IE_MODID, "voltmeter").get();
 
@@ -101,6 +105,7 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static ResourceLocation arsElementalLoc(String name) { return location(ARS_ELEMENTAL_MODID, name); }
     public static ResourceLocation deeperDarkerLoc(String name) { return location(DEEPERDARKER_MODID, name); }
     public static ResourceLocation twilightLoc(String name) { return location(TWILIGHT_MODID, name); }
+    public static ResourceLocation adAstraLoc(String name) { return location(AD_ASTRA_MODID, name); }
 
     private static boolean forceLoaded = false;
 

@@ -33,6 +33,7 @@ import tcintegrations.items.modifiers.tool.SirenModifier;
 import tcintegrations.items.modifiers.tool.TwilitModifier;
 import tcintegrations.items.modifiers.tool.UtheriumModifier;
 import tcintegrations.items.modifiers.tool.CapturingModifier;
+import tcintegrations.items.modifiers.tool.CheesyModifier;
 import tcintegrations.items.modifiers.tool.CloggrumModifier;
 import tcintegrations.items.modifiers.tool.FlamedModifier;
 import tcintegrations.items.modifiers.tool.GlowUpModifier;
@@ -41,6 +42,7 @@ import tcintegrations.items.modifiers.tool.PhantasmalModifier;
 import tcintegrations.items.modifiers.tool.ZappedModifier;
 import tcintegrations.items.modifiers.traits.DragonScalesModifier;
 import tcintegrations.items.modifiers.traits.KineticModifier;
+import tcintegrations.items.modifiers.traits.OxygenatedModifier;
 import tcintegrations.items.modifiers.traits.SoulStained;
 import tcintegrations.items.modifiers.traits.WaterPowered;
 
@@ -76,6 +78,8 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
     public static StaticModifier<TwilitModifier> TWILIT_MODIFIER;
     public static StaticModifier<CloggrumModifier> CLOGGRUM_MODIFIER;
     public static StaticModifier<SculkingModifier> SCULKING_MODIFIER;
+    public static StaticModifier<CheesyModifier> CHEESY_MODIFIER;
+    public static StaticModifier<OxygenatedModifier> OXYGENATED_MODIFIER;
     // Ars Elemental modifiers
     public static StaticModifier<?> AETHERMANCER_MODIFIER;
     public static StaticModifier<?> AQUAMANCER_MODIFIER;
@@ -155,6 +159,11 @@ public class TCIntegrationsModifiers extends TCIntegrationsModule {
         if (ModIntegration.canLoad(ModIntegration.TWILIGHT_MODID)) {
             PRECIPITATE_MODIFIER = MODIFIERS_REGISTRY.register("precipitate", PrecipitateModifier::new);
             TWILIT_MODIFIER = MODIFIERS_REGISTRY.register("twilit", TwilitModifier::new);
+        }
+
+        if (ModIntegration.canLoad(ModIntegration.AD_ASTRA_MODID)) {
+            CHEESY_MODIFIER = MODIFIERS_REGISTRY.register("cheesy", CheesyModifier::new);
+            OXYGENATED_MODIFIER = MODIFIERS_REGISTRY.register("oxygenated", OxygenatedModifier::new);
         }
 
     }

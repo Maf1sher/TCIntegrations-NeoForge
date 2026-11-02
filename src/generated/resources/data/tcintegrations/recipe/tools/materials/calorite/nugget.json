@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ad_astra"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "c:nuggets/calorite"
+    }
+  ],
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "c:nuggets/calorite"
+  },
+  "material": "tcintegrations:calorite",
+  "needed": 9,
+  "value": 1
+}

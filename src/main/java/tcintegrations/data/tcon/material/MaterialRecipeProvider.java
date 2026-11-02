@@ -42,6 +42,7 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         RecipeOutput ifdConsumer = withConditions(consumer, modLoaded(ModIntegration.IFD_MODID));
         RecipeOutput undergardenConsumer = withConditions(consumer, modLoaded(ModIntegration.UNDERGARDEN_MODID));
         RecipeOutput arsConsumer = withConditions(consumer, modLoaded(ModIntegration.ARS_MODID));
+        RecipeOutput adAstraConsumer = withConditions(consumer, modLoaded(ModIntegration.AD_ASTRA_MODID));
 
         // Bronze
         metalMaterialRecipe(bronzeConsumer, MaterialIds.bronze, folder, MaterialIds.bronze.getPath(), true);
@@ -57,6 +58,11 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         metalMaterialRecipe(undergardenConsumer, MaterialIds.cloggrum, folder, MaterialIds.cloggrum.getPath(), true);
         metalMaterialRecipe(undergardenConsumer, MaterialIds.froststeel, folder, MaterialIds.froststeel.getPath(), true);
         metalMaterialRecipe(undergardenConsumer, MaterialIds.forgottenMetal, folder, MaterialIds.forgottenMetal.getPath(), true);
+
+        // Ad Astra
+        metalMaterialRecipe(adAstraConsumer, MaterialIds.desh, folder, MaterialIds.desh.getPath(), true);
+        metalMaterialRecipe(adAstraConsumer, MaterialIds.calorite, folder, MaterialIds.calorite.getPath(), true);
+        metalMaterialRecipe(adAstraConsumer, MaterialIds.ostrom, folder, MaterialIds.ostrom.getPath(), true);
 
         // Ars Nouveau
         if (ModIntegration.SOURCE_GEM != null && ModIntegration.SOURCE_GEM != Items.AIR)
@@ -76,6 +82,9 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
         compatMeltingCasting(consumer, MaterialIds.cloggrum, TCIntegrationsItems.MOLTEN_CLOGGRUM, folder);
         compatMeltingCasting(consumer, MaterialIds.froststeel, TCIntegrationsItems.MOLTEN_FROSTSTEEL, folder);
         compatMeltingCasting(consumer, MaterialIds.forgottenMetal, TCIntegrationsItems.MOLTEN_FORGOTTEN_METAL, folder);
+        compatMeltingCasting(consumer, MaterialIds.desh, TCIntegrationsItems.MOLTEN_DESH, folder);
+        compatMeltingCasting(consumer, MaterialIds.calorite, TCIntegrationsItems.MOLTEN_CALORITE, folder);
+        compatMeltingCasting(consumer, MaterialIds.ostrom, TCIntegrationsItems.MOLTEN_OSTRUM, folder);
     }
 
 }

@@ -42,6 +42,8 @@ public class TciModifierIds {
     public static final ModifierId sculking = id("sculking");
     public static final ModifierId precipitate = id("precipitate");
     public static final ModifierId twilit = id("twilit");
+    public static final ModifierId oxygenated = id("oxygenated");
+    public static final ModifierId cheesy = id("cheesy");
 
     private TciModifierIds() {}
 

@@ -1,10 +1,12 @@
 package tcintegrations.common;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
@@ -106,8 +108,20 @@ public class TagManager {
         // Immersive Engineering
         public static final TagKey<Item> VOLTMETER = itemTag("immersiveengineering", "voltmeter");
 
+        // Ad Astra
+        public static final TagKey<Item> CHEESE = itemTag(TCIntegrations.MODID, "cheese");
+
         private static TagKey<Item> itemTag(String modId, String path) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(modId, path));
         }
+    }
+
+    public static class EntityTypes {
+        public static final TagKey<EntityType<?>> MILK_PRODUCER = TagKey.create(
+            Registries.ENTITY_TYPE,
+            ResourceLocation.fromNamespaceAndPath(TCIntegrations.MODID, "milk_producer")
+        );
+
+        private EntityTypes() {}
     }
 }

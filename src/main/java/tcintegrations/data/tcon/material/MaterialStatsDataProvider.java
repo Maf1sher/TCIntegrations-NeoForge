@@ -38,6 +38,26 @@ public class MaterialStatsDataProvider extends AbstractMaterialStatsDataProvider
             HandleMaterialStats.multipliers().durability(1.10F).miningSpeed(1.05F).build(),
             StatlessMaterialStats.BINDING);
 
+        // tier 2 (Ad Astra)
+        addMaterialStats(MaterialIds.desh,
+            new HeadMaterialStats(250, 6F, IRON, 2F),
+            new LimbMaterialStats(250, -0.2F, 0.1F, 0),
+            new GripMaterialStats(0.1F, 0F, 2F),
+            HandleMaterialStats.multipliers().durability(1.10F).build(),
+            StatlessMaterialStats.BINDING);
+        addMaterialStats(MaterialIds.calorite,
+            new HeadMaterialStats(250, 6F, IRON, 2F),
+            new LimbMaterialStats(250, -0.2F, 0.1F, 0),
+            new GripMaterialStats(0.1F, 0F, 2F),
+            HandleMaterialStats.multipliers().durability(1.10F).build(),
+            StatlessMaterialStats.BINDING);
+        addMaterialStats(MaterialIds.ostrom,
+            new HeadMaterialStats(250, 6F, IRON, 2F),
+            new LimbMaterialStats(250, -0.2F, 0.1F, 0),
+            new GripMaterialStats(0.1F, 0F, 2F),
+            HandleMaterialStats.multipliers().durability(1.10F).build(),
+            StatlessMaterialStats.BINDING);
+
         // tier 3 (mod integration)
         addMaterialStats(MaterialIds.brass,
             new HeadMaterialStats(730, 6F, DIAMOND, 2.25F),
