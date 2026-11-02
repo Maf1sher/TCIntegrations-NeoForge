@@ -17,7 +17,9 @@ import net.neoforged.neoforge.common.util.Lazy;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.EquipmentChangeModifierHook;
+import slimeknights.tconstruct.library.modifiers.modules.build.ModifierSlotModule;
 import slimeknights.tconstruct.library.module.ModuleHookMap.Builder;
+import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.context.EquipmentChangeContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
@@ -32,6 +34,7 @@ public class ArsNouveauModifier extends ArsNouveauBaseModifier implements Equipm
     @Override
     protected void registerHooks(Builder hookBuilder) {
         super.registerHooks(hookBuilder);
+        hookBuilder.addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(1));
         hookBuilder.addHook(this, ModifierHooks.EQUIPMENT_CHANGE);
     }
 
