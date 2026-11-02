@@ -42,10 +42,10 @@ public class IfdMeltingRecipeProvider implements DataProvider {
     private CompletableFuture<?> generateSilver(Path base, CachedOutput cache) {
         Path silver = base.resolve("silver");
         return CompletableFuture.allOf(
-            write(silver.resolve("helmet.json"), cache, buildSilver("silver_metal_helmet", 450)),
-            write(silver.resolve("chestplate.json"), cache, buildSilver("silver_metal_chestplate", 720)),
-            write(silver.resolve("leggings.json"), cache, buildSilver("silver_metal_leggings", 630)),
-            write(silver.resolve("boots.json"), cache, buildSilver("silver_metal_boots", 360)),
+            write(silver.resolve("helmet.json"), cache, buildSilver("armor_silver_metal_helmet", 450)),
+            write(silver.resolve("chestplate.json"), cache, buildSilver("armor_silver_metal_chestplate", 720)),
+            write(silver.resolve("leggings.json"), cache, buildSilver("armor_silver_metal_leggings", 630)),
+            write(silver.resolve("boots.json"), cache, buildSilver("armor_silver_metal_boots", 360)),
             write(silver.resolve("axes.json"), cache, buildSilverMulti(new String[]{"silver_axe", "silver_pickaxe"}, 270)),
             write(silver.resolve("weapon.json"), cache, buildSilverMulti(new String[]{"silver_sword", "silver_hoe"}, 180)),
             write(silver.resolve("small.json"), cache, buildSilver("silver_shovel", 90)),
@@ -58,10 +58,10 @@ public class IfdMeltingRecipeProvider implements DataProvider {
     private CompletableFuture<?> generateCopper(Path base, CachedOutput cache) {
         Path copper = base.resolve("copper");
         return CompletableFuture.allOf(
-            write(copper.resolve("helmet.json"), cache, buildCopper("copper_metal_helmet", 450)),
-            write(copper.resolve("chestplate.json"), cache, buildCopper("copper_metal_chestplate", 720)),
-            write(copper.resolve("leggings.json"), cache, buildCopper("copper_metal_leggings", 630)),
-            write(copper.resolve("boots.json"), cache, buildCopper("copper_metal_boots", 360)),
+            write(copper.resolve("helmet.json"), cache, buildCopper("armor_copper_metal_helmet", 450)),
+            write(copper.resolve("chestplate.json"), cache, buildCopper("armor_copper_metal_chestplate", 720)),
+            write(copper.resolve("leggings.json"), cache, buildCopper("armor_copper_metal_leggings", 630)),
+            write(copper.resolve("boots.json"), cache, buildCopper("armor_copper_metal_boots", 360)),
             write(copper.resolve("axes.json"), cache, buildCopperMulti(new String[]{"copper_axe", "copper_pickaxe"}, 270)),
             write(copper.resolve("weapon.json"), cache, buildCopperMulti(new String[]{"copper_sword", "copper_hoe"}, 180)),
             write(copper.resolve("small.json"), cache, buildCopper("copper_shovel", 90)),
@@ -71,19 +71,25 @@ public class IfdMeltingRecipeProvider implements DataProvider {
         );
     }
 
-    private static JsonObject conditions() {
+    private static JsonObject conditions(String... itemIds) {
+        JsonArray arr = new JsonArray();
         JsonObject cond = new JsonObject();
         cond.addProperty("type", "neoforge:mod_loaded");
         cond.addProperty("modid", "iceandfire");
-        JsonArray arr = new JsonArray();
         arr.add(cond);
+        for (String itemId : itemIds) {
+            JsonObject exists = new JsonObject();
+            exists.addProperty("type", "neoforge:item_exists");
+            exists.addProperty("item", itemId);
+            arr.add(exists);
+        }
         JsonObject root = new JsonObject();
         root.add("neoforge:conditions", arr);
         return root;
     }
 
     private static JsonObject build(String itemId, String fluid, int amount, int temperature, int time) {
-        JsonObject root = conditions();
+        JsonObject root = conditions(itemId);
         root.addProperty("type", "tconstruct:damagable_melting");
         JsonObject ingredient = new JsonObject();
         ingredient.addProperty("item", itemId);
@@ -99,7 +105,7 @@ public class IfdMeltingRecipeProvider implements DataProvider {
     }
 
     private static JsonObject buildMulti(String[] itemIds, String fluid, int amount, int temperature, int time) {
-        JsonObject root = conditions();
+        JsonObject root = conditions(itemIds);
         root.addProperty("type", "tconstruct:damagable_melting");
         JsonArray ingredient = new JsonArray();
         for (String id : itemIds) {

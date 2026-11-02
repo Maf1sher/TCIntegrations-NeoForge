@@ -2,7 +2,6 @@ package tcintegrations.data.integration;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.neoforged.fml.ModList;
 
 import tcintegrations.common.TCIntegrationsModule;
@@ -77,32 +76,6 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final Item ICE_DRAGON_BLOOD = ModItemRef.of(IFD_MODID, "ice_dragon_blood").get();
     public static final Item LIGHTNING_DRAGON_BLOOD = ModItemRef.of(IFD_MODID, "lightning_dragon_blood").get();
     public static final Item GHOST_INGOT = ModItemRef.of(IFD_MODID, "ghost_ingot").get();
-    public static final Item IFD_SILVER_METAL_HELMET = ModItemRef.of(IFD_MODID, "silver_metal_helmet").get();
-    public static final Item IFD_SILVER_METAL_CHESTPLATE = ModItemRef.of(IFD_MODID, "silver_metal_chestplate").get();
-    public static final Item IFD_SILVER_METAL_LEGGINGS = ModItemRef.of(IFD_MODID, "silver_metal_leggings").get();
-    public static final Item IFD_SILVER_METAL_BOOTS = ModItemRef.of(IFD_MODID, "silver_metal_boots").get();
-    public static final Item IFD_SILVER_AXE = ModItemRef.of(IFD_MODID, "silver_axe").get();
-    public static final Item IFD_SILVER_PICKAXE = ModItemRef.of(IFD_MODID, "silver_pickaxe").get();
-    public static final Item IFD_SILVER_SWORD = ModItemRef.of(IFD_MODID, "silver_sword").get();
-    public static final Item IFD_SILVER_HOE = ModItemRef.of(IFD_MODID, "silver_hoe").get();
-    public static final Item IFD_SILVER_SHOVEL = ModItemRef.of(IFD_MODID, "silver_shovel").get();
-    public static final Item IFD_DRAGONARMOR_SILVER_HEAD = ModItemRef.of(IFD_MODID, "dragonarmor_silver_head").get();
-    public static final Item IFD_DRAGONARMOR_SILVER_NECK = ModItemRef.of(IFD_MODID, "dragonarmor_silver_neck").get();
-    public static final Item IFD_DRAGONARMOR_SILVER_BODY = ModItemRef.of(IFD_MODID, "dragonarmor_silver_body").get();
-    public static final Item IFD_DRAGONARMOR_SILVER_TAIL = ModItemRef.of(IFD_MODID, "dragonarmor_silver_tail").get();
-    public static final Item IFD_COPPER_METAL_HELMET = ModItemRef.of(IFD_MODID, "copper_metal_helmet").get();
-    public static final Item IFD_COPPER_METAL_CHESTPLATE = ModItemRef.of(IFD_MODID, "copper_metal_chestplate").get();
-    public static final Item IFD_COPPER_METAL_LEGGINGS = ModItemRef.of(IFD_MODID, "copper_metal_leggings").get();
-    public static final Item IFD_COPPER_METAL_BOOTS = ModItemRef.of(IFD_MODID, "copper_metal_boots").get();
-    public static final Item IFD_COPPER_AXE = ModItemRef.of(IFD_MODID, "copper_axe").get();
-    public static final Item IFD_COPPER_PICKAXE = ModItemRef.of(IFD_MODID, "copper_pickaxe").get();
-    public static final Item IFD_COPPER_SWORD = ModItemRef.of(IFD_MODID, "copper_sword").get();
-    public static final Item IFD_COPPER_HOE = ModItemRef.of(IFD_MODID, "copper_hoe").get();
-    public static final Item IFD_COPPER_SHOVEL = ModItemRef.of(IFD_MODID, "copper_shovel").get();
-    public static final Item IFD_DRAGONARMOR_COPPER_HEAD = ModItemRef.of(IFD_MODID, "dragonarmor_copper_head").get();
-    public static final Item IFD_DRAGONARMOR_COPPER_NECK = ModItemRef.of(IFD_MODID, "dragonarmor_copper_neck").get();
-    public static final Item IFD_DRAGONARMOR_COPPER_BODY = ModItemRef.of(IFD_MODID, "dragonarmor_copper_body").get();
-    public static final Item IFD_DRAGONARMOR_COPPER_TAIL = ModItemRef.of(IFD_MODID, "dragonarmor_copper_tail").get();
 
     // Deeper and Darker items
     public static final Item REINFORCED_ECHO_SHARD = ModItemRef.of(DEEPERDARKER_MODID, "reinforced_echo_shard").get();

@@ -3,11 +3,15 @@
     {
       "type": "neoforge:mod_loaded",
       "modid": "iceandfire"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "iceandfire:armor_copper_metal_boots"
     }
   ],
   "type": "tconstruct:damagable_melting",
   "ingredient": {
-    "item": "iceandfire:copper_metal_boots"
+    "item": "iceandfire:armor_copper_metal_boots"
   },
   "result": {
     "fluid": "tconstruct:molten_copper",
