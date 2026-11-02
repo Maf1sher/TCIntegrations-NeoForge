@@ -1,9 +1,11 @@
-## Tinkers' Integrations and Tweaks [![Project](http://cf.way2muchnoise.eu/full_602680_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/tcintegrations) [![Project](https://modrinth.roughness.technology/full_tcintegrations_downloads.svg)](https://modrinth.com/mod/tcintegrations)
-[![](https://modrinth.roughness.technology/versions/tcintegrations.svg)](https://modrinth.com/mod/tcintegrations/versions)
-[![](https://img.shields.io/badge/Forge-39.0+-green.svg?longCache=true&style=flat)](https://legacy.curseforge.com/minecraft/mc-mods/tcintegrations/files)
+## Tinkers' Integrations and Tweaks
+
 ![MIT](https://img.shields.io/badge/license-MIT-blue.svg?longCache=true&style=flat)
 
-A Minecraft 1.18+ mod designed to provide modpack integrations with other mods for
+Unofficial NeoForge 1.21.1 port of [Tinkers' Integrations and Tweaks](https://github.com/wendall911/TCIntegrations),
+originally by [wendall911](https://github.com/wendall911).
+
+A Minecraft 1.21.1 (NeoForge) mod designed to provide modpack integrations with other mods for
 [Tinkers' Construct](https://github.com/SlimeKnights/TinkersConstruct), as well as some other tweaks.
 
 The main goal here is to not just add a bunch of random new materials from mods and call it "integration". The goal is to add materials where it makes sense, and capture the capabilities of other mods tools and armors in Tinkers' Construct. This started with Botania and wanting to have the ability to use mana generating inventory items to automatically repair tools. This entire concept has worked out well, and the idea moving forward is balanced integration.
@@ -12,49 +14,80 @@ Almost everything in the mod is datapack driven and can be overridden via datapa
 
 **Will take requests for other tweaks and integrations!**
 
+~~Strikethrough~~ marks content removed in this port. → marks a mod whose supported build differs from the original.
+
+## Building
+
+Requires JDK 21. This project builds against Mantle and Tinkers' Construct, so
+clone all three repositories into the same folder:
+
+- [Mantle-NeoForge](https://github.com/Maf1sher/Mantle-NeoForge)
+- [TinkersConstruct-NeoForge](https://github.com/Maf1sher/TinkersConstruct-NeoForge)
+- this repository
+
+Then build them in order, starting from that folder.
+
+Linux / macOS:
+
+```bash
+cd Mantle-NeoForge && ./gradlew build
+cd ../TinkersConstruct-NeoForge && ./gradlew build
+cd ../TCIntegrations-NeoForge && ./gradlew build
+```
+
+Windows (Command Prompt or PowerShell):
+
+```bat
+cd Mantle-NeoForge && gradlew.bat build
+cd ..\TinkersConstruct-NeoForge && gradlew.bat build
+cd ..\TCIntegrations-NeoForge && gradlew.bat build
+```
+
+The jar is written to `build/libs/TCIntegrations-1.21.1-*.jar`.
+
 ## Mod Integrations
-### 🔵 Botania
- * Adds Manasteel to smeltery
- * Manasteel parts add "Mana" modifier
-   * "**Mana**" modifer allows tools to repair with any mana generating inventory item (60 mana cost)
- * Adds Livingwood as tool part material
-   * "**Livingwood**" modifier reduces material repair costs by 75%
- * Adds Livingstone as tool part material
-   * Better stats than rock
- * Adds "**Terra**" upgrade modifier for primary weapons
-   * Repairs weapon if any mana generating inventory item is present (100 mana cost)
-   * When swung and the attack recharge meter is full, it will use 100 Mana and create a damaging Mana burst that deals 7 points (3.5 hearts) of damage to the hit mob
- * Adds "**Elemental**" upgrade modifier for primary weapons
-   * Repairs weapon if any mana generating inventory item is present (70 mana cost)
-   * 5% chance to spawn a Pixie on hit
-   * Beheading chance if a Zombie, Skeleton, Wither Skeleton, Creeper, the Guardian of Gaia, should be implemented with similar chance to the Elementium Axe
- * Adds "**Terrestrial**" upgrade modifier for armor as a complete "set" bonus
-   * Passive generation of 1 Mana every 10 ticks on Mana Tablets
-   * 20% decrease of Mana cost on all Mana-using TCon items (Can't translate to Botania items)
-   * Passive regeneration of 2 health every 4 seconds if their hunger bar isn't full
- * Adds "**Great Fairy**" upgrade modifier for armor as a complete "set" bonus
-   * 10% decrease of the Mana cost on all Mana-using TCon items (Can't translate to Botania items)
-   * If the player is attacked while wearing this armor piece, there's an % chance (depends on armor piece, same as Botania) to spawn a Pixie after being attacked.
-   * Pixies spawned by the wearer will inflict a random potion effect for 2 seconds: either Blindness, Wither, Slowness or Weakness.
-### 🟠 MythicBotany
- * Adds "**Alf**" upgrade modifier for primary weapons
-   * Requires "**Terra**" upgrade modifier to upgrade
-   * Adds additional repair if any mana generating inventory item is present (100 mana cost)
-   * Acts as an item magnet when using interact (normal interact when holding shift)
- * Adds "**Alfheim**" upgrade modifier for armor
-   * Requires "**Terrestrial**" modifier to upgrade
-   * Set bonus increases armor repair rate
-   * Helmet increases reach distance
-   * Chestplate adds knockback resistance
-   * Leggings increase run/swim speed
-   * Boots increase jump height when sprinting
+### 🔵 ~~Botania~~
+ * ~~Adds Manasteel to smeltery~~
+ * ~~Manasteel parts add "Mana" modifier~~
+   * ~~"**Mana**" modifier allows tools to repair with any mana generating inventory item (60 mana cost)~~
+ * ~~Adds Livingwood as tool part material~~
+   * ~~"**Livingwood**" modifier reduces material repair costs by 75%~~
+ * ~~Adds Livingstone as tool part material~~
+   * ~~Better stats than rock~~
+ * ~~Adds "**Terra**" upgrade modifier for primary weapons~~
+   * ~~Repairs weapon if any mana generating inventory item is present (100 mana cost)~~
+   * ~~When swung and the attack recharge meter is full, it will use 100 Mana and create a damaging Mana burst that deals 7 points (3.5 hearts) of damage to the hit mob~~
+ * ~~Adds "**Elemental**" upgrade modifier for primary weapons~~
+   * ~~Repairs weapon if any mana generating inventory item is present (70 mana cost)~~
+   * ~~5% chance to spawn a Pixie on hit~~
+   * ~~Beheading chance if a Zombie, Skeleton, Wither Skeleton, Creeper, the Guardian of Gaia, should be implemented with similar chance to the Elementium Axe~~
+ * ~~Adds "**Terrestrial**" upgrade modifier for armor as a complete "set" bonus~~
+   * ~~Passive generation of 1 Mana every 10 ticks on Mana Tablets~~
+   * ~~20% decrease of Mana cost on all Mana-using TCon items (Can't translate to Botania items)~~
+   * ~~Passive regeneration of 2 health every 4 seconds if their hunger bar isn't full~~
+ * ~~Adds "**Great Fairy**" upgrade modifier for armor as a complete "set" bonus~~
+   * ~~10% decrease of the Mana cost on all Mana-using TCon items (Can't translate to Botania items)~~
+   * ~~If the player is attacked while wearing this armor piece, there's an % chance (depends on armor piece, same as Botania) to spawn a Pixie after being attacked.~~
+   * ~~Pixies spawned by the wearer will inflict a random potion effect for 2 seconds: either Blindness, Wither, Slowness or Weakness.~~
+### 🟠 ~~MythicBotany~~
+ * ~~Adds "**Alf**" upgrade modifier for primary weapons~~
+   * ~~Requires "**Terra**" upgrade modifier to upgrade~~
+   * ~~Adds additional repair if any mana generating inventory item is present (100 mana cost)~~
+   * ~~Acts as an item magnet when using interact (normal interact when holding shift)~~
+ * ~~Adds "**Alfheim**" upgrade modifier for armor~~
+   * ~~Requires "**Terrestrial**" modifier to upgrade~~
+   * ~~Set bonus increases armor repair rate~~
+   * ~~Helmet increases reach distance~~
+   * ~~Chestplate adds knockback resistance~~
+   * ~~Leggings increase run/swim speed~~
+   * ~~Boots increase jump height when sprinting~~
 ### 🟡 Create
  * Adds tool material for Brass
    * Material has similar stats to Bronze
    * Adds "**Moderate**" modifier that makes the tool mine faster in moderate temperatures
  * Adds "**Engineer's Goggles**" ability
    * Can upgrade helmet with Engineer's Goggles, adding same functionality
- * Adds "**Mechanical Arm**" ability 
+ * Adds "**Mechanical Arm**" ability
    * Adds ability to attack with any melee weapon in the offhand
 ### 🟢 Aquaculture 2
  * Adds Neptunium to smeltery
@@ -83,7 +116,7 @@ Almost everything in the mod is datapack driven and can be overridden via datapa
    * Provides one Mana Boost enchantment level that can be combined with Ars Nouveau Modifier Levels for a Max of 4
    * Provides one Mana Regen enchantment level that can be combined with Ars Nouveau Modifier Levels for a Max of 4
    * Provides damage protection and mana regeneration depending on the specific set bonus when an entire set is equipped
-### ⚪ Alex's Mobs
+### ⚪ Alex's Mobs → Alex's Mobs Continued
  * "**Roadrunner Boots**" upgrade modifier - Boots
    * Adds a speed boost per level on sand
  * "**Frontier Cap**" upgrade modifier - Helmet
@@ -92,7 +125,7 @@ Almost everything in the mod is datapack driven and can be overridden via datapa
    * Water breathing
  * "**Bison Fur**" ability modifier - Boots
    * Insulated from Snow
- * "**Shield of the Deep**" upgrade modifier- Chestplate
+ * "**Shield of the Deep**" upgrade modifier - Chestplate
    * Gives Exsanguination effect to nearby entities when attacked
    * Increases underwater air supply when attacked
  * "**Mosquito**" upgrade modifier - Armor
@@ -109,10 +142,12 @@ Almost everything in the mod is datapack driven and can be overridden via datapa
  * Adds "Soul Stained" defense modifier for Armor
 ### 🔴 The Undergarden
  * Adds Cloggrum to smeltery
- * Adds Frosteel to smeltery
+ * Adds Froststeel to smeltery
  * Adds Forgotten to smeltery
- * Adds "**Masticate**" modifier for Armor
-  * Adds a scaled thorns damage effect
+ * Adds "**Cloggrum**" modifier for Armor
+   * Adds thorns damage
+ * ~~Adds "**Masticate**" modifier for Armor~~
+   * ~~Adds a scaled thorns damage effect~~
  * Adds "**Utherium**" modifier for melee weapons
    * Increases damage to Rotspawn by 1.5x
  * Adds "**Froststeel**" modifier for tools
@@ -123,10 +158,13 @@ Almost everything in the mod is datapack driven and can be overridden via datapa
    * 1.5x attack damage against mobs while in the Undergarden
 ### ProjectE
  * Adds EMC for Cobalt
-### Beyond Earth / Ad Astra
+### Apotheosis
+ * Adds "**Capturing**" upgrade modifier
+   * Chance to add the killed mob's spawn egg to the loot
+### ~~Beyond Earth~~ / Ad Astra
  * Improved Tinkers' Construct support
    * Add ore smelting for Desh, Calorite and Ostrum
- * Adds "**Oxegenated**" material property to Desh, Calorite and Ostrum
+ * Adds "**Oxygenated**" material property to Desh, Calorite and Ostrum
    * When harvesting, creates an oxygen bubble around player
  * Adds "**Cheesy**" modifier
    * Can eat tool to restore some hunger
@@ -134,12 +172,13 @@ Almost everything in the mod is datapack driven and can be overridden via datapa
  * Adds an ability modifier "**MultiVision**"
    * Allows multimeter visual overlay to always be enabled
 ### Mekanism
- * Tweak to Osmium material to increase stats slightly to align with Mekanism Tools
- * Adds "**Kinetic**" trait to Osmium material
+ * ~~Tweak to Osmium material to increase stats slightly to align with Mekanism Tools~~
+ * Adds "**Kinetic**" ability modifier for tools
    * When using the tool, a single energy using item gains small recharge amount
  * Adds "**Glow Up**" modifier
    * Adds glowing outline to hit entities, 30s per level
-### Ice and Fire: Dragons
+### Ice and Fire: Dragons → Community Edition
+ * Adds Dragonsteel (fire, ice, lightning) to smeltery
  * Adds "**Flamed**" upgrade modifier - Weapons
    * Knocks back target
    * Sets target on fire for 5 seconds
@@ -150,18 +189,18 @@ Almost everything in the mod is datapack driven and can be overridden via datapa
    * Bonus damage against Fire Dragons
  * Adds "**Zapped**" upgrade modifier - Weapons
    * Knocks back target
-   * Lighting strikes hit target
+   * Lightning strikes hit target
    * Bonus damage against Ice and Fire Dragons
  * Adds "**Phantasmal**" upgrade modifier - Swords
    * Launches Ghost Sword when swinging sword in air
-### Consecration
- * Enables support for Holy Damage that was disabled due to the glacial pace that Tinkers' Construct updates.
+### ~~Consecration~~
+ * ~~Enables support for Holy Damage that was disabled due to the glacial pace that Tinkers' Construct updates.~~
 ### Deeper and Darker
- * Adds "**Skulking** modifier - Armor
+ * Adds "**Skulking**" modifier - Armor
    * Removes blindness and darkness effects.
-### Twightlight Forest
+### Twilight Forest
  * Adds **Precipitate** ability modifier - Weapons / Harvest Tools
-   * Mining speed increases as heath decreases.
+   * Mining speed increases as health decreases.
    * Attack Speed increases as health decreases.
    * Arrow velocity increases as health decreases.
  * Adds **Twilit** upgrade modifier
@@ -176,16 +215,18 @@ Almost everything in the mod is datapack driven and can be overridden via datapa
 ### Smeltery Additions
  * Bronze
    * Adds back bronze block/ingot/nuggets
-   * Adds alternative recipe for bronze 3 copper ingots + 1 obsidion = 4 bronze ingots
+   * Adds alternative recipe for bronze 3 copper ingots + 1 obsidian = 4 bronze ingots
      * Recipe only exists if modpack does not have Tin
- * Manasteel (see Botania)
+ * ~~Manasteel (see Botania)~~
  * Neptunium (see Aquaculture 2)
  * Source Gem (see Ars Nouveau)
  * Soul Stained Steel (see Malum)
  * Cloggrum, Froststeel, Forgotten (See The Undergarden)
- * Desh, Calorite and Ostrum (See Beyond Earth)
+ * Desh, Calorite and Ostrum (See Ad Astra)
 
-## Links of Interest
+## Credits
 
-+ [Tinkers' Integrations and Tweaks Curseforge Page](https://www.curseforge.com/minecraft/mc-mods/tcintegrations)
-+ [Tinkers' Integrations and Tweaks Modrinth Page](https://modrinth.com/mod/tcintegrations)
+- Original mod and author: [wendall911](https://github.com/wendall911/TCIntegrations)
+- Additional credits: ashar42
+- NeoForge 1.21.1 port: [Maf1sher/TCIntegrations-NeoForge](https://github.com/Maf1sher/TCIntegrations-NeoForge)
+- License: MIT
