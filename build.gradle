@@ -138,7 +138,6 @@ def replaceProperties = [
     'mod_display_name': mod_display_name,
     'mod_name': mod_name,
     'mod_credits': mod_credits,
-    'mod_update_branch': mod_update_branch,
     'pack_format': pack_format
 ]
 
