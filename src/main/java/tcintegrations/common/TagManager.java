@@ -46,7 +46,7 @@ public class TagManager {
         public static final TagKey<Item> SOURCE_GEM_BLOCK = itemTag("c", "storage_blocks/source_gem");
 
         // Ars Nouveau
-        public static final TagKey<Item> MAGE_FIBER = itemTag("ars_nouveau", "mage_fiber");
+        public static final TagKey<Item> MAGE_FIBER = itemTag("ars_nouveau", "magebloom_fiber");
 
         // Alex's Mobs
         public static final TagKey<Item> ROADRUNNER_FEATHER = itemTag(TCIntegrations.MODID, "roadrunner_feather");

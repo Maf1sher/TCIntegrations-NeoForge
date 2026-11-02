@@ -38,7 +38,7 @@ public final class ModIntegration extends TCIntegrationsModule {
     public static final Item IRON_HOOK = ModItemRef.of(AQUACULTURE_MODID, "iron_hook").get();
 
     // Ars Nouveau items
-    public static final Item MAGE_FIBER = ModItemRef.of(ARS_MODID, "mage_fiber").get();
+    public static final Item MAGE_FIBER = ModItemRef.of(ARS_MODID, "magebloom_fiber").get();
     public static final Item MARK_OF_MASTERY = ModItemRef.of(ARS_MODID, "mark_of_mastery").get();
     public static final Item AIR_ESSENCE = ModItemRef.of(ARS_MODID, "air_essence").get();
     public static final Item WATER_ESSENCE = ModItemRef.of(ARS_MODID, "water_essence").get();

@@ -72,7 +72,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.tag(TagManager.Items.SOURCE_GEM_BLOCK)
             .addOptional(ModIntegration.arsLoc("source_gem_block"));
         this.tag(TagManager.Items.MAGE_FIBER)
-            .addOptional(ModIntegration.arsLoc("mage_fiber"));
+            .addOptional(ModIntegration.arsLoc("magebloom_fiber"));
         this.tag(TagManager.Items.AIR_ESSENCE)
             .addOptional(ModIntegration.arsLoc("air_essence"));
         this.tag(TagManager.Items.WATER_ESSENCE)
